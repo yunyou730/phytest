@@ -53,6 +53,12 @@
 		2BFE8C4827C476BC001F171C /* b2_edge_shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C1B27C476BC001F171C /* b2_edge_shape.cpp */; };
 		2BFE8C4927C476BC001F171C /* b2_time_of_impact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C1C27C476BC001F171C /* b2_time_of_impact.cpp */; };
 		2BFE8C4A27C476BC001F171C /* b2_distance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C1D27C476BC001F171C /* b2_distance.cpp */; };
+		2BFE8C5E27C4781A001F171C /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C5427C4781A001F171C /* libglfw3.a */; };
+		2BFE8C5F27C4781A001F171C /* libglfw.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C5527C4781A001F171C /* libglfw.3.dylib */; };
+		2BFE8C6027C4781A001F171C /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C5D27C4781A001F171C /* glad.c */; };
+		2BFE8C6627C47931001F171C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C6527C47931001F171C /* IOKit.framework */; };
+		2BFE8C6827C47937001F171C /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C6727C47937001F171C /* AppKit.framework */; };
+		2BFE8C6A27C47941001F171C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C6927C47940001F171C /* CoreFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -165,6 +171,16 @@
 		2BFE8C1B27C476BC001F171C /* b2_edge_shape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2_edge_shape.cpp; sourceTree = "<group>"; };
 		2BFE8C1C27C476BC001F171C /* b2_time_of_impact.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2_time_of_impact.cpp; sourceTree = "<group>"; };
 		2BFE8C1D27C476BC001F171C /* b2_distance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2_distance.cpp; sourceTree = "<group>"; };
+		2BFE8C5127C4781A001F171C /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
+		2BFE8C5227C4781A001F171C /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
+		2BFE8C5427C4781A001F171C /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
+		2BFE8C5527C4781A001F171C /* libglfw.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libglfw.3.dylib; sourceTree = "<group>"; };
+		2BFE8C5927C4781A001F171C /* khrplatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = khrplatform.h; sourceTree = "<group>"; };
+		2BFE8C5B27C4781A001F171C /* glad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glad.h; sourceTree = "<group>"; };
+		2BFE8C5D27C4781A001F171C /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		2BFE8C6527C47931001F171C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		2BFE8C6727C47937001F171C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		2BFE8C6927C47940001F171C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +188,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFE8C6A27C47941001F171C /* CoreFoundation.framework in Frameworks */,
+				2BFE8C6827C47937001F171C /* AppKit.framework in Frameworks */,
+				2BFE8C6627C47931001F171C /* IOKit.framework in Frameworks */,
+				2BFE8C5E27C4781A001F171C /* libglfw3.a in Frameworks */,
+				2BFE8C5F27C4781A001F171C /* libglfw.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +205,7 @@
 				2BFE8BAC27C476BC001F171C /* 3rd */,
 				2BFE8ADB27C3E360001F171C /* phytest */,
 				2BFE8ADA27C3E360001F171C /* Products */,
+				2BFE8C6427C47931001F171C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,6 +228,8 @@
 		2BFE8BAC27C476BC001F171C /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				2BFE8C5627C4781A001F171C /* glad */,
+				2BFE8C4E27C4781A001F171C /* glfw */,
 				2BFE8BAD27C476BC001F171C /* box2d */,
 			);
 			path = 3rd;
@@ -449,6 +473,93 @@
 			path = collision;
 			sourceTree = "<group>";
 		};
+		2BFE8C4E27C4781A001F171C /* glfw */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C4F27C4781A001F171C /* include */,
+				2BFE8C5327C4781A001F171C /* lib */,
+			);
+			path = glfw;
+			sourceTree = "<group>";
+		};
+		2BFE8C4F27C4781A001F171C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C5027C4781A001F171C /* GLFW */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		2BFE8C5027C4781A001F171C /* GLFW */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C5127C4781A001F171C /* glfw3.h */,
+				2BFE8C5227C4781A001F171C /* glfw3native.h */,
+			);
+			path = GLFW;
+			sourceTree = "<group>";
+		};
+		2BFE8C5327C4781A001F171C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C5427C4781A001F171C /* libglfw3.a */,
+				2BFE8C5527C4781A001F171C /* libglfw.3.dylib */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		2BFE8C5627C4781A001F171C /* glad */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C5727C4781A001F171C /* include */,
+				2BFE8C5C27C4781A001F171C /* src */,
+			);
+			path = glad;
+			sourceTree = "<group>";
+		};
+		2BFE8C5727C4781A001F171C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C5827C4781A001F171C /* KHR */,
+				2BFE8C5A27C4781A001F171C /* glad */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		2BFE8C5827C4781A001F171C /* KHR */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C5927C4781A001F171C /* khrplatform.h */,
+			);
+			path = KHR;
+			sourceTree = "<group>";
+		};
+		2BFE8C5A27C4781A001F171C /* glad */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C5B27C4781A001F171C /* glad.h */,
+			);
+			path = glad;
+			sourceTree = "<group>";
+		};
+		2BFE8C5C27C4781A001F171C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C5D27C4781A001F171C /* glad.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		2BFE8C6427C47931001F171C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C6927C47940001F171C /* CoreFoundation.framework */,
+				2BFE8C6727C47937001F171C /* AppKit.framework */,
+				2BFE8C6527C47931001F171C /* IOKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -518,6 +629,7 @@
 				2BFE8C2727C476BC001F171C /* b2_pulley_joint.cpp in Sources */,
 				2BFE8C4727C476BC001F171C /* b2_collide_polygon.cpp in Sources */,
 				2BFE8C3027C476BC001F171C /* b2_wheel_joint.cpp in Sources */,
+				2BFE8C6027C4781A001F171C /* glad.c in Sources */,
 				2BFE8C3F27C476BC001F171C /* b2_collide_circle.cpp in Sources */,
 				2BFE8C2E27C476BC001F171C /* b2_gear_joint.cpp in Sources */,
 				2BFE8C4327C476BC001F171C /* b2_chain_shape.cpp in Sources */,
@@ -674,7 +786,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T282937CB5;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/3rd/box2d/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/3rd/box2d/include\"",
+					"\"$(SRCROOT)/3rd/glad/include\"",
+					"\"$(SRCROOT)/3rd/glfw/include\"",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/3rd/glfw/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -685,7 +805,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T282937CB5;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/3rd/box2d/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/3rd/box2d/include\"",
+					"\"$(SRCROOT)/3rd/glad/include\"",
+					"\"$(SRCROOT)/3rd/glfw/include\"",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/3rd/glfw/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
