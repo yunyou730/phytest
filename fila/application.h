@@ -2,6 +2,7 @@
 
 namespace fl {
 
+class Framework;
 class Application
 {
 public:
@@ -14,8 +15,12 @@ public:
     virtual void OnUpdate();
     virtual void OnRenderer();
     
-    void SetDeltaTime();
+    void SetDeltaTime(float deltaTime);
     float GetDeltaTime();
+    
+protected:
+    Framework*  _framework = nullptr;
+    float       _deltaTimeThisFrame = 0.0f;
 };
 
 }

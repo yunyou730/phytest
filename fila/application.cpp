@@ -1,4 +1,5 @@
 #include "application.h"
+#include "framework/Framework.h"
 
 namespace fl {
 
@@ -14,7 +15,7 @@ Application::~Application()
 
 void Application::OnPrepare()
 {
-    
+    _framework = new Framework();
 }
 
 void Application::OnCleanup()
@@ -32,7 +33,7 @@ void Application::OnRenderer()
     
 }
 
-void Application::SetDeltaTime()
+void Application::SetDeltaTime(float deltaTime)
 {
     
 }

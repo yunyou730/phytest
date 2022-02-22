@@ -61,6 +61,11 @@
 		2BFE8C6A27C47941001F171C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C6927C47940001F171C /* CoreFoundation.framework */; };
 		2BFE8C7427C47B30001F171C /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C7227C47B30001F171C /* window.cpp */; };
 		2BFE8C7927C48212001F171C /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C7827C48212001F171C /* application.cpp */; };
+		2BFE8C8A27C485E7001F171C /* Framework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C8927C485E7001F171C /* Framework.cpp */; };
+		2BFE8C9327C485F7001F171C /* Phy2DSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C8D27C485F7001F171C /* Phy2DSystem.cpp */; };
+		2BFE8C9427C485F7001F171C /* RendererSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C8E27C485F7001F171C /* RendererSystem.cpp */; };
+		2BFE8C9527C485F7001F171C /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C9127C485F7001F171C /* System.cpp */; };
+		2BFE8C9B27C48E5C001F171C /* TestSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C9927C48E5C001F171C /* TestSystem.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -188,6 +193,16 @@
 		2BFE8C7327C47B30001F171C /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
 		2BFE8C7727C48212001F171C /* application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = application.h; sourceTree = "<group>"; };
 		2BFE8C7827C48212001F171C /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
+		2BFE8C8827C485E7001F171C /* Framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Framework.h; sourceTree = "<group>"; };
+		2BFE8C8927C485E7001F171C /* Framework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Framework.cpp; sourceTree = "<group>"; };
+		2BFE8C8D27C485F7001F171C /* Phy2DSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Phy2DSystem.cpp; sourceTree = "<group>"; };
+		2BFE8C8E27C485F7001F171C /* RendererSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RendererSystem.cpp; sourceTree = "<group>"; };
+		2BFE8C8F27C485F7001F171C /* RendererSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RendererSystem.h; sourceTree = "<group>"; };
+		2BFE8C9027C485F7001F171C /* Phy2DSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phy2DSystem.h; sourceTree = "<group>"; };
+		2BFE8C9127C485F7001F171C /* System.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
+		2BFE8C9227C485F7001F171C /* System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System.h; sourceTree = "<group>"; };
+		2BFE8C9927C48E5C001F171C /* TestSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestSystem.cpp; sourceTree = "<group>"; };
+		2BFE8C9A27C48E5C001F171C /* TestSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSystem.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -571,6 +586,7 @@
 		2BFE8C6E27C47B30001F171C /* fila */ = {
 			isa = PBXGroup;
 			children = (
+				2BFE8C7D27C48560001F171C /* framework */,
 				2BFE8C6F27C47B30001F171C /* renderer */,
 				2BFE8C7027C47B30001F171C /* fila.h */,
 				2BFE8C7827C48212001F171C /* application.cpp */,
@@ -594,6 +610,31 @@
 				2BFE8C7327C47B30001F171C /* window.h */,
 			);
 			path = window;
+			sourceTree = "<group>";
+		};
+		2BFE8C7D27C48560001F171C /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C8C27C485F7001F171C /* system */,
+				2BFE8C8927C485E7001F171C /* Framework.cpp */,
+				2BFE8C8827C485E7001F171C /* Framework.h */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		2BFE8C8C27C485F7001F171C /* system */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8C9027C485F7001F171C /* Phy2DSystem.h */,
+				2BFE8C8D27C485F7001F171C /* Phy2DSystem.cpp */,
+				2BFE8C8E27C485F7001F171C /* RendererSystem.cpp */,
+				2BFE8C8F27C485F7001F171C /* RendererSystem.h */,
+				2BFE8C9927C48E5C001F171C /* TestSystem.cpp */,
+				2BFE8C9A27C48E5C001F171C /* TestSystem.h */,
+				2BFE8C9127C485F7001F171C /* System.cpp */,
+				2BFE8C9227C485F7001F171C /* System.h */,
+			);
+			path = system;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,6 +693,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFE8C9527C485F7001F171C /* System.cpp in Sources */,
 				2BFE8C2427C476BC001F171C /* b2_revolute_joint.cpp in Sources */,
 				2BFE8C1E27C476BC001F171C /* b2_joint.cpp in Sources */,
 				2BFE8C2927C476BC001F171C /* b2_distance_joint.cpp in Sources */,
@@ -673,7 +715,9 @@
 				2BFE8C3727C476BC001F171C /* b2_fixture.cpp in Sources */,
 				2BFE8C3427C476BC001F171C /* b2_mouse_joint.cpp in Sources */,
 				2BFE8C3E27C476BC001F171C /* b2_math.cpp in Sources */,
+				2BFE8C8A27C485E7001F171C /* Framework.cpp in Sources */,
 				2BFE8C2527C476BC001F171C /* b2_contact_solver.cpp in Sources */,
+				2BFE8C9427C485F7001F171C /* RendererSystem.cpp in Sources */,
 				2BFE8C2C27C476BC001F171C /* b2_edge_polygon_contact.cpp in Sources */,
 				2BFE8C3827C476BC001F171C /* b2_rope.cpp in Sources */,
 				2BFE8C2627C476BC001F171C /* b2_world_callbacks.cpp in Sources */,
@@ -686,6 +730,8 @@
 				2BFE8C2A27C476BC001F171C /* b2_contact_manager.cpp in Sources */,
 				2BFE8C2127C476BC001F171C /* b2_chain_polygon_contact.cpp in Sources */,
 				2BFE8C3C27C476BC001F171C /* b2_stack_allocator.cpp in Sources */,
+				2BFE8C9327C485F7001F171C /* Phy2DSystem.cpp in Sources */,
+				2BFE8C9B27C48E5C001F171C /* TestSystem.cpp in Sources */,
 				2BFE8C4A27C476BC001F171C /* b2_distance.cpp in Sources */,
 				2BFE8C4927C476BC001F171C /* b2_time_of_impact.cpp in Sources */,
 				2BFE8C3D27C476BC001F171C /* b2_settings.cpp in Sources */,
