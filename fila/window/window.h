@@ -5,6 +5,7 @@
 
 namespace fl
 {
+class Application;
 class Window
 {
 public:
@@ -13,7 +14,7 @@ public:
     
 public:
     bool Create();
-    void MainLoop();
+    void MainLoop(Application* app);
     void Destroy();
     
 protected:

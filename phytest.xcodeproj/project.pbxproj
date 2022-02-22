@@ -60,6 +60,7 @@
 		2BFE8C6827C47937001F171C /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C6727C47937001F171C /* AppKit.framework */; };
 		2BFE8C6A27C47941001F171C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C6927C47940001F171C /* CoreFoundation.framework */; };
 		2BFE8C7427C47B30001F171C /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C7227C47B30001F171C /* window.cpp */; };
+		2BFE8C7927C48212001F171C /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C7827C48212001F171C /* application.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -185,6 +186,8 @@
 		2BFE8C7027C47B30001F171C /* fila.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fila.h; sourceTree = "<group>"; };
 		2BFE8C7227C47B30001F171C /* window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
 		2BFE8C7327C47B30001F171C /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
+		2BFE8C7727C48212001F171C /* application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = application.h; sourceTree = "<group>"; };
+		2BFE8C7827C48212001F171C /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -570,6 +573,8 @@
 			children = (
 				2BFE8C6F27C47B30001F171C /* renderer */,
 				2BFE8C7027C47B30001F171C /* fila.h */,
+				2BFE8C7827C48212001F171C /* application.cpp */,
+				2BFE8C7727C48212001F171C /* application.h */,
 				2BFE8C7127C47B30001F171C /* window */,
 			);
 			path = fila;
@@ -695,6 +700,7 @@
 				2BFE8C2327C476BC001F171C /* b2_contact.cpp in Sources */,
 				2BFE8C2827C476BC001F171C /* b2_polygon_circle_contact.cpp in Sources */,
 				2BFE8C4127C476BC001F171C /* b2_collision.cpp in Sources */,
+				2BFE8C7927C48212001F171C /* application.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

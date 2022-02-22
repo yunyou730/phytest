@@ -67,9 +67,11 @@ void TestBox2D()
 
 int main(int argc, const char * argv[])
 {
+    fl::Application app;
     fl::Window window("adid",800,600);
+    
     window.Create();
-    window.MainLoop();
+    window.MainLoop(&app);
     window.Destroy();
 
 
