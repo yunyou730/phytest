@@ -29,11 +29,18 @@ void Framework::RegisterSystem(System* sys)
     RegisterSysByType(sys,ISysCleanup,_cleanupSysList);
 }
 
-void Framework::OnPrepare()
+void Framework::RegisterWorldComponent(const std::string& wcClsName,WorldComponent* comp)
+{
+    auto it = _worldCompMap.find(wcClsName);
+    assert(it == _worldCompMap.end());
+    _worldCompMap.insert(std::make_pair(wcClsName,comp));
+}
+
+void Framework::OnPrepare(const PrepareParam& prepareParam)
 {
     for(auto it = _prepareSysList.begin();it != _prepareSysList.end();it++)
     {
-        (*it)->Prepare();
+        (*it)->Prepare(prepareParam);
     }
 }
 

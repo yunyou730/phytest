@@ -20,7 +20,6 @@ Window::~Window()
     
 }
 
-
 void Window::InitEnv()
 {
     static bool bHasInited = false;
@@ -62,12 +61,12 @@ bool Window::Create()
     return true;
 }
 
-void Window::MainLoop(Application* app)
+void Window::MainLoop(Application* app,const PrepareParam& prepareParam)
 {
-    glViewport(0,0,_width,_height);
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+//    glViewport(0,0,_width,_height);
+//    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     
-    app->OnPrepare();
+    app->OnPrepare(prepareParam);
     
     while(!glfwWindowShouldClose(_window))
     {

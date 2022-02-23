@@ -2,10 +2,13 @@
 
 namespace fl {
 
+class Framework;
 class RendererSystem : public System, public ISysRenderer,public ISysPrepare
 {
 public:
-    virtual void Prepare() override;
+    RendererSystem(Framework* framework);
+    
+    virtual void Prepare(const PrepareParam& prepareParam) override;
     virtual void Renderer() override;
 };
 

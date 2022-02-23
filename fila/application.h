@@ -1,4 +1,5 @@
 #pragma once
+#include "window.h"
 
 namespace fl {
 
@@ -9,7 +10,7 @@ public:
     Application();
     virtual ~Application();
     
-    virtual void OnPrepare();
+    virtual void OnPrepare(const PrepareParam& prepareParam);
     virtual void OnCleanup();
     
     virtual void OnUpdate();

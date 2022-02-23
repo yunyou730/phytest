@@ -1,8 +1,10 @@
 #include "System.h"
+#include "Framework.h"
 
 namespace fl {
 
-System::System()
+System::System(Framework* framework)
+    :_framework(framework)
 {
     
 }

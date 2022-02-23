@@ -54,7 +54,6 @@
 		2BFE8C4927C476BC001F171C /* b2_time_of_impact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C1C27C476BC001F171C /* b2_time_of_impact.cpp */; };
 		2BFE8C4A27C476BC001F171C /* b2_distance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C1D27C476BC001F171C /* b2_distance.cpp */; };
 		2BFE8C5E27C4781A001F171C /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C5427C4781A001F171C /* libglfw3.a */; };
-		2BFE8C5F27C4781A001F171C /* libglfw.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C5527C4781A001F171C /* libglfw.3.dylib */; };
 		2BFE8C6027C4781A001F171C /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C5D27C4781A001F171C /* glad.c */; };
 		2BFE8C6627C47931001F171C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C6527C47931001F171C /* IOKit.framework */; };
 		2BFE8C6827C47937001F171C /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFE8C6727C47937001F171C /* AppKit.framework */; };
@@ -66,6 +65,10 @@
 		2BFE8C9427C485F7001F171C /* RendererSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C8E27C485F7001F171C /* RendererSystem.cpp */; };
 		2BFE8C9527C485F7001F171C /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C9127C485F7001F171C /* System.cpp */; };
 		2BFE8C9B27C48E5C001F171C /* TestSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C9927C48E5C001F171C /* TestSystem.cpp */; };
+		2BFE8CA727C4A045001F171C /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CA327C4A045001F171C /* common.cpp */; };
+		2BFE8CA827C4A045001F171C /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CA427C4A045001F171C /* log.cpp */; };
+		2BFE8CAE27C4A886001F171C /* WorldComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CAD27C4A886001F171C /* WorldComponent.cpp */; };
+		2BFE8CB327C4AAEB001F171C /* HashClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CB227C4AAEB001F171C /* HashClass.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -181,7 +184,6 @@
 		2BFE8C5127C4781A001F171C /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
 		2BFE8C5227C4781A001F171C /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
 		2BFE8C5427C4781A001F171C /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
-		2BFE8C5527C4781A001F171C /* libglfw.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libglfw.3.dylib; sourceTree = "<group>"; };
 		2BFE8C5927C4781A001F171C /* khrplatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = khrplatform.h; sourceTree = "<group>"; };
 		2BFE8C5B27C4781A001F171C /* glad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glad.h; sourceTree = "<group>"; };
 		2BFE8C5D27C4781A001F171C /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
@@ -203,6 +205,14 @@
 		2BFE8C9227C485F7001F171C /* System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System.h; sourceTree = "<group>"; };
 		2BFE8C9927C48E5C001F171C /* TestSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestSystem.cpp; sourceTree = "<group>"; };
 		2BFE8C9A27C48E5C001F171C /* TestSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSystem.h; sourceTree = "<group>"; };
+		2BFE8CA327C4A045001F171C /* common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = common.cpp; sourceTree = "<group>"; };
+		2BFE8CA427C4A045001F171C /* log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = log.cpp; sourceTree = "<group>"; };
+		2BFE8CA527C4A045001F171C /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		2BFE8CA627C4A045001F171C /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		2BFE8CAC27C4A886001F171C /* WorldComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldComponent.h; sourceTree = "<group>"; };
+		2BFE8CAD27C4A886001F171C /* WorldComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldComponent.cpp; sourceTree = "<group>"; };
+		2BFE8CB027C4A97D001F171C /* HashClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashClass.h; sourceTree = "<group>"; };
+		2BFE8CB227C4AAEB001F171C /* HashClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashClass.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +224,6 @@
 				2BFE8C6827C47937001F171C /* AppKit.framework in Frameworks */,
 				2BFE8C6627C47931001F171C /* IOKit.framework in Frameworks */,
 				2BFE8C5E27C4781A001F171C /* libglfw3.a in Frameworks */,
-				2BFE8C5F27C4781A001F171C /* libglfw.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +535,6 @@
 			isa = PBXGroup;
 			children = (
 				2BFE8C5427C4781A001F171C /* libglfw3.a */,
-				2BFE8C5527C4781A001F171C /* libglfw.3.dylib */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -592,6 +600,7 @@
 				2BFE8C7827C48212001F171C /* application.cpp */,
 				2BFE8C7727C48212001F171C /* application.h */,
 				2BFE8C7127C47B30001F171C /* window */,
+				2BFE8CA227C4A045001F171C /* utils */,
 			);
 			path = fila;
 			sourceTree = SOURCE_ROOT;
@@ -615,6 +624,7 @@
 		2BFE8C7D27C48560001F171C /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				2BFE8CAB27C4A886001F171C /* component */,
 				2BFE8C8C27C485F7001F171C /* system */,
 				2BFE8C8927C485E7001F171C /* Framework.cpp */,
 				2BFE8C8827C485E7001F171C /* Framework.h */,
@@ -635,6 +645,28 @@
 				2BFE8C9227C485F7001F171C /* System.h */,
 			);
 			path = system;
+			sourceTree = "<group>";
+		};
+		2BFE8CA227C4A045001F171C /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8CB027C4A97D001F171C /* HashClass.h */,
+				2BFE8CB227C4AAEB001F171C /* HashClass.cpp */,
+				2BFE8CA527C4A045001F171C /* common.h */,
+				2BFE8CA327C4A045001F171C /* common.cpp */,
+				2BFE8CA627C4A045001F171C /* log.h */,
+				2BFE8CA427C4A045001F171C /* log.cpp */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		2BFE8CAB27C4A886001F171C /* component */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8CAC27C4A886001F171C /* WorldComponent.h */,
+				2BFE8CAD27C4A886001F171C /* WorldComponent.cpp */,
+			);
+			path = component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -728,7 +760,10 @@
 				2BFE8C3527C476BC001F171C /* b2_circle_contact.cpp in Sources */,
 				2BFE8C4027C476BC001F171C /* b2_circle_shape.cpp in Sources */,
 				2BFE8C2A27C476BC001F171C /* b2_contact_manager.cpp in Sources */,
+				2BFE8CA827C4A045001F171C /* log.cpp in Sources */,
+				2BFE8CA727C4A045001F171C /* common.cpp in Sources */,
 				2BFE8C2127C476BC001F171C /* b2_chain_polygon_contact.cpp in Sources */,
+				2BFE8CB327C4AAEB001F171C /* HashClass.cpp in Sources */,
 				2BFE8C3C27C476BC001F171C /* b2_stack_allocator.cpp in Sources */,
 				2BFE8C9327C485F7001F171C /* Phy2DSystem.cpp in Sources */,
 				2BFE8C9B27C48E5C001F171C /* TestSystem.cpp in Sources */,
@@ -746,6 +781,7 @@
 				2BFE8C2327C476BC001F171C /* b2_contact.cpp in Sources */,
 				2BFE8C2827C476BC001F171C /* b2_polygon_circle_contact.cpp in Sources */,
 				2BFE8C4127C476BC001F171C /* b2_collision.cpp in Sources */,
+				2BFE8CAE27C4A886001F171C /* WorldComponent.cpp in Sources */,
 				2BFE8C7927C48212001F171C /* application.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
