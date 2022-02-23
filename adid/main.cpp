@@ -67,15 +67,15 @@ void TestBox2D()
 
 int main(int argc, const char * argv[])
 {
-    fl::Application app;
-    fl::Window window("adid",800,600);
-    
-    fl::PrepareParam param;
+    fl::LaunchParam param;
     param.viewportWidth = 800;
     param.viewportHeight = 600;
     param.clearColorR = 0.2f;
     param.clearColorG = 0.3f;
     param.clearColorB = 0.6f;
+    
+    fl::Application app;
+    fl::Window window("adid",param);
     
     window.Create();
     window.MainLoop(&app,param);

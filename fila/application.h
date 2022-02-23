@@ -10,7 +10,7 @@ public:
     Application();
     virtual ~Application();
     
-    virtual void OnPrepare(const PrepareParam& prepareParam);
+    virtual void OnPrepare(const LaunchParam& launchParam);
     virtual void OnCleanup();
     
     virtual void OnUpdate();

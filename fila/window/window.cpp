@@ -7,10 +7,10 @@ namespace fl
 extern void framebufferSizeCallback(GLFWwindow* window,int width,int height);
 extern void processInput(GLFWwindow *window);
 
-Window::Window(const std::string& name,int width,int height)
+Window::Window(const std::string& name,const LaunchParam& launchParam)
     :_name(name)
-    ,_width(width)
-    ,_height(height)
+    ,_width(launchParam.viewportWidth)
+    ,_height(launchParam.viewportHeight)
 {
     InitEnv();
 }
@@ -61,12 +61,9 @@ bool Window::Create()
     return true;
 }
 
-void Window::MainLoop(Application* app,const PrepareParam& prepareParam)
+void Window::MainLoop(Application* app,const LaunchParam& launchParam)
 {
-//    glViewport(0,0,_width,_height);
-//    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-    
-    app->OnPrepare(prepareParam);
+    app->OnPrepare(launchParam);
     
     while(!glfwWindowShouldClose(_window))
     {

@@ -20,7 +20,7 @@ protected:
 class ISysPrepare
 {
 public:
-    virtual void Prepare(const PrepareParam& prepareParam) = 0;
+    virtual void Prepare(const LaunchParam& launchParam) = 0;
 };
 
 // Update ----------

@@ -13,7 +13,7 @@ if(pointer != nullptr) \
 
 namespace fl
 {
-struct PrepareParam
+struct LaunchParam
 {
     int viewportWidth = 800;
     int viewportHeight = 600;
@@ -22,7 +22,7 @@ struct PrepareParam
     float clearColorG = 0.3f;
     float clearColorB = 0.7f;
     
-    void operator= (const PrepareParam& other)
+    void operator= (const LaunchParam& other)
     {
         this->viewportWidth = other.viewportWidth;
         this->viewportHeight = other.viewportHeight;

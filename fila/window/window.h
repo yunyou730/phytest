@@ -10,12 +10,12 @@ class Application;
 class Window
 {
 public:
-    Window(const std::string& name,int width,int height);
+    Window(const std::string& name,const LaunchParam& launchParam);
     virtual ~Window();
     
 public:
     bool Create();
-    void MainLoop(Application* app,const PrepareParam& prepareParam);
+    void MainLoop(Application* app,const LaunchParam& launchParam);
     void Destroy();
     
 protected:

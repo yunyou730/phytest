@@ -19,7 +19,7 @@ Application::~Application()
     
 }
 
-void Application::OnPrepare(const PrepareParam& prepareParam)
+void Application::OnPrepare(const LaunchParam& launchParam)
 {
     _framework = new Framework();
     
@@ -28,10 +28,10 @@ void Application::OnPrepare(const PrepareParam& prepareParam)
     
     // world component
     auto globalRenderParam = new WCGlobalRenderParam();
-    globalRenderParam->prepareParam = prepareParam;
+    globalRenderParam->launchParam = launchParam;
     
     _framework->RegisterWorldComponent(CLASS_NAME(WCGlobalRenderParam),globalRenderParam);
-    _framework->OnPrepare(prepareParam);
+    _framework->OnPrepare(launchParam);
 }
 
 void Application::OnCleanup()

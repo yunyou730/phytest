@@ -36,11 +36,11 @@ void Framework::RegisterWorldComponent(const std::string& wcClsName,WorldCompone
     _worldCompMap.insert(std::make_pair(wcClsName,comp));
 }
 
-void Framework::OnPrepare(const PrepareParam& prepareParam)
+void Framework::OnPrepare(const LaunchParam& launchParam)
 {
     for(auto it = _prepareSysList.begin();it != _prepareSysList.end();it++)
     {
-        (*it)->Prepare(prepareParam);
+        (*it)->Prepare(launchParam);
     }
 }
 

@@ -14,7 +14,7 @@ public:
     virtual ~Framework();
     
 public:
-    void OnPrepare(const PrepareParam& prepareParam);
+    void OnPrepare(const LaunchParam& launchParam);
     void OnUpdate();
     void OnRender();
     void OnCleanUp();

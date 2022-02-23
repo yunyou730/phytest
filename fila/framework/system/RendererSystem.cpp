@@ -13,12 +13,12 @@ RendererSystem::RendererSystem(Framework* framework)
     
 }
 
-void RendererSystem::Prepare(const PrepareParam& prepareParam)
+void RendererSystem::Prepare(const LaunchParam& launchParam)
 {
     auto param =_framework->GetWorldComponent<WCGlobalRenderParam>(CLASS_NAME(WCGlobalRenderParam));
-    glClearColor(param->prepareParam.clearColorR,
-                 param->prepareParam.clearColorG,
-                 param->prepareParam.clearColorB, 1.0f);
+    glClearColor(param->launchParam.clearColorR,
+                 param->launchParam.clearColorG,
+                 param->launchParam.clearColorB, 1.0f);
 }
 
 void RendererSystem::Renderer()
