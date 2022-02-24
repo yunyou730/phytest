@@ -14,6 +14,8 @@
 #include "../fila/fila.h"
 #include "common.h"
 
+#include "Game.h"
+
 void TestBox2D()
 {
     // ground
@@ -46,10 +48,8 @@ void TestBox2D()
     
     body->CreateFixture(&fixtureDef);
     
-    
     // simulating the world
     float timeStep = 1.0f / 60.0f;
-    
     
     int32 velocityIterations = 6;
     int32 positionIterations = 2;
@@ -68,17 +68,12 @@ void TestBox2D()
 int main(int argc, const char * argv[])
 {
     fl::LaunchParam param;
-    param.viewportWidth = 800;
-    param.viewportHeight = 600;
-    param.clearColorR = 0.2f;
-    param.clearColorG = 0.3f;
-    param.clearColorB = 0.6f;
     
-    fl::Application app;
+    ad::Game game;
     fl::Window window("adid",param);
     
     window.Create();
-    window.MainLoop(&app,param);
+    window.MainLoop(&game,param);
     window.Destroy();
     
     return 0;

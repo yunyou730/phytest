@@ -7,6 +7,7 @@
 
 namespace fl {
 
+class Entity;
 class Framework
 {
 public:
@@ -33,7 +34,12 @@ public:
         }
         return nullptr;
     }
+        
+public:
+    Entity* CreateEntity();
     
+protected:
+    unsigned int NextEntityID();
     
 protected:
     std::vector<ISysPrepare*>       _prepareSysList;
@@ -43,6 +49,9 @@ protected:
     
     std::map<std::string,WorldComponent*>    _worldCompMap;
     
+    
+    std::map<unsigned int,Entity*>  _entityMap;
+    unsigned int                    _entityIdSeed = 0;
 };
 
 }

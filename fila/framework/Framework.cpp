@@ -1,5 +1,6 @@
 #include "Framework.h"
 #include "system/System.h"
+#include "Entity.h"
 
 #define RegisterSysByType(sys,SysType,Container) ({\
 auto item = dynamic_cast<SysType*>(sys);\
@@ -36,6 +37,16 @@ void Framework::RegisterWorldComponent(const std::string& wcClsName,WorldCompone
     _worldCompMap.insert(std::make_pair(wcClsName,comp));
 }
 
+Entity* Framework::CreateEntity()
+{
+    _entityIdSeed++;
+    
+    Entity* entity = new Entity(_entityIdSeed);
+    _entityMap.insert(std::make_pair(_entityIdSeed,entity));
+    
+    return entity;
+}
+
 void Framework::OnPrepare(const LaunchParam& launchParam)
 {
     for(auto it = _prepareSysList.begin();it != _prepareSysList.end();it++)
@@ -66,6 +77,12 @@ void Framework::OnCleanUp()
     {
         (*it)->CleanUp();
     }
+}
+
+unsigned int Framework::NextEntityID()
+{
+    _entityIdSeed++;
+    return _entityIdSeed;
 }
 
 }

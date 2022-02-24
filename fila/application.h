@@ -10,7 +10,7 @@ public:
     Application();
     virtual ~Application();
     
-    virtual void OnPrepare(const LaunchParam& launchParam);
+    virtual void OnPrepare(const fl::LaunchParam& launchParam);
     virtual void OnCleanup();
     
     virtual void OnUpdate();
@@ -18,6 +18,9 @@ public:
     
     void SetDeltaTime(float deltaTime);
     float GetDeltaTime();
+    
+protected:
+    Framework* GetFramework() { return _framework;}
     
 protected:
     Framework*  _framework = nullptr;

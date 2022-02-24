@@ -2,7 +2,7 @@
 #include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "common.h"
+#include "../utils/common.h"
 
 namespace fl
 {
@@ -10,12 +10,12 @@ class Application;
 class Window
 {
 public:
-    Window(const std::string& name,const LaunchParam& launchParam);
+    Window(const std::string& name,const fl::LaunchParam& launchParam);
     virtual ~Window();
     
 public:
     bool Create();
-    void MainLoop(Application* app,const LaunchParam& launchParam);
+    void MainLoop(Application* app,const fl::LaunchParam& launchParam);
     void Destroy();
     
 protected:
