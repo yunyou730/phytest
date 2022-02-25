@@ -4,7 +4,6 @@
 //
 //  Created by bytedance on 2022/2/21.
 //
-
 #include <iostream>
 
 #include <glad/glad.h>
@@ -15,6 +14,8 @@
 #include "common.h"
 
 #include "Game.h"
+#include <glm/glm.hpp>
+#include "log.h"
 
 void TestBox2D()
 {
@@ -65,8 +66,33 @@ void TestBox2D()
     // cleanup
 }
 
+void TestMath()
+{
+    glm::vec3 v1;
+    glm::vec3 v2(1.0,2.0f,3.0f);
+    
+    fl::Log::Info(v1);
+    fl::Log::Info(v2);
+    
+    printf("%s\n",CLASS_NAME(test));
+    
+    
+//    fl::FileReader r1("res/test.vsh");
+    fl::FileReader f1("xx");
+    std::string vsCode = f1.Read();
+    
+    fl::FileReader f2("");
+    std::string fsCode = f2.Read();
+    
+    printf("%s\n%s\n",vsCode.c_str(),fsCode.c_str());
+    
+    
+}
+
 int main(int argc, const char * argv[])
 {
+    TestMath();
+    
     fl::LaunchParam param;
     
     ad::Game game;

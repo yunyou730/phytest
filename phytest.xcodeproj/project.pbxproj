@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B6003B427C7EC5C00B19562 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B227C7EC5C00B19562 /* Game.cpp */; };
-		2B6003B827C7F6EA00B19562 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B627C7F6EA00B19562 /* Vertex.cpp */; };
+		2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */; };
 		2B60074227C7F7C400B19562 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60068527C7F7C400B19562 /* glm.cpp */; };
 		2B60074427C7F7EA00B19562 /* vec4.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60059A27C7F7C300B19562 /* vec4.hpp */; };
 		2B60074527C7F7EA00B19562 /* integer.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60059B27C7F7C300B19562 /* integer.hpp */; };
@@ -428,6 +428,10 @@
 		2B6008E327C7F7EB00B19562 /* rotate_normalized_axis.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60073F27C7F7C400B19562 /* rotate_normalized_axis.hpp */; };
 		2B6008E427C7F7EB00B19562 /* projection.inl in Sources */ = {isa = PBXBuildFile; fileRef = 2B60074027C7F7C400B19562 /* projection.inl */; };
 		2B6008E527C7F7EB00B19562 /* type_aligned.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60074127C7F7C400B19562 /* type_aligned.hpp */; };
+		2B6008EF27C9545000B19562 /* FileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6008ED27C9545000B19562 /* FileReader.cpp */; };
+		2B6008F727C9557B00B19562 /* test.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6008F527C954D200B19562 /* test.fsh */; };
+		2B6008F827C9557B00B19562 /* test.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6008F627C954D200B19562 /* test.vsh */; };
+		2B6008FE27C95A5F00B19562 /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6008FD27C95A5E00B19562 /* ShaderManager.cpp */; };
 		2BFE8ADD27C3E360001F171C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8ADC27C3E360001F171C /* main.cpp */; };
 		2BFE8C1E27C476BC001F171C /* b2_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8BDA27C476BC001F171C /* b2_joint.cpp */; };
 		2BFE8C1F27C476BC001F171C /* b2_chain_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8BDC27C476BC001F171C /* b2_chain_circle_contact.cpp */; };
@@ -498,20 +502,22 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		2BFE8AD727C3E360001F171C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = res;
+			dstSubfolderSpec = 16;
 			files = (
+				2B6008F727C9557B00B19562 /* test.fsh in CopyFiles */,
+				2B6008F827C9557B00B19562 /* test.vsh in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2B6003B227C7EC5C00B19562 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		2B6003B327C7EC5C00B19562 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
-		2B6003B627C7F6EA00B19562 /* Vertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vertex.cpp; sourceTree = "<group>"; };
-		2B6003B727C7F6EA00B19562 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
+		2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
+		2B6003B727C7F6EA00B19562 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
 		2B60059A27C7F7C300B19562 /* vec4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec4.hpp; sourceTree = "<group>"; };
 		2B60059B27C7F7C300B19562 /* integer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = integer.hpp; sourceTree = "<group>"; };
 		2B60059C27C7F7C300B19562 /* vector_relational.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vector_relational.hpp; sourceTree = "<group>"; };
@@ -931,6 +937,12 @@
 		2B60073F27C7F7C400B19562 /* rotate_normalized_axis.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rotate_normalized_axis.hpp; sourceTree = "<group>"; };
 		2B60074027C7F7C400B19562 /* projection.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = projection.inl; sourceTree = "<group>"; };
 		2B60074127C7F7C400B19562 /* type_aligned.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = type_aligned.hpp; sourceTree = "<group>"; };
+		2B6008ED27C9545000B19562 /* FileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileReader.cpp; sourceTree = "<group>"; };
+		2B6008EE27C9545000B19562 /* FileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReader.h; sourceTree = "<group>"; };
+		2B6008F527C954D200B19562 /* test.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = test.fsh; sourceTree = "<group>"; };
+		2B6008F627C954D200B19562 /* test.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = test.vsh; sourceTree = "<group>"; };
+		2B6008FC27C95A5E00B19562 /* ShaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderManager.h; sourceTree = "<group>"; };
+		2B6008FD27C95A5E00B19562 /* ShaderManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderManager.cpp; sourceTree = "<group>"; };
 		2BFE8AD927C3E360001F171C /* phytest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = phytest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFE8ADC27C3E360001F171C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2BFE8BB027C476BC001F171C /* b2_joint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_joint.h; sourceTree = "<group>"; };
@@ -1549,6 +1561,25 @@
 			path = gtx;
 			sourceTree = "<group>";
 		};
+		2B6008EC27C9545000B19562 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				2B6008ED27C9545000B19562 /* FileReader.cpp */,
+				2B6008EE27C9545000B19562 /* FileReader.h */,
+			);
+			path = io;
+			sourceTree = "<group>";
+		};
+		2B6008F227C954AB00B19562 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				2B6008F527C954D200B19562 /* test.fsh */,
+				2B6008F627C954D200B19562 /* test.vsh */,
+			);
+			name = res;
+			path = fila/res;
+			sourceTree = SOURCE_ROOT;
+		};
 		2BFE8AD027C3E360001F171C = {
 			isa = PBXGroup;
 			children = (
@@ -1924,7 +1955,9 @@
 				2BFE8C7827C48212001F171C /* application.cpp */,
 				2BFE8C7727C48212001F171C /* application.h */,
 				2BFE8C7127C47B30001F171C /* window */,
+				2B6008EC27C9545000B19562 /* io */,
 				2BFE8CA227C4A045001F171C /* utils */,
+				2B6008F227C954AB00B19562 /* res */,
 			);
 			path = fila;
 			sourceTree = SOURCE_ROOT;
@@ -1932,8 +1965,10 @@
 		2BFE8C6F27C47B30001F171C /* renderer */ = {
 			isa = PBXGroup;
 			children = (
-				2B6003B627C7F6EA00B19562 /* Vertex.cpp */,
-				2B6003B727C7F6EA00B19562 /* Vertex.h */,
+				2B6008FD27C95A5E00B19562 /* ShaderManager.cpp */,
+				2B6008FC27C95A5E00B19562 /* ShaderManager.h */,
+				2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */,
+				2B6003B727C7F6EA00B19562 /* ShaderProgram.h */,
 			);
 			path = renderer;
 			sourceTree = "<group>";
@@ -2352,6 +2387,7 @@
 				2B60086227C7F7EB00B19562 /* matrix_access.hpp in Sources */,
 				2B60086327C7F7EB00B19562 /* random.inl in Sources */,
 				2B60086427C7F7EB00B19562 /* epsilon.hpp in Sources */,
+				2B6008EF27C9545000B19562 /* FileReader.cpp in Sources */,
 				2B60086527C7F7EB00B19562 /* constants.inl in Sources */,
 				2B60086627C7F7EB00B19562 /* reciprocal.hpp in Sources */,
 				2B60086727C7F7EB00B19562 /* type_ptr.inl in Sources */,
@@ -2414,6 +2450,7 @@
 				2B6008A027C7F7EB00B19562 /* matrix_query.hpp in Sources */,
 				2B6008A127C7F7EB00B19562 /* vector_angle.inl in Sources */,
 				2B6008A227C7F7EB00B19562 /* extend.hpp in Sources */,
+				2B6008FE27C95A5F00B19562 /* ShaderManager.cpp in Sources */,
 				2B6008A327C7F7EB00B19562 /* gradient_paint.hpp in Sources */,
 				2B6008A427C7F7EB00B19562 /* quaternion.hpp in Sources */,
 				2B6008A527C7F7EB00B19562 /* exterior_product.hpp in Sources */,
@@ -2502,7 +2539,7 @@
 				2BFE8C4327C476BC001F171C /* b2_chain_shape.cpp in Sources */,
 				2BFE8C3727C476BC001F171C /* b2_fixture.cpp in Sources */,
 				2BFE8C3427C476BC001F171C /* b2_mouse_joint.cpp in Sources */,
-				2B6003B827C7F6EA00B19562 /* Vertex.cpp in Sources */,
+				2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */,
 				2BFE8C3E27C476BC001F171C /* b2_math.cpp in Sources */,
 				2BFE8C8A27C485E7001F171C /* Framework.cpp in Sources */,
 				2BFE8C2527C476BC001F171C /* b2_contact_solver.cpp in Sources */,

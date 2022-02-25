@@ -7,16 +7,19 @@
 
 #include "WorldComponent.h"
 
+// managers
+#include "renderer/ShaderManager.h"
+
 namespace fl {
 
 Application::Application()
 {
-    
+    _shaderManager = new ShaderManager();
 }
 
 Application::~Application()
 {
-    
+    SAFE_DEL(_shaderManager);
 }
 
 void Application::OnPrepare(const LaunchParam& launchParam)

@@ -85,5 +85,21 @@ unsigned int Framework::NextEntityID()
     return _entityIdSeed;
 }
 
+std::vector<Entity*> Framework::QueryEntityWithCompSet(std::set<std::string> compSet)
+{
+    std::vector<Entity*> entities;
+    for(auto it = _entityMap.begin();it != _entityMap.end();it++)
+    {
+        Entity* entity = it->second;
+        
+//        entity->DumpComponent();
+        if(entity->CheckComponent(compSet))
+        {
+            entities.push_back(entity);
+        }
+    }
+    return entities;
+}
+
 }
 

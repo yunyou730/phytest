@@ -4,6 +4,7 @@
 namespace fl {
 
 class Framework;
+class ShaderManager;
 class Application
 {
 public:
@@ -19,12 +20,20 @@ public:
     void SetDeltaTime(float deltaTime);
     float GetDeltaTime();
     
+// managers
+public:
+    ShaderManager* GetShaderManager() { return _shaderManager;}
+    
 protected:
     Framework* GetFramework() { return _framework;}
     
 protected:
     Framework*  _framework = nullptr;
     float       _deltaTimeThisFrame = 0.0f;
+    
+    
+// managers
+    ShaderManager* _shaderManager = nullptr;
 };
 
 }

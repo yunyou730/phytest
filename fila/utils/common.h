@@ -10,7 +10,6 @@ if(pointer != nullptr) \
 
 #define CLASS_NAME(name) #name
 
-
 namespace fl
 {
 struct LaunchParam
@@ -32,5 +31,6 @@ struct LaunchParam
         this->clearColorB = other.clearColorB;
     }
 };
+
 }
 

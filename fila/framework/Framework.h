@@ -2,6 +2,7 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <set>
 #include "WorldComponent.h"
 #include "System.h"
 
@@ -37,7 +38,8 @@ public:
         
 public:
     Entity* CreateEntity();
-    
+    std::vector<Entity*> QueryEntityWithCompSet(std::set<std::string> compSet);
+        
 protected:
     unsigned int NextEntityID();
     

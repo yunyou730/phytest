@@ -3,6 +3,8 @@
 namespace fl {
 
 class Framework;
+class PremitiveComponent;
+class Entity;
 class RendererSystem : public System, public ISysRenderer,public ISysPrepare
 {
 public:
@@ -10,6 +12,9 @@ public:
     
     virtual void Prepare(const LaunchParam& launchParam) override;
     virtual void Renderer() override;
+        
+protected:
+    void RenderPremitive(Entity* entity);
 };
 
 }

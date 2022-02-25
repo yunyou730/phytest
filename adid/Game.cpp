@@ -20,15 +20,15 @@ void Game::OnPrepare(const fl::LaunchParam& launchParam)
     fl::Application::OnPrepare(launchParam);
     
     fl::Entity* entity = GetFramework()->CreateEntity();
-//    entity->AddComponent(CLASS_NAME(), <#Component *component#>)
     
-    printf("[1]%s [2]%s\n",CLASS_NAME(fl::PremitiveComponent),CLASS_NAME(PremitiveComponent));
+    auto comp = new fl::PremitiveComponent(fl::EVertexAttrType::POS);
+    comp->AddVertex(glm::vec3(-0.5,-0.5,0.0));
+    comp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
+    comp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
+    comp->AddVertex(glm::vec3( 0.5, 0.5,0.0));
     
-//    fl::PremitiveComponent comp;
-    
-//    entity->AddComponent(<#const std::string &compClsName#>, <#Component *component#>)
-    
-    
+    entity->AddComponent(CLASS_NAME(PremitiveComponent), comp);
+
 }
 
 void Game::OnCleanup()
