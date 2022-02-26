@@ -74,17 +74,7 @@ void TestMath()
     fl::Log::Info(v1);
     fl::Log::Info(v2);
     
-    printf("%s\n",CLASS_NAME(test));
-    
-    
-//    fl::FileReader r1("res/test.vsh");
-    fl::FileReader f1("xx");
-    std::string vsCode = f1.Read();
-    
-    fl::FileReader f2("");
-    std::string fsCode = f2.Read();
-    
-    printf("%s\n%s\n",vsCode.c_str(),fsCode.c_str());
+//    printf("%s\n",CLASS_NAME(test));
     
     
 }

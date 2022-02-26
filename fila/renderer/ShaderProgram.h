@@ -23,6 +23,9 @@ public:
     void SetUniformMat4x4(const std::string& uniformName,float* data);
     void SetUniformMat4x4Array(const std::string& uniformName,unsigned int count,float* data);
     
+protected:
+    ShaderProgram();
+    
 public:
     GLuint program = 0;
     GLuint vs = 0;

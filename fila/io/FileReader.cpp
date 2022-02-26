@@ -37,7 +37,8 @@ std::string FileReader::Read()
     }
     catch(std::ifstream::failure& e)
     {
-        std::cout << "Open file " << _filePath << "failed" << std::endl;
+        std::cout << "Open file [" << _filePath << "] failed" << std::endl;
+        assert(false);
     }
     return content;
 }

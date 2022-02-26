@@ -8,6 +8,11 @@ static void glCheckError()
     
 }
 
+ShaderProgram::ShaderProgram()
+{
+    
+}
+
 ShaderProgram* ShaderProgram::CreateShaderProgram(const std::string& vsSource,const std::string& fsSource)
 {
     const char* vsSourceAlias = vsSource.c_str();

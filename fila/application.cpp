@@ -14,16 +14,17 @@ namespace fl {
 
 Application::Application()
 {
-    _shaderManager = new ShaderManager();
+
 }
 
 Application::~Application()
 {
-    SAFE_DEL(_shaderManager);
+
 }
 
 void Application::OnPrepare(const LaunchParam& launchParam)
 {
+    _shaderManager = new ShaderManager();
     _framework = new Framework();
     
     // system
@@ -41,6 +42,7 @@ void Application::OnCleanup()
 {
     _framework->OnCleanUp();
     SAFE_DEL(_framework);
+    SAFE_DEL(_shaderManager);
 }
 
 void Application::OnUpdate()
