@@ -22,25 +22,37 @@ void Game::OnPrepare(const fl::LaunchParam& launchParam)
 {
     fl::Application::OnPrepare(launchParam);
     
+    // Create entity1 ,render rectangle
+    {
+        fl::Entity* entity = GetFramework()->CreateEntity();
+        
+        auto premitiveComp = new fl::PremitiveComponent(fl::EVertexAttrType::POS);
+        premitiveComp->AddVertex(glm::vec3(-0.5,-0.5,0.0));
+        premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
+        premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
+        premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
+        premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
+        premitiveComp->AddVertex(glm::vec3( 0.5, 0.5,0.0));
+        premitiveComp->Commit();
+        entity->AddComponent(CLASS_NAME(PremitiveComponent), premitiveComp);
+        
+        auto renderStateComp = new fl::RenderStateComponent();
+        renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::BuiltinAttrPos);
+        renderStateComp->SetPrimitiveType(fl::ERenderPrimitiveType::Point);
+        entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
+    }
+
     
-    // Create one test render entity
-    fl::Entity* entity = GetFramework()->CreateEntity();
     
-    auto premitiveComp = new fl::PremitiveComponent(fl::EVertexAttrType::POS);
-    premitiveComp->AddVertex(glm::vec3(-0.5,-0.5,0.0));
-    premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
-    premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
-    
-    premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
-    premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
-    premitiveComp->AddVertex(glm::vec3( 0.5, 0.5,0.0));
-    
-    premitiveComp->Commit();
-    entity->AddComponent(CLASS_NAME(PremitiveComponent), premitiveComp);
-    
-    auto renderStateComp = new fl::RenderStateComponent();
-    renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::BuiltinShader1);
-    entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
+    // Create entity2
+    {
+        fl::Entity* entity = GetFramework()->CreateEntity();
+        
+        auto premitiveComp = new fl::PremitiveComponent(fl::EVertexAttrType::POS_UV);
+        
+        
+        
+    }
     
 }
 

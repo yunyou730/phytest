@@ -52,18 +52,42 @@ void RendererSystem::RenderPremitive(Entity* entity)
     auto premComp = entity->GetComponent<PremitiveComponent>(CLASS_NAME(PremitiveComponent));
     auto renderStateComp = entity->GetComponent<RenderStateComponent>(CLASS_NAME(RenderStateComponent));
     
-    
+    // params
     unsigned int shaderId = renderStateComp->GetShaderId();
     int verticesCount = premComp->GetVerticesCount();
     GLuint vao = premComp->GetVAO();
     
+    
+    GLuint primitiveType = HandlePrimitiveType(renderStateComp);
+    
+    
     ShaderProgram* shader = _shaderManager->GetShader(shaderId);
     shader->Use();
     glBindVertexArray(vao);
-    glDrawArrays(renderStateComp->GetPrimitiveType(),0,verticesCount);
+    glDrawArrays(primitiveType,0,verticesCount);
     glBindVertexArray(0);
     shader->UnUse();
 }
 
+GLuint RendererSystem::HandlePrimitiveType(RenderStateComponent* renderStateComp)
+{
+    auto primitiveType = renderStateComp->GetPrimitiveType();
+    
+    GLuint result = GL_TRIANGLES;
+    switch(primitiveType)
+    {
+        case ERenderPrimitiveType::Triangle:
+            result = GL_TRIANGLES;
+            break;
+        case ERenderPrimitiveType::Point:
+            result = GL_POINTS;
+            glPointSize(renderStateComp->GetPointSize());
+            break;
+        default:
+            result = GL_TRIANGLES;
+            break;
+    }
+    return result;
+}
 
 }

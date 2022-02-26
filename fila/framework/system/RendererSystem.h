@@ -1,4 +1,5 @@
 #include "System.h"
+#include "RenderStateComponent.h"
 
 namespace fl {
 
@@ -16,6 +17,9 @@ public:
         
 protected:
     void RenderPremitive(Entity* entity);
+    
+    GLuint HandlePrimitiveType(RenderStateComponent* renderStateComp);
+    void HandleFillMode(RenderStateComponent* renderStateComp);
     
 protected:
     ShaderManager*  _shaderManager = nullptr;

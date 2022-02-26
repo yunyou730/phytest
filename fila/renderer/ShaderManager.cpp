@@ -27,7 +27,10 @@ unsigned int ShaderManager::CreateShader(const std::string& vsCode,const std::st
 
 void ShaderManager::CreateBuiltinShaders()
 {
-    CreateShaderWithFile("res/test.vsh","res/test.fsh");
+    CreateShaderWithFile("res/attr_pos.vsh","res/attr_pos.fsh");
+    CreateShaderWithFile("res/attr_pos_uv.vsh","res/attr_pos_uv.fsh");
+    CreateShaderWithFile("res/attr_pos_uv_col.vsh","res/attr_pos_uv_col.fsh");
+    
 }
 
 ShaderProgram* ShaderManager::GetShader(unsigned int shaderId) const

@@ -6,7 +6,9 @@ namespace fl {
 
 enum class EBuiltinShaderId
 {
-    BuiltinShader1 = 1,
+    BuiltinAttrPos = 1,
+    BuiltinAttrPosUV,
+    BuiltinAttrPosUVCol,
     
     Max,
 };

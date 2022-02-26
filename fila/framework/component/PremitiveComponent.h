@@ -24,6 +24,8 @@ public:
     PremitiveComponent(EVertexAttrType vertAttrType = EVertexAttrType::POS);
     
     void AddVertex(const glm::vec3& pos);
+    void AddVertex(const glm::vec3& pos,const glm::vec2& uv);
+    
     void SetVertexPos(int vertexIndex,const glm::vec3& pos);
     void SetVertexColor(int vertexIndex,const glm::vec4& color);
     void SetVertexUV(int vertexIndex,const glm::vec2& color);

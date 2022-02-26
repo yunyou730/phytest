@@ -10,7 +10,15 @@ namespace fl {
 enum class ERenderPrimitiveType
 {
     Triangle,
-    TriangleFramewire,
+    Point,
+    
+    Max,
+};
+
+enum class ERenderFillMode
+{
+    Fill,
+    Wireframe,
     
     Max,
 };
@@ -30,11 +38,21 @@ public:
     unsigned int GetShaderId() const { return _shaderId; }
         
     void SetPrimitiveType(ERenderPrimitiveType primitiveType) {_primitiveType = primitiveType;}
-    GLuint GetPrimitiveType() const;
+    ERenderPrimitiveType GetPrimitiveType() const { return _primitiveType;}
+    
+    void SetFillMode(ERenderFillMode fillMode) { _fillMode = fillMode; }
+    ERenderFillMode GetFillMode() const { return _fillMode;}
+    
+    void SetPointSize(float pointSize) { _pointSize = pointSize;}
+    float GetPointSize() const { return _pointSize;}
     
 protected:
     unsigned int _shaderId = 0;
     ERenderPrimitiveType  _primitiveType = ERenderPrimitiveType::Triangle;
+    ERenderFillMode     _fillMode = ERenderFillMode::Fill;
+    float _pointSize = 20.0f;
+    
+    
 };
 
 }

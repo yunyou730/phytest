@@ -35,6 +35,13 @@ void PremitiveComponent::AddVertex(const glm::vec3& pos)
     }
 }
 
+void PremitiveComponent::AddVertex(const glm::vec3& pos,const glm::vec2& uv)
+{
+    assert(_vertAttrType >= EVertexAttrType::POS_UV);
+    AddVertex(pos);
+    SetVertexUV(GetVerticesCount() - 1,uv);
+}
+
 void PremitiveComponent::SetVertexPos(int vertexIndex,const glm::vec3& pos)
 {
     int subIndex = GetVertexStride() * vertexIndex;
@@ -139,6 +146,7 @@ void PremitiveComponent::Commit()
                     glEnableVertexAttribArray(0);
                 }
                     break;
+                
                 default:
                     break;
             }
