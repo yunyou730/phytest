@@ -59,7 +59,7 @@ void RendererSystem::RenderPremitive(Entity* entity)
     
     
     GLuint primitiveType = HandlePrimitiveType(renderStateComp);
-    
+    HandleFillMode(renderStateComp);
     
     ShaderProgram* shader = _shaderManager->GetShader(shaderId);
     shader->Use();
@@ -88,6 +88,22 @@ GLuint RendererSystem::HandlePrimitiveType(RenderStateComponent* renderStateComp
             break;
     }
     return result;
+}
+
+void RendererSystem::HandleFillMode(RenderStateComponent* renderStateComp)
+{
+    switch(renderStateComp->GetFillMode())
+    {
+        case ERenderFillMode::Fill:
+            glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
+            break;
+        case ERenderFillMode::Wireframe:
+            glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+            break;
+        default:
+            glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
+            break;
+    }
 }
 
 }

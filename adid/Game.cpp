@@ -38,7 +38,8 @@ void Game::OnPrepare(const fl::LaunchParam& launchParam)
         
         auto renderStateComp = new fl::RenderStateComponent();
         renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::BuiltinAttrPos);
-        renderStateComp->SetPrimitiveType(fl::ERenderPrimitiveType::Point);
+        renderStateComp->SetPrimitiveType(fl::ERenderPrimitiveType::Triangle);
+        renderStateComp->SetFillMode(fl::ERenderFillMode::Wireframe);
         entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
     }
 
