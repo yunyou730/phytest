@@ -135,7 +135,7 @@ void PremitiveComponent::Commit()
         glBindBuffer(GL_ARRAY_BUFFER,_vbo);
         {
             // pass data to vbo
-            glBufferData(GL_ARRAY_BUFFER,sizeof(_vertexData[0]) * _vertexData.size(),&(_vertexData[0]),GL_STATIC_DRAW);
+            glBufferData(GL_ARRAY_BUFFER,sizeof(_vertexData[0]) * _vertexData.size(),&_vertexData[0],GL_STATIC_DRAW);
             
             // specy how to explain data format
             switch(_vertAttrType)
@@ -146,7 +146,18 @@ void PremitiveComponent::Commit()
                     glEnableVertexAttribArray(0);
                 }
                     break;
-                
+                case EVertexAttrType::POS_UV:
+                {
+                    unsigned int stride = GetVertexStride();
+                    // slot 0,pos
+                    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,stride* sizeof(float),(void*)0);
+                    glEnableVertexAttribArray(0);
+                    
+                    // slot 1, uv
+                    glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)(sizeof(GL_FLOAT) * 3));
+                    glEnableVertexAttribArray(1);
+                }
+                    break;
                 default:
                     break;
             }
