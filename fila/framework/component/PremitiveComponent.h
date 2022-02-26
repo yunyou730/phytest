@@ -25,9 +25,10 @@ public:
     
     void AddVertex(const glm::vec3& pos);
     void AddVertex(const glm::vec3& pos,const glm::vec2& uv);
+    void AddVertex(const glm::vec3& pos,const glm::vec2& uv,const glm::vec3& color);
     
     void SetVertexPos(int vertexIndex,const glm::vec3& pos);
-    void SetVertexColor(int vertexIndex,const glm::vec4& color);
+    void SetVertexColor(int vertexIndex,const glm::vec3& color);
     void SetVertexUV(int vertexIndex,const glm::vec2& color);
     void SetVertexNormal(int vertexIndex,const glm::vec3& normal);
     void SetVertexTangent(int vertexIndex,const glm::vec3& tangent);

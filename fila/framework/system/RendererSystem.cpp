@@ -56,6 +56,7 @@ void RendererSystem::RenderPremitive(Entity* entity)
     unsigned int shaderId = renderStateComp->GetShaderId();
     int verticesCount = premComp->GetVerticesCount();
     GLuint vao = premComp->GetVAO();
+    assert(vao != 0);
     
     GLuint primitiveType = HandlePrimitiveType(renderStateComp);
     HandleFillMode(renderStateComp);

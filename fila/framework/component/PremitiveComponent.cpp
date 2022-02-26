@@ -42,6 +42,13 @@ void PremitiveComponent::AddVertex(const glm::vec3& pos,const glm::vec2& uv)
     SetVertexUV(GetVerticesCount() - 1,uv);
 }
 
+void PremitiveComponent::AddVertex(const glm::vec3& pos,const glm::vec2& uv,const glm::vec3& color)
+{
+    assert(_vertAttrType >= EVertexAttrType::POS_UV_COLOR);
+    AddVertex(pos,uv);
+    SetVertexColor(GetVerticesCount() - 1,color);
+}
+
 void PremitiveComponent::SetVertexPos(int vertexIndex,const glm::vec3& pos)
 {
     int subIndex = GetVertexStride() * vertexIndex;
@@ -59,7 +66,7 @@ void PremitiveComponent::SetVertexUV(int vertexIndex,const glm::vec2& uv)
     _vertexData[subIndex++] = uv.y;
 }
 
-void PremitiveComponent::SetVertexColor(int vertexIndex,const glm::vec4& color)
+void PremitiveComponent::SetVertexColor(int vertexIndex,const glm::vec3& color)
 {
     assert(_vertAttrType >= EVertexAttrType::POS_UV_COLOR);
     int subIndex = GetVertexStride() * vertexIndex + kPosSize + kUVSize;
@@ -119,6 +126,8 @@ void PremitiveComponent::Commit()
 {
     assert(_vertexData.size() > 0);
     
+    unsigned int stride = GetVertexStride();
+    
     glGenVertexArrays(1,&_vao);
     glGenBuffers(1,&_vbo);
     
@@ -142,23 +151,36 @@ void PremitiveComponent::Commit()
             {
                 case EVertexAttrType::POS:
                 {
-                    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,3 * sizeof(float),(void*)0);
+
+                    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)0);
                     glEnableVertexAttribArray(0);
                 }
                     break;
                 case EVertexAttrType::POS_UV:
                 {
-                    unsigned int stride = GetVertexStride();
                     // slot 0,pos
                     glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,stride* sizeof(float),(void*)0);
                     glEnableVertexAttribArray(0);
-                    
                     // slot 1, uv
                     glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)(sizeof(GL_FLOAT) * 3));
                     glEnableVertexAttribArray(1);
                 }
                     break;
+                case EVertexAttrType::POS_UV_COLOR:
+                {
+                    // slot 0,pos
+                    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,stride* sizeof(float),(void*)0);
+                    glEnableVertexAttribArray(0);
+                    // slot 1, uv
+                    glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)(sizeof(GL_FLOAT) * 3));
+                    glEnableVertexAttribArray(1);
+                    // slot 2, color
+                    glVertexAttribPointer(2,3,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)(sizeof(GL_FLOAT) * 5));
+                    glEnableVertexAttribArray(2);
+                }
+                    break;
                 default:
+                    assert(false);
                     break;
             }
         }
