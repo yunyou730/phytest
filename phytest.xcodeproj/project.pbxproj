@@ -432,6 +432,7 @@
 		2B6008F727C9557B00B19562 /* test.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6008F527C954D200B19562 /* test.fsh */; };
 		2B6008F827C9557B00B19562 /* test.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B6008F627C954D200B19562 /* test.vsh */; };
 		2B6008FE27C95A5F00B19562 /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6008FD27C95A5E00B19562 /* ShaderManager.cpp */; };
+		2B60090227C9F78600B19562 /* RenderStateComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60090127C9F78600B19562 /* RenderStateComponent.cpp */; };
 		2BFE8ADD27C3E360001F171C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8ADC27C3E360001F171C /* main.cpp */; };
 		2BFE8C1E27C476BC001F171C /* b2_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8BDA27C476BC001F171C /* b2_joint.cpp */; };
 		2BFE8C1F27C476BC001F171C /* b2_chain_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8BDC27C476BC001F171C /* b2_chain_circle_contact.cpp */; };
@@ -943,6 +944,8 @@
 		2B6008F627C954D200B19562 /* test.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = test.vsh; sourceTree = "<group>"; };
 		2B6008FC27C95A5E00B19562 /* ShaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderManager.h; sourceTree = "<group>"; };
 		2B6008FD27C95A5E00B19562 /* ShaderManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderManager.cpp; sourceTree = "<group>"; };
+		2B60090027C9F78600B19562 /* RenderStateComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderStateComponent.h; sourceTree = "<group>"; };
+		2B60090127C9F78600B19562 /* RenderStateComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderStateComponent.cpp; sourceTree = "<group>"; };
 		2BFE8AD927C3E360001F171C /* phytest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = phytest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFE8ADC27C3E360001F171C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2BFE8BB027C476BC001F171C /* b2_joint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_joint.h; sourceTree = "<group>"; };
@@ -2038,6 +2041,8 @@
 				2BFE8CC027C6028B001F171C /* Component.cpp */,
 				2BFE8CBB27C60276001F171C /* PremitiveComponent.h */,
 				2BFE8CBC27C60276001F171C /* PremitiveComponent.cpp */,
+				2B60090127C9F78600B19562 /* RenderStateComponent.cpp */,
+				2B60090027C9F78600B19562 /* RenderStateComponent.h */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -2291,6 +2296,7 @@
 				2B60080227C7F7EA00B19562 /* matrix.hpp in Sources */,
 				2B60080327C7F7EA00B19562 /* glm.hpp in Sources */,
 				2B60080427C7F7EA00B19562 /* trigonometric.hpp in Sources */,
+				2B60090227C9F78600B19562 /* RenderStateComponent.cpp in Sources */,
 				2B60080527C7F7EA00B19562 /* geometric.hpp in Sources */,
 				2B60080627C7F7EA00B19562 /* func_exponential.inl in Sources */,
 				2B60080727C7F7EA00B19562 /* func_integer_simd.inl in Sources */,

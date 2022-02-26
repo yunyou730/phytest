@@ -3,6 +3,7 @@
 #include "Component.h"
 #include <glm/glm.hpp>
 #include <vector>
+#include <glad/glad.h>
 
 namespace fl {
 
@@ -30,12 +31,22 @@ public:
     void SetVertexTangent(int vertexIndex,const glm::vec3& tangent);
     void SetVertexBitangent(int vertexIndex,const glm::vec3& bitangent);
     
+    void Commit();
+    GLuint GetVAO() const;
+    
+    int GetVerticesCount() const;
+    
 protected:
     int GetVertexStride() const;
     
 protected:
     std::vector<float>      _vertexData;
     EVertexAttrType         _vertAttrType = EVertexAttrType::POS;
+    
+    // vao,vbo,ebo
+    GLuint _vao = 0;
+    GLuint _vbo = 0;
+    GLuint _ebo = 0;
 };
 
 }

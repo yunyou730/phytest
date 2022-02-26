@@ -12,7 +12,8 @@ if(item != nullptr)\
 
 namespace fl {
 
-Framework::Framework()
+Framework::Framework(Application* app)
+    :_app(app)
 {
     
 }

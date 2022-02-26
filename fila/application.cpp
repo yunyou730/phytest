@@ -25,7 +25,7 @@ Application::~Application()
 void Application::OnPrepare(const LaunchParam& launchParam)
 {
     _shaderManager = new ShaderManager();
-    _framework = new Framework();
+    _framework = new Framework(this);
     
     // system
     _framework->RegisterSystem(new RendererSystem(_framework));

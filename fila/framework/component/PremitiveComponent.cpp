@@ -23,6 +23,10 @@ PremitiveComponent::PremitiveComponent(EVertexAttrType vertAttrType)
 
 void PremitiveComponent::AddVertex(const glm::vec3& pos)
 {
+    _vertexData.push_back(pos.x);
+    _vertexData.push_back(pos.y);
+    _vertexData.push_back(pos.z);
+    
     int stride = GetVertexStride();
     int needFill = stride - kPosSize;
     for(int i = 0;i < needFill;i++)
@@ -102,6 +106,58 @@ int PremitiveComponent::GetVertexStride() const
             break;
     }
     return 0;
+}
+
+void PremitiveComponent::Commit()
+{
+    assert(_vertexData.size() > 0);
+    
+    glGenVertexArrays(1,&_vao);
+    glGenBuffers(1,&_vbo);
+    
+    glBindVertexArray(_vao);
+    {
+        /*
+         POS,
+         POS_UV,
+         POS_UV_COLOR,
+         POS_UV_COLOR_NORMAL,
+         POS_UV_COLOR_NORMAL_TANGENT_BITANGENT,
+         **/
+        
+        glBindBuffer(GL_ARRAY_BUFFER,_vbo);
+        {
+            // pass data to vbo
+            glBufferData(GL_ARRAY_BUFFER,sizeof(_vertexData[0]) * _vertexData.size(),&(_vertexData[0]),GL_STATIC_DRAW);
+            
+            // specy how to explain data format
+            switch(_vertAttrType)
+            {
+                case EVertexAttrType::POS:
+                {
+                    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,3 * sizeof(float),(void*)0);
+                    glEnableVertexAttribArray(0);
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+        glBindBuffer(GL_ARRAY_BUFFER,0);
+        
+    }
+    glBindVertexArray(0);
+}
+
+GLuint PremitiveComponent::GetVAO() const
+{
+    
+    return _vao;
+}
+
+int PremitiveComponent::GetVerticesCount() const
+{
+    return _vertexData.size() / GetVertexStride();
 }
 
 }

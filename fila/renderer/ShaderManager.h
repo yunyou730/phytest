@@ -6,8 +6,8 @@ namespace fl {
 
 enum class EBuiltinShaderId
 {
-    BuiltinShader1,
-        
+    BuiltinShader1 = 1,
+    
     Max,
 };
 

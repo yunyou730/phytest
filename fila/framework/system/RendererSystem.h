@@ -5,6 +5,7 @@ namespace fl {
 class Framework;
 class PremitiveComponent;
 class Entity;
+class ShaderManager;
 class RendererSystem : public System, public ISysRenderer,public ISysPrepare
 {
 public:
@@ -15,6 +16,9 @@ public:
         
 protected:
     void RenderPremitive(Entity* entity);
+    
+protected:
+    ShaderManager*  _shaderManager = nullptr;
 };
 
 }

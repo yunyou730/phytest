@@ -2,6 +2,9 @@
 #include "Framework.h"
 #include "Entity.h"
 #include "PremitiveComponent.h"
+#include "RenderStateComponent.h"
+
+#include "fila.h"
 
 namespace ad {
 
@@ -19,16 +22,26 @@ void Game::OnPrepare(const fl::LaunchParam& launchParam)
 {
     fl::Application::OnPrepare(launchParam);
     
+    
+    // Create one test render entity
     fl::Entity* entity = GetFramework()->CreateEntity();
     
-    auto comp = new fl::PremitiveComponent(fl::EVertexAttrType::POS);
-    comp->AddVertex(glm::vec3(-0.5,-0.5,0.0));
-    comp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
-    comp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
-    comp->AddVertex(glm::vec3( 0.5, 0.5,0.0));
+    auto premitiveComp = new fl::PremitiveComponent(fl::EVertexAttrType::POS);
+    premitiveComp->AddVertex(glm::vec3(-0.5,-0.5,0.0));
+    premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
+    premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
     
-    entity->AddComponent(CLASS_NAME(PremitiveComponent), comp);
-
+    premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
+    premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
+    premitiveComp->AddVertex(glm::vec3( 0.5, 0.5,0.0));
+    
+    premitiveComp->Commit();
+    entity->AddComponent(CLASS_NAME(PremitiveComponent), premitiveComp);
+    
+    auto renderStateComp = new fl::RenderStateComponent();
+    renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::BuiltinShader1);
+    entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
+    
 }
 
 void Game::OnCleanup()

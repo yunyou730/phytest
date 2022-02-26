@@ -8,12 +8,17 @@
 
 namespace fl {
 
+class Application;
 class Entity;
 class Framework
 {
 public:
-    Framework();
+    Framework(Application* app);
     virtual ~Framework();
+    
+    
+public:
+    Application* GetApp() const { return _app;}
     
 public:
     void OnPrepare(const LaunchParam& launchParam);
@@ -54,6 +59,9 @@ protected:
     
     std::map<unsigned int,Entity*>  _entityMap;
     unsigned int                    _entityIdSeed = 0;
+    
+    
+    Application*    _app = nullptr;
 };
 
 }

@@ -75,8 +75,6 @@ void TestMath()
     fl::Log::Info(v2);
     
 //    printf("%s\n",CLASS_NAME(test));
-    
-    
 }
 
 int main(int argc, const char * argv[])
