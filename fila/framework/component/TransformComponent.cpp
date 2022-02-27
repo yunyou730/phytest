@@ -1,4 +1,5 @@
 #include "TransformComponent.h"
+#include <glm/gtc/matrix_transform.hpp>
 
 namespace fl {
 
@@ -91,7 +92,26 @@ const glm::mat4& TransformComponent::GetModelMatrix()
 
 void TransformComponent::CalcModelMatrix()
 {
-    // @todo
+    // scale part
+    glm::mat4 scale(1.0);
+    scale = glm::scale(scale,_scale);
+    
+    // rotation part
+    glm::mat4 rotByX(1.0),rotByY(1.0),rotByZ(1.0);
+    
+    rotByX = glm::rotate(rotByX,glm::radians(_rotByEachAxis.x) , glm::vec3(1.0f, 0.0f, 0.0f));
+    rotByY = glm::rotate(rotByX,glm::radians(_rotByEachAxis.y) , glm::vec3(0.0f, 1.0f, 0.0f));
+    rotByZ = glm::rotate(rotByX,glm::radians(_rotByEachAxis.z) , glm::vec3(0.0f, 0.0f, 1.0f));
+    
+    glm::mat4 rot = rotByX * rotByY * rotByZ;
+    
+    
+    // translate part
+    glm::mat4 translate(1.0);
+    translate = glm::translate(translate,_pos);
+    
+    
+    _modelMatrix = scale * rot * translate;
     
 }
 

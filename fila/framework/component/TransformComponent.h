@@ -14,6 +14,7 @@ public:
     void SetX(float x);
     void SetY(float y);
     void SetZ(float z);
+    glm::vec3 GetPos() const { return _pos;}
     
     void SetScaleX(float sx);
     void SetScaleY(float sy);

@@ -28,6 +28,9 @@ public:
     
     void SetLookDir(const glm::vec3& lookDir);
     
+    glm::mat4& GetViewMatrix(const glm::vec3& cameraPos);
+    glm::mat4& GetProjectionMatrix();
+    
 protected:
     
     ECameraType _cameraType = ECameraType::Perspective;
@@ -41,7 +44,6 @@ protected:
     float _fovY = 60.0f;
     
     glm::vec3 _lookDir;
-    
     
     glm::mat4 _viewMatrix;
     glm::mat4 _projectionMatrix;

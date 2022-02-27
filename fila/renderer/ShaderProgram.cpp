@@ -89,7 +89,13 @@ void ShaderProgram::UnUse()
     glUseProgram(0);
 }
 
-void ShaderProgram::SetUniform(const std::string& uniformName,const glm::vec4& value)
+bool ShaderProgram::CheckUniform(const std::string& uniformName)
+{
+    GLint location = glGetUniformLocation(program,uniformName.c_str());
+    return location >= 0;
+}
+
+void ShaderProgram::SetUniformVec4(const std::string& uniformName,const glm::vec4& value)
 {
     GLint location = glGetUniformLocation(program,uniformName.c_str());
     assert(location >= 0);
@@ -97,7 +103,7 @@ void ShaderProgram::SetUniform(const std::string& uniformName,const glm::vec4& v
     glCheckError();
 }
 
-void ShaderProgram::SetUniform(const std::string& uniformName,const glm::vec3& value)
+void ShaderProgram::SetUniformVec3(const std::string& uniformName,const glm::vec3& value)
 {
     GLint location = glGetUniformLocation(program,uniformName.c_str());
     assert(location >= 0);
@@ -108,7 +114,7 @@ void ShaderProgram::SetUniform(const std::string& uniformName,const glm::vec3& v
 
 }
 
-void ShaderProgram::SetUniform(const std::string& uniformName,const glm::vec2& value)
+void ShaderProgram::SetUniformVec2(const std::string& uniformName,const glm::vec2& value)
 {
     GLint location = glGetUniformLocation(program,uniformName.c_str());
     assert(location >= 0);
@@ -117,7 +123,7 @@ void ShaderProgram::SetUniform(const std::string& uniformName,const glm::vec2& v
     glCheckError();
 }
 
-void ShaderProgram::SetUniform(const std::string& uniformName,float value)
+void ShaderProgram::SetUniformFloat(const std::string& uniformName,float value)
 {
     GLint location = glGetUniformLocation(program,uniformName.c_str());
     assert(location >= 0);
@@ -125,7 +131,7 @@ void ShaderProgram::SetUniform(const std::string& uniformName,float value)
     glCheckError();
 }
 
-void ShaderProgram::SetUniform(const std::string& uniformName,int value)
+void ShaderProgram::SetUniformInt(const std::string& uniformName,int value)
 {
     GLint location = glGetUniformLocation(program,uniformName.c_str());
     assert(location >= 0);
@@ -133,7 +139,7 @@ void ShaderProgram::SetUniform(const std::string& uniformName,int value)
     glCheckError();
 }
 
-void ShaderProgram::SetUniform(const std::string& uniformName,bool bValue)
+void ShaderProgram::SetUniformBool(const std::string& uniformName,bool bValue)
 {
     GLint location = glGetUniformLocation(program,uniformName.c_str());
     assert(location >= 0);
@@ -152,10 +158,10 @@ void ShaderProgram::SetUniformMat4x4(const std::string& uniformName,float* data)
               GLsizei      count,
               GLboolean      transpose,
               const GLfloat *     value);
-
          */
     // 1 means 1 mat4
     glUniformMatrix4fv(location,1,GL_TRUE,data);
+//    glUniformMatrix4fv(location,1,GL_FALSE,data);
     glCheckError();
 }
 

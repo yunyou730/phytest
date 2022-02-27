@@ -437,8 +437,8 @@
 		2B60090E27CA0DF800B19562 /* attr_pos_uv_col.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60090C27CA0DED00B19562 /* attr_pos_uv_col.vsh */; };
 		2B60090F27CA0DF800B19562 /* attr_pos_uv.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60090B27CA0DED00B19562 /* attr_pos_uv.fsh */; };
 		2B60091027CA0DF800B19562 /* attr_pos_uv.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60090927CA0DED00B19562 /* attr_pos_uv.vsh */; };
-		2B60091427CA8CB300B19562 /* standard_base.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60091327CA8CA500B19562 /* standard_base.fsh */; };
-		2B60091527CA8CB300B19562 /* standard_base.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60091227CA8CA500B19562 /* standard_base.vsh */; };
+		2B60091427CA8CB300B19562 /* standard_mvp.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60091327CA8CA500B19562 /* standard_mvp.fsh */; };
+		2B60091527CA8CB300B19562 /* standard_mvp.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60091227CA8CA500B19562 /* standard_mvp.vsh */; };
 		2B60091927CA904C00B19562 /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60091827CA904C00B19562 /* TransformComponent.cpp */; };
 		2B60091E27CB26AC00B19562 /* MathExt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60091C27CB26AC00B19562 /* MathExt.cpp */; };
 		2B60092227CB3A0E00B19562 /* CameraComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60092027CB3A0E00B19562 /* CameraComponent.cpp */; };
@@ -515,8 +515,8 @@
 			dstPath = res;
 			dstSubfolderSpec = 16;
 			files = (
-				2B60091427CA8CB300B19562 /* standard_base.fsh in CopyFiles */,
-				2B60091527CA8CB300B19562 /* standard_base.vsh in CopyFiles */,
+				2B60091427CA8CB300B19562 /* standard_mvp.fsh in CopyFiles */,
+				2B60091527CA8CB300B19562 /* standard_mvp.vsh in CopyFiles */,
 				2B60090D27CA0DF800B19562 /* attr_pos_uv_col.fsh in CopyFiles */,
 				2B60090E27CA0DF800B19562 /* attr_pos_uv_col.vsh in CopyFiles */,
 				2B60090F27CA0DF800B19562 /* attr_pos_uv.fsh in CopyFiles */,
@@ -964,8 +964,8 @@
 		2B60090A27CA0DED00B19562 /* attr_pos_uv_col.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = attr_pos_uv_col.fsh; sourceTree = "<group>"; };
 		2B60090B27CA0DED00B19562 /* attr_pos_uv.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = attr_pos_uv.fsh; sourceTree = "<group>"; };
 		2B60090C27CA0DED00B19562 /* attr_pos_uv_col.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = attr_pos_uv_col.vsh; sourceTree = "<group>"; };
-		2B60091227CA8CA500B19562 /* standard_base.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = standard_base.vsh; sourceTree = "<group>"; };
-		2B60091327CA8CA500B19562 /* standard_base.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = standard_base.fsh; sourceTree = "<group>"; };
+		2B60091227CA8CA500B19562 /* standard_mvp.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = standard_mvp.vsh; sourceTree = "<group>"; };
+		2B60091327CA8CA500B19562 /* standard_mvp.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = standard_mvp.fsh; sourceTree = "<group>"; };
 		2B60091727CA904C00B19562 /* TransformComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformComponent.h; sourceTree = "<group>"; };
 		2B60091827CA904C00B19562 /* TransformComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformComponent.cpp; sourceTree = "<group>"; };
 		2B60091C27CB26AC00B19562 /* MathExt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MathExt.cpp; sourceTree = "<group>"; };
@@ -1606,8 +1606,8 @@
 				2B60090927CA0DED00B19562 /* attr_pos_uv.vsh */,
 				2B6008F527C954D200B19562 /* attr_pos.fsh */,
 				2B6008F627C954D200B19562 /* attr_pos.vsh */,
-				2B60091327CA8CA500B19562 /* standard_base.fsh */,
-				2B60091227CA8CA500B19562 /* standard_base.vsh */,
+				2B60091327CA8CA500B19562 /* standard_mvp.fsh */,
+				2B60091227CA8CA500B19562 /* standard_mvp.vsh */,
 			);
 			name = res;
 			path = fila/res;

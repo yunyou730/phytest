@@ -30,7 +30,7 @@ void ShaderManager::CreateBuiltinShaders()
     CreateShaderWithFile("res/attr_pos.vsh","res/attr_pos.fsh");
     CreateShaderWithFile("res/attr_pos_uv.vsh","res/attr_pos_uv.fsh");
     CreateShaderWithFile("res/attr_pos_uv_col.vsh","res/attr_pos_uv_col.fsh");
-    CreateShaderWithFile("res/standard_base.vsh","res/standard_base.fsh");
+    CreateShaderWithFile("res/standard_mvp.vsh","res/standard_mvp.fsh");
 }
 
 ShaderProgram* ShaderManager::GetShader(unsigned int shaderId) const

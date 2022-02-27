@@ -31,9 +31,39 @@ void Game::OnPrepare(const fl::LaunchParam& launchParam)
         entity->AddComponent(CLASS_NAME(CameraComponent), cameraComp);
         
         auto transformComp = entity->GetComponent<fl::TransformComponent>(CLASS_NAME(TransformComponent));
-        transformComp->SetPosition(glm::vec3(0,0,-10));
+        transformComp->SetPosition(glm::vec3(0,0,-5.0));
     }
     
+    {
+        // Create entity with MVP
+        fl::Entity* entity = GetFramework()->CreateEntity();
+        
+        auto transform = entity->GetComponent<fl::TransformComponent>(CLASS_NAME(TransformComponent));
+        transform->SetScale(glm::vec3(1.0,1.2,1.0));
+//        transform->SetRotationZ(45);
+        transform->SetPosition(glm::vec3(0.0,0.0,0.0));
+        
+        
+        auto premitiveComp = new fl::PremitiveComponent(fl::EVertexAttrType::POS);
+        premitiveComp->AddVertex(glm::vec3(-0.5,-0.5,0.0));
+        premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
+        premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
+        premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
+        premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
+        premitiveComp->AddVertex(glm::vec3( 0.5, 0.5,0.0));
+        premitiveComp->Commit();
+        entity->AddComponent(CLASS_NAME(PremitiveComponent), premitiveComp);
+        
+        
+        auto renderStateComp = new fl::RenderStateComponent();
+        renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::Builtin_StardardMVP);
+        renderStateComp->SetPrimitiveType(fl::ERenderPrimitiveType::Triangle);
+        renderStateComp->SetFillMode(fl::ERenderFillMode::Fill);
+        entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
+        
+    }
+    
+    /*
     // Create entity1 ,render rectangle
     {
         fl::Entity* entity = GetFramework()->CreateEntity();
@@ -115,6 +145,7 @@ void Game::OnPrepare(const fl::LaunchParam& launchParam)
         renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::BuiltinStardardBase);
         entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
     }
+    */
     
     
 }

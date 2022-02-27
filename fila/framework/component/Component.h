@@ -8,7 +8,7 @@ class Component
 public:
     virtual ~Component() {}
     
-    void SetEntity(Entity* entity) {}
+    void SetEntity(Entity* entity) { _entity = entity; }
     Entity* GetEntity() { return _entity;}
     
 protected:

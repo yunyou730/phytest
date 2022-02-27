@@ -5,10 +5,15 @@
 namespace fl {
 
 class Framework;
-class PremitiveComponent;
 class Entity;
-class ShaderManager;
+class PremitiveComponent;
 class CameraComponent;
+class TransformComponent;
+class CameraComponent;
+
+class ShaderManager;
+class ShaderProgram;
+
 class RendererSystem : public System, public ISysRenderer,public ISysPrepare
 {
 public:
@@ -24,6 +29,7 @@ protected:
     void RenderPremitive(Entity* entity,CameraComponent* camComp);
     GLuint HandlePrimitiveType(RenderStateComponent* renderStateComp);
     void HandleFillMode(RenderStateComponent* renderStateComp);
+    void HandleMVP(ShaderProgram* shader,TransformComponent* targetTransform,TransformComponent* cameraTransform,CameraComponent* cameraComp);
     
 protected:
     ShaderManager*  _shaderManager = nullptr;
