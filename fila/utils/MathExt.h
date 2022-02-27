@@ -5,6 +5,8 @@
 
 namespace fl {
 
+
+
 class Log
 {
 public:
@@ -29,13 +31,6 @@ public:
     
     inline static void Info(const glm::mat4& mat)
     {
-        char info[256] = {0};
-        sprintf(info,"---\n%.3f,%.3f,%.3f,%.3f\n%.3f,%.3f,%.3f,%.3f\n%.3f,%.3f,%.3f,%.3f\n%.3f,%.3f,%.3f,%.3f\n",
-                mat[0][0],mat[0][1],mat[0][2],mat[0][3],
-                mat[1][0],mat[1][1],mat[1][2],mat[1][3],
-                mat[2][0],mat[2][1],mat[2][2],mat[2][3],
-                mat[3][0],mat[3][1],mat[3][2],mat[3][3]);
-        /*
         std::stringstream ss;
         ss << "---------\n";
         for(int r = 0;r < 4;r++)
@@ -47,8 +42,6 @@ public:
             ss << "\n";
         }
         Info(ss.str().c_str());
-         */
-        Info(info);
     }
 };
 

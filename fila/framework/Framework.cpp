@@ -1,6 +1,7 @@
 #include "Framework.h"
 #include "system/System.h"
 #include "Entity.h"
+#include "TransformComponent.h"
 
 #define RegisterSysByType(sys,SysType,Container) ({\
 auto item = dynamic_cast<SysType*>(sys);\
@@ -44,6 +45,10 @@ Entity* Framework::CreateEntity()
     
     Entity* entity = new Entity(_entityIdSeed);
     _entityMap.insert(std::make_pair(_entityIdSeed,entity));
+    
+    // auto create transform component
+    auto transform = new TransformComponent();
+    entity->AddComponent(CLASS_NAME(TransformComponent), transform);
     
     return entity;
 }

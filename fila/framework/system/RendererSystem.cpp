@@ -6,9 +6,12 @@
 #include "Framework.h"
 #include <set>
 #include <string>
+
 #include "Entity.h"
 #include "PremitiveComponent.h"
 #include "RenderStateComponent.h"
+#include "CameraComponent.h"
+
 #include "application.h"
 #include "ShaderManager.h"
 #include "ShaderProgram.h"
@@ -34,20 +37,43 @@ void RendererSystem::Prepare(const LaunchParam& launchParam)
 
 void RendererSystem::Renderer()
 {
+    std::vector<Entity*> cameraEntities = GetCameraEntities();
+    std::vector<Entity*> toRenderEntities = GetRenderableEntities();
+    
+    for(auto camIt = cameraEntities.begin();camIt != cameraEntities.end();camIt++)
+    {
+        CameraComponent* camComp = (*camIt)->GetComponent<CameraComponent>(CLASS_NAME(CameraComponent));
+        for(auto it = toRenderEntities.begin();it != toRenderEntities.end();it++)
+        {
+            Entity* entity = *it;
+            RenderStateComponent* renderStateComp = entity->GetComponent<RenderStateComponent>(CLASS_NAME(RenderStateComponent));
+            if(camComp->CheckLayer(renderStateComp->GetRenderLayer()))
+            {
+                RenderPremitive(entity,camComp);
+            }
+        }
+    }
+}
+
+
+std::vector<Entity*> RendererSystem::GetCameraEntities()
+{
+    std::set<std::string> compSet;
+    compSet.insert(CLASS_NAME(CameraComponent));
+    return GetFramework()->QueryEntityWithCompSet(compSet);
+}
+
+std::vector<Entity*> RendererSystem::GetRenderableEntities()
+{
     std::set<std::string> compSet;
     compSet.insert(CLASS_NAME(PremitiveComponent));
     compSet.insert(CLASS_NAME(RenderStateComponent));
     
-    std::vector<Entity*> entities = GetFramework()->QueryEntityWithCompSet(compSet);
-    
-    for(auto it = entities.begin();it != entities.end();it++)
-    {
-        Entity* entity = *it;
-        RenderPremitive(entity);
-    }
+    std::vector<Entity*> renderEntities = GetFramework()->QueryEntityWithCompSet(compSet);
+    return renderEntities;
 }
 
-void RendererSystem::RenderPremitive(Entity* entity)
+void RendererSystem::RenderPremitive(Entity* entity,CameraComponent* cameraComponent)
 {
     auto premComp = entity->GetComponent<PremitiveComponent>(CLASS_NAME(PremitiveComponent));
     auto renderStateComp = entity->GetComponent<RenderStateComponent>(CLASS_NAME(RenderStateComponent));

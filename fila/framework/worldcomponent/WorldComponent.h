@@ -1,5 +1,4 @@
 #pragma once
-#include "HashClass.h"
 #include "window.h"
 
 namespace fl {

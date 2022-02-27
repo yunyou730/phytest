@@ -46,13 +46,16 @@ public:
     void SetPointSize(float pointSize) { _pointSize = pointSize;}
     float GetPointSize() const { return _pointSize;}
     
+    void SetRenderLayer(int layerIndex) { _renderLayerInex = layerIndex; }
+    int GetRenderLayer() const { return _renderLayerInex;}
+    
 protected:
     unsigned int _shaderId = 0;
     ERenderPrimitiveType  _primitiveType = ERenderPrimitiveType::Triangle;
     ERenderFillMode     _fillMode = ERenderFillMode::Fill;
     float _pointSize = 20.0f;
     
-    
+    int _renderLayerInex = 1;
 };
 
 }

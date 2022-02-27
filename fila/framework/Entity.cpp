@@ -23,6 +23,7 @@ void Entity::AddComponent(const std::string& compClsName,Component* component)
 {
     auto it = _componentMap.find(compClsName);
     assert(it == _componentMap.end());
+    component->SetEntity(this);
     _componentMap.insert(std::make_pair(compClsName,component));
 }
 

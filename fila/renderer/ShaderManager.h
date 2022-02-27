@@ -10,6 +10,8 @@ enum class EBuiltinShaderId
     BuiltinAttrPosUV,
     BuiltinAttrPosUVCol,
     
+    BuiltinStardardBase,
+    
     Max,
 };
 

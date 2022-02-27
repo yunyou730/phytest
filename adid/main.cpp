@@ -14,7 +14,7 @@
 #include "common.h"
 
 #include "Game.h"
-#include <glm/glm.hpp>
+
 #include "log.h"
 
 void TestBox2D()
@@ -66,15 +66,35 @@ void TestBox2D()
     // cleanup
 }
 
+
+glm::mat4 camera(float Translate, glm::vec2 const& Rotate)
+{
+    glm::mat4 Projection = glm::perspective(glm::pi<float>() * 0.25f, 4.0f / 3.0f, 0.1f, 100.f);
+    glm::mat4 View = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -Translate));
+    View = glm::rotate(View, Rotate.y, glm::vec3(-1.0f, 0.0f, 0.0f));
+    View = glm::rotate(View, Rotate.x, glm::vec3(0.0f, 1.0f, 0.0f));
+    glm::mat4 Model = glm::scale(glm::mat4(1.0f), glm::vec3(0.5f));
+    return Projection * View * Model;
+}
+
 void TestMath()
 {
-    glm::vec3 v1;
-    glm::vec3 v2(1.0,2.0f,3.0f);
+    glm::mat4 mat(1.0);
+    fl::Log::Info(mat);
     
-    fl::Log::Info(v1);
-    fl::Log::Info(v2);
+    mat = glm::rotate(mat,glm::radians<float>(90),glm::vec3(1,0,0));
+    fl::Log::Info(mat);
     
-//    printf("%s\n",CLASS_NAME(test));
+    float rad = glm::radians<float>(180);
+    float deg = glm::degrees<float>(glm::pi<float>());
+    printf("%.3f,%.3f\n",rad,deg);
+    
+//    glm::mat4 camMat = camera();
+    
+    
+    glm::mat4 Projection = glm::perspective(glm::pi<float>() * 0.25f, 4.0f / 3.0f, 0.1f, 100.f);
+    fl::Log::Info(Projection);
+    
 }
 
 int main(int argc, const char * argv[])

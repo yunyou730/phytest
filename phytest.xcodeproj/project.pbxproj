@@ -437,6 +437,11 @@
 		2B60090E27CA0DF800B19562 /* attr_pos_uv_col.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60090C27CA0DED00B19562 /* attr_pos_uv_col.vsh */; };
 		2B60090F27CA0DF800B19562 /* attr_pos_uv.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60090B27CA0DED00B19562 /* attr_pos_uv.fsh */; };
 		2B60091027CA0DF800B19562 /* attr_pos_uv.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60090927CA0DED00B19562 /* attr_pos_uv.vsh */; };
+		2B60091427CA8CB300B19562 /* standard_base.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60091327CA8CA500B19562 /* standard_base.fsh */; };
+		2B60091527CA8CB300B19562 /* standard_base.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B60091227CA8CA500B19562 /* standard_base.vsh */; };
+		2B60091927CA904C00B19562 /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60091827CA904C00B19562 /* TransformComponent.cpp */; };
+		2B60091E27CB26AC00B19562 /* MathExt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60091C27CB26AC00B19562 /* MathExt.cpp */; };
+		2B60092227CB3A0E00B19562 /* CameraComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60092027CB3A0E00B19562 /* CameraComponent.cpp */; };
 		2BFE8ADD27C3E360001F171C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8ADC27C3E360001F171C /* main.cpp */; };
 		2BFE8C1E27C476BC001F171C /* b2_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8BDA27C476BC001F171C /* b2_joint.cpp */; };
 		2BFE8C1F27C476BC001F171C /* b2_chain_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8BDC27C476BC001F171C /* b2_chain_circle_contact.cpp */; };
@@ -498,7 +503,6 @@
 		2BFE8CA727C4A045001F171C /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CA327C4A045001F171C /* common.cpp */; };
 		2BFE8CA827C4A045001F171C /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CA427C4A045001F171C /* log.cpp */; };
 		2BFE8CAE27C4A886001F171C /* WorldComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CAD27C4A886001F171C /* WorldComponent.cpp */; };
-		2BFE8CB327C4AAEB001F171C /* HashClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CB227C4AAEB001F171C /* HashClass.cpp */; };
 		2BFE8CBD27C60276001F171C /* PremitiveComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CBC27C60276001F171C /* PremitiveComponent.cpp */; };
 		2BFE8CC127C6028B001F171C /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CC027C6028B001F171C /* Component.cpp */; };
 		2BFE8CC527C60540001F171C /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CC327C60540001F171C /* Entity.cpp */; };
@@ -511,6 +515,8 @@
 			dstPath = res;
 			dstSubfolderSpec = 16;
 			files = (
+				2B60091427CA8CB300B19562 /* standard_base.fsh in CopyFiles */,
+				2B60091527CA8CB300B19562 /* standard_base.vsh in CopyFiles */,
 				2B60090D27CA0DF800B19562 /* attr_pos_uv_col.fsh in CopyFiles */,
 				2B60090E27CA0DF800B19562 /* attr_pos_uv_col.vsh in CopyFiles */,
 				2B60090F27CA0DF800B19562 /* attr_pos_uv.fsh in CopyFiles */,
@@ -958,6 +964,14 @@
 		2B60090A27CA0DED00B19562 /* attr_pos_uv_col.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = attr_pos_uv_col.fsh; sourceTree = "<group>"; };
 		2B60090B27CA0DED00B19562 /* attr_pos_uv.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = attr_pos_uv.fsh; sourceTree = "<group>"; };
 		2B60090C27CA0DED00B19562 /* attr_pos_uv_col.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = attr_pos_uv_col.vsh; sourceTree = "<group>"; };
+		2B60091227CA8CA500B19562 /* standard_base.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = standard_base.vsh; sourceTree = "<group>"; };
+		2B60091327CA8CA500B19562 /* standard_base.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = standard_base.fsh; sourceTree = "<group>"; };
+		2B60091727CA904C00B19562 /* TransformComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformComponent.h; sourceTree = "<group>"; };
+		2B60091827CA904C00B19562 /* TransformComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformComponent.cpp; sourceTree = "<group>"; };
+		2B60091C27CB26AC00B19562 /* MathExt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MathExt.cpp; sourceTree = "<group>"; };
+		2B60091D27CB26AC00B19562 /* MathExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathExt.h; sourceTree = "<group>"; };
+		2B60092027CB3A0E00B19562 /* CameraComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraComponent.cpp; sourceTree = "<group>"; };
+		2B60092127CB3A0E00B19562 /* CameraComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraComponent.h; sourceTree = "<group>"; };
 		2BFE8AD927C3E360001F171C /* phytest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = phytest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFE8ADC27C3E360001F171C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2BFE8BB027C476BC001F171C /* b2_joint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_joint.h; sourceTree = "<group>"; };
@@ -1085,8 +1099,6 @@
 		2BFE8CA627C4A045001F171C /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
 		2BFE8CAC27C4A886001F171C /* WorldComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldComponent.h; sourceTree = "<group>"; };
 		2BFE8CAD27C4A886001F171C /* WorldComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldComponent.cpp; sourceTree = "<group>"; };
-		2BFE8CB027C4A97D001F171C /* HashClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashClass.h; sourceTree = "<group>"; };
-		2BFE8CB227C4AAEB001F171C /* HashClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashClass.cpp; sourceTree = "<group>"; };
 		2BFE8CBB27C60276001F171C /* PremitiveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PremitiveComponent.h; sourceTree = "<group>"; };
 		2BFE8CBC27C60276001F171C /* PremitiveComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PremitiveComponent.cpp; sourceTree = "<group>"; };
 		2BFE8CBF27C6028A001F171C /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
@@ -1594,6 +1606,8 @@
 				2B60090927CA0DED00B19562 /* attr_pos_uv.vsh */,
 				2B6008F527C954D200B19562 /* attr_pos.fsh */,
 				2B6008F627C954D200B19562 /* attr_pos.vsh */,
+				2B60091327CA8CA500B19562 /* standard_base.fsh */,
+				2B60091227CA8CA500B19562 /* standard_base.vsh */,
 			);
 			name = res;
 			path = fila/res;
@@ -2031,12 +2045,12 @@
 		2BFE8CA227C4A045001F171C /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				2BFE8CB027C4A97D001F171C /* HashClass.h */,
-				2BFE8CB227C4AAEB001F171C /* HashClass.cpp */,
 				2BFE8CA527C4A045001F171C /* common.h */,
 				2BFE8CA327C4A045001F171C /* common.cpp */,
 				2BFE8CA627C4A045001F171C /* log.h */,
 				2BFE8CA427C4A045001F171C /* log.cpp */,
+				2B60091C27CB26AC00B19562 /* MathExt.cpp */,
+				2B60091D27CB26AC00B19562 /* MathExt.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -2059,6 +2073,10 @@
 				2BFE8CBC27C60276001F171C /* PremitiveComponent.cpp */,
 				2B60090127C9F78600B19562 /* RenderStateComponent.cpp */,
 				2B60090027C9F78600B19562 /* RenderStateComponent.h */,
+				2B60091827CA904C00B19562 /* TransformComponent.cpp */,
+				2B60091727CA904C00B19562 /* TransformComponent.h */,
+				2B60092027CB3A0E00B19562 /* CameraComponent.cpp */,
+				2B60092127CB3A0E00B19562 /* CameraComponent.h */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -2199,6 +2217,7 @@
 				2B60079127C7F7EA00B19562 /* matrix_float3x3_precision.hpp in Sources */,
 				2B60079227C7F7EA00B19562 /* matrix_float3x3.hpp in Sources */,
 				2B60079327C7F7EA00B19562 /* scalar_int_sized.hpp in Sources */,
+				2B60092227CB3A0E00B19562 /* CameraComponent.cpp in Sources */,
 				2B60079427C7F7EA00B19562 /* matrix_uint3x2_sized.hpp in Sources */,
 				2B60079527C7F7EA00B19562 /* matrix_float4x4_precision.hpp in Sources */,
 				2B60079627C7F7EA00B19562 /* matrix_double4x2.hpp in Sources */,
@@ -2411,6 +2430,7 @@
 				2B60086427C7F7EB00B19562 /* epsilon.hpp in Sources */,
 				2B6008EF27C9545000B19562 /* FileReader.cpp in Sources */,
 				2B60086527C7F7EB00B19562 /* constants.inl in Sources */,
+				2B60091927CA904C00B19562 /* TransformComponent.cpp in Sources */,
 				2B60086627C7F7EB00B19562 /* reciprocal.hpp in Sources */,
 				2B60086727C7F7EB00B19562 /* type_ptr.inl in Sources */,
 				2B60086827C7F7EB00B19562 /* type_aligned.hpp in Sources */,
@@ -2517,6 +2537,7 @@
 				2B6008CC27C7F7EB00B19562 /* color_space.inl in Sources */,
 				2B6008CD27C7F7EB00B19562 /* normal.inl in Sources */,
 				2B6008CE27C7F7EB00B19562 /* color_encoding.hpp in Sources */,
+				2B60091E27CB26AC00B19562 /* MathExt.cpp in Sources */,
 				2B6008CF27C7F7EB00B19562 /* matrix_major_storage.hpp in Sources */,
 				2B6008D027C7F7EB00B19562 /* norm.inl in Sources */,
 				2B6008D127C7F7EB00B19562 /* texture.inl in Sources */,
@@ -2582,7 +2603,6 @@
 				2BFE8CA827C4A045001F171C /* log.cpp in Sources */,
 				2BFE8CA727C4A045001F171C /* common.cpp in Sources */,
 				2BFE8C2127C476BC001F171C /* b2_chain_polygon_contact.cpp in Sources */,
-				2BFE8CB327C4AAEB001F171C /* HashClass.cpp in Sources */,
 				2BFE8C3C27C476BC001F171C /* b2_stack_allocator.cpp in Sources */,
 				2BFE8C9327C485F7001F171C /* Phy2DSystem.cpp in Sources */,
 				2BFE8C9B27C48E5C001F171C /* TestSystem.cpp in Sources */,
