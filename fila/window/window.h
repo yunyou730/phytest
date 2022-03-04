@@ -21,11 +21,15 @@ public:
 protected:
     static void InitEnv();
     
+    float ProcessFPS(int desireFPS);
+    
 protected:
     std::string _name   = "fila";
     GLFWwindow* _window = nullptr;
     int _width = 800;
     int _height = 600;
+    
+    float _fpsTimeCounter = 0.0f;
 };
 
 

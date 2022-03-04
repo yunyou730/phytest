@@ -20,6 +20,9 @@ public:
     void SetDeltaTime(float deltaTime);
     float GetDeltaTime();
     
+    void SetDesireFPS(int desireFPS) { _desireFPS = desireFPS;}
+    int GetDesireFPS() const { return _desireFPS;}
+    
 // managers
 public:
     ShaderManager* GetShaderManager() { return _shaderManager;}
@@ -30,7 +33,7 @@ protected:
 protected:
     Framework*  _framework = nullptr;
     float       _deltaTimeThisFrame = 0.0f;
-    
+    int       _desireFPS = 60.0f;
     
 // managers
     ShaderManager* _shaderManager = nullptr;

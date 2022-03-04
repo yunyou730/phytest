@@ -43,24 +43,25 @@ void Game::OnPrepare(const fl::LaunchParam& launchParam)
 //        transform->SetRotationZ(45);
         transform->SetPosition(glm::vec3(0.0,0.0,0.0));
         
+        // primitve
+        auto premitiveComp = new fl::PremitiveComponent(fl::EVertexAttrType::POS_UV_COLOR);
+        premitiveComp->AddVertex(glm::vec3(-0.5,-0.5,0.0),glm::vec2(0,0),glm::vec3(1,0,0));
+        premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0),glm::vec2(1,0),glm::vec3(0,1,0));
+        premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0),glm::vec2(0,1),glm::vec3(0,0,1));
         
-        auto premitiveComp = new fl::PremitiveComponent(fl::EVertexAttrType::POS);
-        premitiveComp->AddVertex(glm::vec3(-0.5,-0.5,0.0));
-        premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
-        premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
-        premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
-        premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
-        premitiveComp->AddVertex(glm::vec3( 0.5, 0.5,0.0));
+        premitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0),glm::vec2(1,0),glm::vec3(0,1,0));
+        premitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0),glm::vec2(0,1),glm::vec3(0,0,1));
+        premitiveComp->AddVertex(glm::vec3( 0.5, 0.5,0.0),glm::vec2(1,1),glm::vec3(1,1,0));
+        
         premitiveComp->Commit();
         entity->AddComponent(CLASS_NAME(PremitiveComponent), premitiveComp);
         
-        
+        // render state
         auto renderStateComp = new fl::RenderStateComponent();
         renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::Builtin_StardardMVP);
         renderStateComp->SetPrimitiveType(fl::ERenderPrimitiveType::Triangle);
         renderStateComp->SetFillMode(fl::ERenderFillMode::Fill);
         entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
-        
     }
     
     /*

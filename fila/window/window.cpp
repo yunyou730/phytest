@@ -1,5 +1,6 @@
 #include "window.h"
 #include "application.h"
+#include <thread>
 
 namespace fl
 {
@@ -64,11 +65,18 @@ bool Window::Create()
 void Window::MainLoop(Application* app,const LaunchParam& launchParam)
 {
     app->OnPrepare(launchParam);
+    app->SetDesireFPS(60);
+    
+    _fpsTimeCounter = glfwGetTime();
     
     while(!glfwWindowShouldClose(_window))
     {
+        float deltaTime = ProcessFPS(app->GetDesireFPS());
+        printf("[dt]%.3f\n",deltaTime);
+        
         processInput(_window);
         
+        app->SetDeltaTime(deltaTime);
         app->OnUpdate();
         
         // Render code here
@@ -86,6 +94,24 @@ void Window::MainLoop(Application* app,const LaunchParam& launchParam)
 void Window::Destroy()
 {
     glfwTerminate();
+}
+
+float Window::ProcessFPS(int desireFPS)
+{
+    float atLeastFrameTime = 1.0f / desireFPS;
+    
+    double now = glfwGetTime();
+    double deltaTime = now - _fpsTimeCounter;
+    if(deltaTime < atLeastFrameTime)
+    {
+        int toSleepMS = int((atLeastFrameTime - deltaTime) * 1000);
+        std::this_thread::sleep_for(std::chrono::milliseconds(toSleepMS));
+    }
+    now = glfwGetTime();
+    deltaTime = now - _fpsTimeCounter;
+    
+    _fpsTimeCounter = glfwGetTime();
+    return deltaTime;
 }
 
 

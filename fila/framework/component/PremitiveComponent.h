@@ -29,7 +29,7 @@ public:
     
     void SetVertexPos(int vertexIndex,const glm::vec3& pos);
     void SetVertexColor(int vertexIndex,const glm::vec3& color);
-    void SetVertexUV(int vertexIndex,const glm::vec2& color);
+    void SetVertexUV(int vertexIndex,const glm::vec2& uv);
     void SetVertexNormal(int vertexIndex,const glm::vec3& normal);
     void SetVertexTangent(int vertexIndex,const glm::vec3& tangent);
     void SetVertexBitangent(int vertexIndex,const glm::vec3& bitangent);
