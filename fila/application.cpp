@@ -5,16 +5,16 @@
 #include "TestSystem.h"
 #include "RendererSystem.h"
 
-#include "WorldComponent.h"
-
 // managers
 #include "renderer/ShaderManager.h"
+
+
 
 namespace fl {
 
 Application::Application()
 {
-
+    
 }
 
 Application::~Application()
@@ -34,7 +34,12 @@ void Application::OnPrepare(const LaunchParam& launchParam)
     auto globalRenderParam = new WCGlobalRenderParam();
     globalRenderParam->launchParam = launchParam;
     
+    auto keyboardInput = new WCKeyboardInput();
+    
     _framework->RegisterWorldComponent(CLASS_NAME(WCGlobalRenderParam),globalRenderParam);
+    _framework->RegisterWorldComponent(CLASS_NAME(WCKeyboardInput),keyboardInput);
+
+    // Prepare
     _framework->OnPrepare(launchParam);
 }
 
@@ -55,14 +60,30 @@ void Application::OnRenderer()
     _framework->OnRender();
 }
 
-void Application::SetDeltaTime(float deltaTime)
+void Application::ProcessInput(Window* window)
 {
+    auto input = _framework->GetWorldComponent<WCKeyboardInput>(CLASS_NAME(WCKeyboardInput));
+
+    RefreshKeyState(window,input,GLFW_KEY_ESCAPE,EInputKey::KEY_ESC);
+    RefreshKeyState(window,input,GLFW_KEY_UP,EInputKey::KEY_UP);
+    RefreshKeyState(window,input,GLFW_KEY_DOWN,EInputKey::KEY_DOWN);
+    RefreshKeyState(window,input,GLFW_KEY_LEFT,EInputKey::KEY_LEFT);
+    RefreshKeyState(window,input,GLFW_KEY_RIGHT,EInputKey::KEY_RIGHT);
     
+    if(input->GetState(EInputKey::KEY_ESC) == EKeyState::PRESS)
+    {
+        SetShouldExit();
+    }
 }
 
-float Application::GetDeltaTime()
+void Application::RefreshKeyState(Window* window,
+                     WCKeyboardInput* input,
+                     int glfwKeyCode,
+                     EInputKey keyCode)
 {
-    return 0.0f;
+    int glfwState = glfwGetKey(window->GLFWWindow(), glfwKeyCode);
+    fl::EKeyState state = (glfwState  == GLFW_PRESS) ? fl::EKeyState::PRESS : fl::EKeyState::RELEASE;
+    input->SetState(keyCode, state);
 }
 
 }

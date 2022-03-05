@@ -102,9 +102,8 @@ int main(int argc, const char * argv[])
     TestMath();
     
     fl::LaunchParam param;
-    
-    ad::Game game;
     fl::Window window("adid",param);
+    ad::Game game;
     
     window.Create();
     window.MainLoop(&game,param);

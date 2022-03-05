@@ -12,6 +12,10 @@ public:
         printf("[info] %s\n",msg);
     }
     
+    inline static void Info(const char* tag,const char* msg)
+    {
+        printf("[%s] %s\n",tag,msg);
+    }
     
     inline static void Info(const glm::vec3& v)
     {

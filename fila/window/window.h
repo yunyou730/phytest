@@ -18,6 +18,8 @@ public:
     void MainLoop(Application* app,const fl::LaunchParam& launchParam);
     void Destroy();
     
+    GLFWwindow* GLFWWindow() { return _window;}
+    
 protected:
     static void InitEnv();
     

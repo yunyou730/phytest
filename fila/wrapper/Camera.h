@@ -2,12 +2,9 @@
 
 
 namespace fl {
-class Scene
+class Camera
 {
 public:
-    void CreateCamera();
-    
-    
     
 };
 }

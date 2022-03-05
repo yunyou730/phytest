@@ -6,7 +6,7 @@ namespace fl
 {
 
 extern void framebufferSizeCallback(GLFWwindow* window,int width,int height);
-extern void processInput(GLFWwindow *window);
+//extern void processInput(GLFWwindow *window);
 
 Window::Window(const std::string& name,const LaunchParam& launchParam)
     :_name(name)
@@ -69,14 +69,12 @@ void Window::MainLoop(Application* app,const LaunchParam& launchParam)
     
     _fpsTimeCounter = glfwGetTime();
     
-    while(!glfwWindowShouldClose(_window))
+    while(!app->ShallExit())
     {
         float deltaTime = ProcessFPS(app->GetDesireFPS());
-        printf("[dt]%.3f\n",deltaTime);
-        
-        processInput(_window);
-        
         app->SetDeltaTime(deltaTime);
+        
+        app->ProcessInput(this);
         app->OnUpdate();
         
         // Render code here
@@ -121,10 +119,10 @@ void framebufferSizeCallback(GLFWwindow* window,int width,int height)
     printf("%d,%d\n",width,height);
 }
 
-void processInput(GLFWwindow *window)
-{
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-}
+//void processInput(GLFWwindow *window)
+//{
+//    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+//        glfwSetWindowShouldClose(window, true);
+//}
 
 }

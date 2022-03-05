@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B586D0427D2763D00833F2F /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D0127D2763C00833F2F /* Scene.cpp */; };
+		2B586D0527D2763D00833F2F /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D0327D2763C00833F2F /* Camera.cpp */; };
+		2B586D1027D332FB00833F2F /* CameraCtrlSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */; };
 		2B6003B427C7EC5C00B19562 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B227C7EC5C00B19562 /* Game.cpp */; };
 		2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */; };
 		2B60074227C7F7C400B19562 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60068527C7F7C400B19562 /* glm.cpp */; };
@@ -442,7 +445,6 @@
 		2B60091927CA904C00B19562 /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60091827CA904C00B19562 /* TransformComponent.cpp */; };
 		2B60091E27CB26AC00B19562 /* MathExt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60091C27CB26AC00B19562 /* MathExt.cpp */; };
 		2B60092227CB3A0E00B19562 /* CameraComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60092027CB3A0E00B19562 /* CameraComponent.cpp */; };
-		2B60092827CCBE6400B19562 /* scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60092627CCBE6300B19562 /* scene.cpp */; };
 		2BFE8ADD27C3E360001F171C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8ADC27C3E360001F171C /* main.cpp */; };
 		2BFE8C1E27C476BC001F171C /* b2_joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8BDA27C476BC001F171C /* b2_joint.cpp */; };
 		2BFE8C1F27C476BC001F171C /* b2_chain_circle_contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8BDC27C476BC001F171C /* b2_chain_circle_contact.cpp */; };
@@ -530,6 +532,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B586D0027D2763C00833F2F /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		2B586D0127D2763C00833F2F /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		2B586D0227D2763C00833F2F /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		2B586D0327D2763C00833F2F /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraCtrlSystem.cpp; sourceTree = "<group>"; };
+		2B586D0F27D332FB00833F2F /* CameraCtrlSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCtrlSystem.h; sourceTree = "<group>"; };
 		2B6003B227C7EC5C00B19562 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		2B6003B327C7EC5C00B19562 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
@@ -973,8 +981,6 @@
 		2B60091D27CB26AC00B19562 /* MathExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathExt.h; sourceTree = "<group>"; };
 		2B60092027CB3A0E00B19562 /* CameraComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraComponent.cpp; sourceTree = "<group>"; };
 		2B60092127CB3A0E00B19562 /* CameraComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraComponent.h; sourceTree = "<group>"; };
-		2B60092627CCBE6300B19562 /* scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scene.cpp; sourceTree = "<group>"; };
-		2B60092727CCBE6300B19562 /* scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scene.h; sourceTree = "<group>"; };
 		2BFE8AD927C3E360001F171C /* phytest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = phytest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFE8ADC27C3E360001F171C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2BFE8BB027C476BC001F171C /* b2_joint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_joint.h; sourceTree = "<group>"; };
@@ -1106,8 +1112,8 @@
 		2BFE8CBC27C60276001F171C /* PremitiveComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PremitiveComponent.cpp; sourceTree = "<group>"; };
 		2BFE8CBF27C6028A001F171C /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 		2BFE8CC027C6028B001F171C /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
-		2BFE8CC327C60540001F171C /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = framework/Entity.cpp; sourceTree = "<group>"; };
-		2BFE8CC427C60540001F171C /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = framework/Entity.h; sourceTree = "<group>"; };
+		2BFE8CC327C60540001F171C /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		2BFE8CC427C60540001F171C /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1616,13 +1622,15 @@
 			path = fila/res;
 			sourceTree = SOURCE_ROOT;
 		};
-		2B60092527CCBE6300B19562 /* scene */ = {
+		2B60092527CCBE6300B19562 /* wrapper */ = {
 			isa = PBXGroup;
 			children = (
-				2B60092627CCBE6300B19562 /* scene.cpp */,
-				2B60092727CCBE6300B19562 /* scene.h */,
+				2B586D0327D2763C00833F2F /* Camera.cpp */,
+				2B586D0227D2763C00833F2F /* Camera.h */,
+				2B586D0127D2763C00833F2F /* Scene.cpp */,
+				2B586D0027D2763C00833F2F /* Scene.h */,
 			);
-			path = scene;
+			path = wrapper;
 			sourceTree = "<group>";
 		};
 		2BFE8AD027C3E360001F171C = {
@@ -1650,6 +1658,8 @@
 				2BFE8ADC27C3E360001F171C /* main.cpp */,
 				2B6003B227C7EC5C00B19562 /* Game.cpp */,
 				2B6003B327C7EC5C00B19562 /* Game.h */,
+				2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */,
+				2B586D0F27D332FB00833F2F /* CameraCtrlSystem.h */,
 			);
 			path = adid;
 			sourceTree = "<group>";
@@ -1992,8 +2002,6 @@
 		2BFE8C6E27C47B30001F171C /* fila */ = {
 			isa = PBXGroup;
 			children = (
-				2BFE8CC327C60540001F171C /* Entity.cpp */,
-				2BFE8CC427C60540001F171C /* Entity.h */,
 				2BFE8C7D27C48560001F171C /* framework */,
 				2BFE8C6F27C47B30001F171C /* renderer */,
 				2BFE8C7027C47B30001F171C /* fila.h */,
@@ -2002,7 +2010,7 @@
 				2BFE8C7127C47B30001F171C /* window */,
 				2B6008EC27C9545000B19562 /* io */,
 				2BFE8CA227C4A045001F171C /* utils */,
-				2B60092527CCBE6300B19562 /* scene */,
+				2B60092527CCBE6300B19562 /* wrapper */,
 				2B6008F227C954AB00B19562 /* res */,
 			);
 			path = fila;
@@ -2031,11 +2039,13 @@
 		2BFE8C7D27C48560001F171C /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				2BFE8CC327C60540001F171C /* Entity.cpp */,
+				2BFE8CC427C60540001F171C /* Entity.h */,
+				2BFE8C8927C485E7001F171C /* Framework.cpp */,
+				2BFE8C8827C485E7001F171C /* Framework.h */,
 				2BFE8CBA27C60276001F171C /* component */,
 				2BFE8CAB27C4A886001F171C /* worldcomponent */,
 				2BFE8C8C27C485F7001F171C /* system */,
-				2BFE8C8927C485E7001F171C /* Framework.cpp */,
-				2BFE8C8827C485E7001F171C /* Framework.h */,
 			);
 			path = framework;
 			sourceTree = "<group>";
@@ -2262,7 +2272,6 @@
 				2B6007B027C7F7EA00B19562 /* vector_uint3_sized.hpp in Sources */,
 				2B6007B127C7F7EA00B19562 /* vector_int3.hpp in Sources */,
 				2B6007B227C7F7EA00B19562 /* matrix_uint3x3.hpp in Sources */,
-				2B60092827CCBE6400B19562 /* scene.cpp in Sources */,
 				2B6007B327C7F7EA00B19562 /* scalar_constants.inl in Sources */,
 				2B6007B427C7F7EA00B19562 /* matrix_double4x4.hpp in Sources */,
 				2B6007B527C7F7EA00B19562 /* scalar_uint_sized.hpp in Sources */,
@@ -2362,6 +2371,7 @@
 				2B60081227C7F7EA00B19562 /* _features.hpp in Sources */,
 				2B60081327C7F7EA00B19562 /* func_integer.inl in Sources */,
 				2B60081427C7F7EA00B19562 /* _vectorize.hpp in Sources */,
+				2B586D0527D2763D00833F2F /* Camera.cpp in Sources */,
 				2B60081527C7F7EA00B19562 /* func_geometric.inl in Sources */,
 				2B60081627C7F7EA00B19562 /* type_quat.hpp in Sources */,
 				2B60081727C7F7EA00B19562 /* func_common.inl in Sources */,
@@ -2440,6 +2450,7 @@
 				2B60086027C7F7EB00B19562 /* color_space.inl in Sources */,
 				2B60086127C7F7EB00B19562 /* noise.inl in Sources */,
 				2B60086227C7F7EB00B19562 /* matrix_access.hpp in Sources */,
+				2B586D1027D332FB00833F2F /* CameraCtrlSystem.cpp in Sources */,
 				2B60086327C7F7EB00B19562 /* random.inl in Sources */,
 				2B60086427C7F7EB00B19562 /* epsilon.hpp in Sources */,
 				2B6008EF27C9545000B19562 /* FileReader.cpp in Sources */,
@@ -2495,6 +2506,7 @@
 				2B60089527C7F7EB00B19562 /* float_notmalize.inl in Sources */,
 				2B60089627C7F7EB00B19562 /* transform.hpp in Sources */,
 				2B60089727C7F7EB00B19562 /* bit.hpp in Sources */,
+				2B586D0427D2763D00833F2F /* Scene.cpp in Sources */,
 				2B60089827C7F7EB00B19562 /* number_precision.hpp in Sources */,
 				2B60089927C7F7EB00B19562 /* mixed_product.hpp in Sources */,
 				2B60089A27C7F7EB00B19562 /* closest_point.inl in Sources */,
