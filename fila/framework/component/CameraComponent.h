@@ -31,6 +31,8 @@ public:
     glm::mat4& GetViewMatrix(const glm::vec3& cameraPos);
     glm::mat4& GetProjectionMatrix();
     
+    float MoveSpeed() const { return _moveSpeed;}
+    
 protected:
     
     ECameraType _cameraType = ECameraType::Perspective;
@@ -50,6 +52,8 @@ protected:
     
     int _sort = 1;
     std::set<int> _renderLayers;
+    
+    float _moveSpeed = 2.0f;
 };
 
 }

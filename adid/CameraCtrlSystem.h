@@ -14,6 +14,10 @@ public:
     virtual void Update() override;
     
 protected:
+    void DumpKeyboardState();
+    void HandleCameraMove(fl::Entity* camEntity);
+    
+protected:
     fl::WCKeyboardInput* _keyboardInput = nullptr;
 };
 

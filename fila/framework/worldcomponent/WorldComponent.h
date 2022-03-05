@@ -24,6 +24,8 @@ public:
     void SetState(EInputKey key,EKeyState state);
     EKeyState GetState(EInputKey key) const;
     
+    bool IsKeyPressed(EInputKey key) const { return GetState(key) == EKeyState::PRESS;}
+    
     std::map<EInputKey,EKeyState>   _keyStateMap;
 };
 
