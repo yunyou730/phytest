@@ -44,11 +44,11 @@ void RendererSystem::Renderer()
     // Each camera renders each entity.
     for(auto camIt = cameraEntities.begin();camIt != cameraEntities.end();camIt++)
     {
-        CameraComponent* camComp = (*camIt)->GetComponent<CameraComponent>(CLASS_NAME(CameraComponent));
+        auto camComp = (*camIt)->GetComponent<CameraComponent>();
         for(auto it = toRenderEntities.begin();it != toRenderEntities.end();it++)
         {
             Entity* entity = *it;
-            RenderStateComponent* renderStateComp = entity->GetComponent<RenderStateComponent>(CLASS_NAME(RenderStateComponent));
+            RenderStateComponent* renderStateComp = entity->GetComponent<RenderStateComponent>();
             if(camComp->CheckLayer(renderStateComp->GetRenderLayer()))
             {
                 RenderPrimitive(entity,camComp);
@@ -76,10 +76,10 @@ std::vector<Entity*> RendererSystem::GetRenderableEntities()
 
 void RendererSystem::RenderPrimitive(Entity* entity,CameraComponent* cameraComponent)
 {
-    auto premComp = entity->GetComponent<PrimitiveComponent>(CLASS_NAME(PrimitiveComponent));
-    auto renderStateComp = entity->GetComponent<RenderStateComponent>(CLASS_NAME(RenderStateComponent));
-    auto targetTransform = entity->GetComponent<TransformComponent>(CLASS_NAME(TransformComponent));
-    auto cameraTransform = cameraComponent->GetEntity()->GetComponent<TransformComponent>(CLASS_NAME(TransformComponent));
+    auto premComp = entity->GetComponent<PrimitiveComponent>();
+    auto renderStateComp = entity->GetComponent<RenderStateComponent>();
+    auto targetTransform = entity->GetComponent<TransformComponent>();
+    auto cameraTransform = cameraComponent->GetEntity()->GetComponent<TransformComponent>();
     
     // params
     unsigned int shaderId = renderStateComp->GetShaderId();
@@ -140,11 +140,6 @@ void RendererSystem::HandleFillMode(RenderStateComponent* renderStateComp)
 
 void RendererSystem::HandleMVP(ShaderProgram* shader,TransformComponent* targetTransform,TransformComponent* cameraTransform,CameraComponent* cameraComp)
 {
-    // @miao @todo
-    /*
-    uniform mat4 u_View;
-    uniform mat4 u_Projection;
-    */
     if(shader->CheckUniform("u_Model"))
     {
         glm::mat4 model = targetTransform->GetModelMatrix();

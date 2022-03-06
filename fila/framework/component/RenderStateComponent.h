@@ -34,6 +34,8 @@ enum class ERenderFillMode
 class RenderStateComponent : public Component
 {
 public:
+    static const char* ClsName() {return "RenderStateComponent";}
+    
     void SetShaderId(unsigned int shaderId) { _shaderId = shaderId; }
     unsigned int GetShaderId() const { return _shaderId; }
         

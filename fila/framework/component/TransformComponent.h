@@ -8,6 +8,7 @@ namespace fl {
 class TransformComponent : public Component
 {
 public:
+    static const char* ClsName() {return "TransformComponent";}
     TransformComponent();
 
     void SetPosition(const glm::vec3& pos);

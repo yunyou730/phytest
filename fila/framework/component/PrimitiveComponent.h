@@ -21,6 +21,7 @@ enum class EVertexAttrType
 class PrimitiveComponent : public Component
 {
 public:
+    static const char* ClsName() {return "PrimitiveComponent";}
     PrimitiveComponent(EVertexAttrType vertAttrType = EVertexAttrType::POS);
     
     void AddVertex(const glm::vec3& pos);

@@ -145,7 +145,7 @@ void Game::CreateCamera(int viewportWidth,int viewportHeight)
     
     entity->AddComponent(CLASS_NAME(CameraComponent), cameraComp);
     
-    auto transformComp = entity->GetComponent<fl::TransformComponent>(CLASS_NAME(TransformComponent));
+    auto transformComp = entity->GetComponent<fl::TransformComponent>();
     transformComp->SetPosition(glm::vec3(0,0,-5.0));
 }
 
@@ -153,7 +153,7 @@ void Game::CreateTest1()
 {
     fl::Entity* entity = GetFramework()->CreateEntity();
     
-    auto transform = entity->GetComponent<fl::TransformComponent>(CLASS_NAME(TransformComponent));
+    auto transform = entity->GetComponent<fl::TransformComponent>();
     transform->SetScale(glm::vec3(1.0,1.2,1.0));
 //        transform->SetRotationZ(45);
     transform->SetPosition(glm::vec3(0.0,0.0,0.0));

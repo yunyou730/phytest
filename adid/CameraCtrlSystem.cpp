@@ -17,7 +17,7 @@ CameraCtrlSystem::CameraCtrlSystem(fl::Framework* framework)
 
 void CameraCtrlSystem::Update()
 {
-    DumpKeyboardState();
+//    DumpKeyboardState();
  
     float dt = _framework->GetApp()->GetDeltaTime();
     
@@ -48,9 +48,9 @@ void CameraCtrlSystem::DumpKeyboardState()
 
 void CameraCtrlSystem::HandleCameraMove(float deltaTime,fl::Entity* camEntity)
 {
-    auto transform = camEntity->GetComponent<fl::TransformComponent>(CLASS_NAME(TransformComponent));
+    auto transform = camEntity->GetComponent<fl::TransformComponent>();
     
-    auto camComp = camEntity->GetComponent<fl::CameraComponent>(CLASS_NAME(CameraComponent));
+    auto camComp = camEntity->GetComponent<fl::CameraComponent>();
     
     
     float distance = camComp->MoveSpeed() * _framework->GetApp()->GetDeltaTime();
@@ -83,9 +83,8 @@ void CameraCtrlSystem::HandleCameraMove(float deltaTime,fl::Entity* camEntity)
 
 void CameraCtrlSystem::HandleCameraRotate(float deltaTime,fl::Entity* camEntity)
 {
-    auto transform = camEntity->GetComponent<fl::TransformComponent>(CLASS_NAME(TransformComponent));
     
-    auto camComp = camEntity->GetComponent<fl::CameraComponent>(CLASS_NAME(CameraComponent));
+    auto camComp = camEntity->GetComponent<fl::CameraComponent>();
     
     float rotDegSpeed = camComp->RotSpeed();
     float rotDeg = rotDegSpeed * deltaTime;
@@ -138,12 +137,9 @@ void CameraCtrlSystem::HandleCameraRotate(float deltaTime,fl::Entity* camEntity)
         
         fl::Log::Info(rot);
         
-//        to = glm::normalize(to);
-        
         camComp->SetLookDir(to);
-//        glm::vec3 newLookDir = glm::vec4(camComp->LookDir(),0.0) * rot;
-//        camComp->SetLookDir(newLookDir);
-        printf("xx\n");
+        
+        
     }
 }
 

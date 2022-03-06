@@ -17,7 +17,9 @@ enum class ECameraType
 class CameraComponent : public Component
 {
 public:
+    static const char* ClsName() {return "CameraComponent";}
     CameraComponent(float viewportWidth,float viewportHeight);
+    
     
     inline void SetZNearFar(float zNear,float zFar) { _zNear = zNear;_zFar = zFar;}
     inline void SetFovY(float fovy) {_fovY = fovy;}

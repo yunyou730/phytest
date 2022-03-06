@@ -20,6 +20,15 @@ public:
     bool CheckComponent(const std::set<std::string>& compClsSet);
     void DumpComponent() const;
     
+
+    
+    template<typename CompCls>
+    CompCls* GetComponent()
+    {
+        return GetComponent<CompCls>(CompCls::ClsName());
+    }
+    
+protected:
     template<typename CompCls>
     CompCls* GetComponent(const std::string& compClsName)
     {
