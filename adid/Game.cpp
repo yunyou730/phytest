@@ -115,8 +115,6 @@ void Game::OnPrepare(const fl::LaunchParam& launchParam)
         entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
     }
     */
-    
-    
 }
 
 void Game::OnCleanup()
@@ -142,6 +140,7 @@ void Game::CreateCamera(int viewportWidth,int viewportHeight)
     fl::Entity* entity = GetFramework()->CreateEntity();
     auto cameraComp = new fl::CameraComponent(viewportWidth,viewportHeight);
     cameraComp->SetLookDir(glm::vec3(0,0,1));
+    cameraComp->SetCameraType(fl::ECameraType::Ortho);
     
     entity->AddComponent(CLASS_NAME(CameraComponent), cameraComp);
     
@@ -186,17 +185,14 @@ void Game::CreateTest2()
     transform->SetScale(glm::vec3(1.5,0.2,2.0));
     transform->SetPosition(glm::vec3(0,0.0,0.0));
     
-    
     auto primitiveComp = new fl::PrimitiveComponent(fl::EVertexAttrType::POS_UV_COLOR,true);
     primitiveComp->AddVertex(glm::vec3(-0.5,-0.5,0.0),glm::vec2(0,0),glm::vec3(1,0,0));
     primitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0),glm::vec2(1,0),glm::vec3(0,1,0));
     primitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0),glm::vec2(0,1),glm::vec3(0,0,1));
     primitiveComp->AddVertex(glm::vec3( 0.5, 0.5,0.0),glm::vec2(1,1),glm::vec3(1,1,0));
     primitiveComp->SetIndexData({0,1,2,1,3,2});
-    
     primitiveComp->Commit();
     entity->AddComponent(CLASS_NAME(PrimitiveComponent), primitiveComp);
-    
     
     // render state
     auto renderStateComp = new fl::RenderStateComponent();

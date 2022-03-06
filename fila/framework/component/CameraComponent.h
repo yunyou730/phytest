@@ -20,7 +20,6 @@ public:
     static const char* ClsName() {return "CameraComponent";}
     CameraComponent(float viewportWidth,float viewportHeight);
     
-    
     inline void SetZNearFar(float zNear,float zFar) { _zNear = zNear;_zFar = zFar;}
     inline void SetFovY(float fovy) {_fovY = fovy;}
     inline void SetViewportSize(float width,float height) {_viewportWidth = width;_viewportHeight = height;}
@@ -39,6 +38,8 @@ public:
     
     float MoveSpeed() const { return _moveSpeed;}
     float RotDegSpeed() const { return _rotateDegSpeed;}
+    
+    void SetCameraType(ECameraType camType) { _cameraType = camType;}
     
 protected:
     

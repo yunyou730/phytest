@@ -10,10 +10,10 @@ namespace fl {
 CameraComponent::CameraComponent(float viewportWidth,float viewportHeight)
     :_viewportWidth(viewportWidth)
     ,_viewportHeight(viewportHeight)
+    ,_lookDir(glm::vec3(0,0,1))
+    ,_upDir(glm::vec3(0,1,0))
 {
     _renderLayers.insert(1);
-    _lookDir = glm::vec3(0,0,1);
-    _upDir = glm::vec3(0,1,0);
 }
 
 bool CameraComponent::CheckLayer(int layer)
@@ -41,12 +41,19 @@ glm::mat4& CameraComponent::GetViewMatrix(const glm::vec3& cameraPos)
 
 glm::mat4& CameraComponent::GetProjectionMatrix()
 {
-//    _projectionMatrix = glm::identity<glm::mat4>();
-    // @miao @todo
-    
     float aspect = _viewportWidth / _viewportHeight;
-    _projectionMatrix = glm::perspective(glm::radians(_fovY), aspect, _zNear, _zFar);
-    
+    switch(_cameraType)
+    {
+        case ECameraType::Perspective:
+            _projectionMatrix = glm::perspective(glm::radians(_fovY), aspect, _zNear, _zFar);
+            break;
+        case ECameraType::Ortho:
+            _projectionMatrix = glm::ortho<float>(-aspect,aspect,-1.,1.,_zNear,_zFar);  // fix height,adapth width
+//            _projectionMatrix = glm::ortho<float>(-1,1,-1/aspect,1/aspect,_zNear,_zFar); // fix width,adapth height
+            break;
+        default:
+            break;
+    }
     return _projectionMatrix;
 }
 
