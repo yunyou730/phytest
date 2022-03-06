@@ -7,13 +7,16 @@
 
 namespace fl {
 
+/*
+从上到下，依次序是被嵌套 与 嵌套的关系
+*/
 enum class EVertexAttrType
 {
     POS,
     POS_UV,
     POS_UV_COLOR,
-    POS_UV_COLOR_NORMAL,
-    POS_UV_COLOR_NORMAL_TANGENT_BITANGENT,
+    POS_UV_COLOR_NORMAL,        // temp not suport
+    POS_UV_COLOR_NORMAL_TANGENT_BITANGENT,  // temp not suport
     
     MAX,
 };
@@ -22,7 +25,7 @@ class PrimitiveComponent : public Component
 {
 public:
     static const char* ClsName() {return "PrimitiveComponent";}
-    PrimitiveComponent(EVertexAttrType vertAttrType = EVertexAttrType::POS);
+    PrimitiveComponent(EVertexAttrType vertAttrType,bool bEnableEBO);
     
     void AddVertex(const glm::vec3& pos);
     void AddVertex(const glm::vec3& pos,const glm::vec2& uv);
@@ -39,6 +42,14 @@ public:
     GLuint GetVAO() const;
     
     int GetVerticesCount() const;
+    int GetIndicesCount() const;
+    
+    void SetIndexData(const std::vector<int>& indexData);
+    bool IsEBOEnable() const { return _bEnableEBO;}
+    
+protected:
+    void CommitVBO(int stride);
+    void CommitEBO();
     
 protected:
     int GetVertexStride() const;
@@ -51,6 +62,9 @@ protected:
     GLuint _vao = 0;
     GLuint _vbo = 0;
     GLuint _ebo = 0;
+    
+    bool                _bEnableEBO = false;
+    std::vector<int>    _indexData;
 };
 
 }

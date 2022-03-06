@@ -24,7 +24,7 @@ public:
 protected:
     void CreateCamera(int viewportWidth,int viewportHeight);
     void CreateTest1();
-    
+    void CreateTest2();
 };
 
 }

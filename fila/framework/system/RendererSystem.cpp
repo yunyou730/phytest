@@ -76,15 +76,14 @@ std::vector<Entity*> RendererSystem::GetRenderableEntities()
 
 void RendererSystem::RenderPrimitive(Entity* entity,CameraComponent* cameraComponent)
 {
-    auto premComp = entity->GetComponent<PrimitiveComponent>();
+    auto primComp = entity->GetComponent<PrimitiveComponent>();
     auto renderStateComp = entity->GetComponent<RenderStateComponent>();
     auto targetTransform = entity->GetComponent<TransformComponent>();
     auto cameraTransform = cameraComponent->GetEntity()->GetComponent<TransformComponent>();
     
     // params
     unsigned int shaderId = renderStateComp->GetShaderId();
-    int verticesCount = premComp->GetVerticesCount();
-    GLuint vao = premComp->GetVAO();
+    GLuint vao = primComp->GetVAO();
     assert(vao != 0);
     
     GLuint primitiveType = HandlePrimitiveType(renderStateComp);
@@ -96,7 +95,15 @@ void RendererSystem::RenderPrimitive(Entity* entity,CameraComponent* cameraCompo
     HandleMVP(shader,targetTransform,cameraTransform,cameraComponent);
     
     glBindVertexArray(vao);
-    glDrawArrays(primitiveType,0,verticesCount);
+
+    if(primComp->IsEBOEnable())
+    {
+        glDrawElements(primitiveType,primComp->GetIndicesCount(),GL_UNSIGNED_INT,0);
+    }
+    else
+    {
+        glDrawArrays(primitiveType,0,primComp->GetVerticesCount());
+    }
     glBindVertexArray(0);
     shader->UnUse();
 }

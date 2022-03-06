@@ -15,8 +15,9 @@ static const int kNormalSize    = 3;
 static const int kTangentSize   = 3;
 static const int kBitangentSize = 3;
 
-PrimitiveComponent::PrimitiveComponent(EVertexAttrType vertAttrType)
+PrimitiveComponent::PrimitiveComponent(EVertexAttrType vertAttrType,bool bEnableEBO)
     :_vertAttrType(vertAttrType)
+    ,_bEnableEBO(bEnableEBO)
 {
     
 }
@@ -131,75 +132,104 @@ void PrimitiveComponent::Commit()
     glGenVertexArrays(1,&_vao);
     glGenBuffers(1,&_vbo);
     
+    
     glBindVertexArray(_vao);
     {
-        /*
-         POS,
-         POS_UV,
-         POS_UV_COLOR,
-         POS_UV_COLOR_NORMAL,
-         POS_UV_COLOR_NORMAL_TANGENT_BITANGENT,
-         **/
-        
-        glBindBuffer(GL_ARRAY_BUFFER,_vbo);
+        CommitVBO(stride);
+        if(_bEnableEBO)
         {
-            // pass data to vbo
-            glBufferData(GL_ARRAY_BUFFER,sizeof(_vertexData[0]) * _vertexData.size(),&_vertexData[0],GL_STATIC_DRAW);
-            
-            // specy how to explain data format
-            switch(_vertAttrType)
-            {
-                case EVertexAttrType::POS:
-                {
-
-                    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)0);
-                    glEnableVertexAttribArray(0);
-                }
-                    break;
-                case EVertexAttrType::POS_UV:
-                {
-                    // slot 0,pos
-                    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,stride* sizeof(float),(void*)0);
-                    glEnableVertexAttribArray(0);
-                    // slot 1, uv
-                    glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)(sizeof(GL_FLOAT) * 3));
-                    glEnableVertexAttribArray(1);
-                }
-                    break;
-                case EVertexAttrType::POS_UV_COLOR:
-                {
-                    // slot 0,pos
-                    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,stride* sizeof(float),(void*)0);
-                    glEnableVertexAttribArray(0);
-                    // slot 1, uv
-                    glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)(sizeof(GL_FLOAT) * 3));
-                    glEnableVertexAttribArray(1);
-                    // slot 2, color
-                    glVertexAttribPointer(2,3,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)(sizeof(GL_FLOAT) * 5));
-                    glEnableVertexAttribArray(2);
-                }
-                    break;
-                default:
-                    assert(false);
-                    break;
-            }
+            glGenBuffers(1,&_ebo);
+            CommitEBO();
         }
-        glBindBuffer(GL_ARRAY_BUFFER,0);
-        
     }
     glBindVertexArray(0);
 }
 
+void PrimitiveComponent::CommitVBO(int stride)
+{
+    glBindBuffer(GL_ARRAY_BUFFER,_vbo);
+    {
+        // pass data to vbo
+        assert(_vertexData.size() > 0);
+        unsigned long bufferSize = sizeof(_vertexData[0]) * _vertexData.size();
+        void* bufferAddress = &_vertexData[0];
+        glBufferData(GL_ARRAY_BUFFER,bufferSize,bufferAddress,GL_STATIC_DRAW);
+        
+        // specy how to explain data format
+        switch(_vertAttrType)
+        {
+            case EVertexAttrType::POS:
+            {
+
+                glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)0);
+                glEnableVertexAttribArray(0);
+            }
+                break;
+            case EVertexAttrType::POS_UV:
+            {
+                // slot 0,pos
+                glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,stride* sizeof(float),(void*)0);
+                glEnableVertexAttribArray(0);
+                // slot 1, uv
+                glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)(sizeof(GL_FLOAT) * 3));
+                glEnableVertexAttribArray(1);
+            }
+                break;
+            case EVertexAttrType::POS_UV_COLOR:
+            {
+                // slot 0,pos
+                glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,stride* sizeof(float),(void*)0);
+                glEnableVertexAttribArray(0);
+                // slot 1, uv
+                glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)(sizeof(GL_FLOAT) * 3));
+                glEnableVertexAttribArray(1);
+                // slot 2, color
+                glVertexAttribPointer(2,3,GL_FLOAT,GL_FALSE,stride * sizeof(float),(void*)(sizeof(GL_FLOAT) * 5));
+                glEnableVertexAttribArray(2);
+            }
+                break;
+            default:
+                assert(false);
+                break;
+        }
+    }
+    glBindBuffer(GL_ARRAY_BUFFER,0);
+}
+
+void PrimitiveComponent::CommitEBO()
+{
+    assert(_indexData.size() > 0);
+    const unsigned long bufferSize = sizeof(_indexData[0]) * _indexData.size();
+    const void* bufferAddress = &_indexData[0];
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _ebo);
+    {
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, bufferSize, bufferAddress, GL_STATIC_DRAW);
+    }
+//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);  // must keep EBO bound !
+}
+
 GLuint PrimitiveComponent::GetVAO() const
 {
-    
     return _vao;
 }
 
 int PrimitiveComponent::GetVerticesCount() const
 {
-    return _vertexData.size() / GetVertexStride();
+    return (int)_vertexData.size() / GetVertexStride();
 }
+
+int PrimitiveComponent::GetIndicesCount() const
+{
+    return (int)_indexData.size();
+}
+
+void PrimitiveComponent::SetIndexData(const std::vector<int>& indexData)
+{
+    // todo
+    // do more check
+    _indexData = indexData;
+}
+
 
 }
 
