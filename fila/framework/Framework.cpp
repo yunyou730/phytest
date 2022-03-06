@@ -107,5 +107,15 @@ std::vector<Entity*> Framework::QueryEntityWithCompSet(std::set<std::string> com
     return entities;
 }
 
+Entity* Framework::GetEntity(const int entityID)
+{
+    auto it = _entityMap.find(entityID);
+    if(it != _entityMap.end())
+    {
+        return it->second;
+    }
+    return nullptr;
+}
+
 }
 

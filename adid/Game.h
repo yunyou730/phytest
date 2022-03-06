@@ -22,9 +22,12 @@ public:
     
     
 protected:
-    void CreateCamera(int viewportWidth,int viewportHeight);
-    void CreateTest1();
-    void CreateTest2();
+    void CreatePersCamera(int viewportWidth,int viewportHeight);
+    void CreateOthoCamera(int viewportWidth,int viewportHeight);
+    
+    void CreateVBOTest();
+    void CreateEBOTest();
+    void CreateBox();
 };
 
 }

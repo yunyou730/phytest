@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B586D0427D2763D00833F2F /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D0127D2763C00833F2F /* Scene.cpp */; };
-		2B586D0527D2763D00833F2F /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D0327D2763C00833F2F /* Camera.cpp */; };
 		2B586D1027D332FB00833F2F /* CameraCtrlSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */; };
+		2B586D1627D4A58E00833F2F /* TestMoveSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D1527D4A58E00833F2F /* TestMoveSystem.cpp */; };
 		2B6003B427C7EC5C00B19562 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B227C7EC5C00B19562 /* Game.cpp */; };
 		2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */; };
 		2B60074227C7F7C400B19562 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60068527C7F7C400B19562 /* glm.cpp */; };
@@ -532,12 +531,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2B586D0027D2763C00833F2F /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
-		2B586D0127D2763C00833F2F /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
-		2B586D0227D2763C00833F2F /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
-		2B586D0327D2763C00833F2F /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraCtrlSystem.cpp; sourceTree = "<group>"; };
 		2B586D0F27D332FB00833F2F /* CameraCtrlSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCtrlSystem.h; sourceTree = "<group>"; };
+		2B586D1427D4A58E00833F2F /* TestMoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMoveSystem.h; sourceTree = "<group>"; };
+		2B586D1527D4A58E00833F2F /* TestMoveSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestMoveSystem.cpp; sourceTree = "<group>"; };
 		2B6003B227C7EC5C00B19562 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		2B6003B327C7EC5C00B19562 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
@@ -1622,17 +1619,6 @@
 			path = fila/res;
 			sourceTree = SOURCE_ROOT;
 		};
-		2B60092527CCBE6300B19562 /* wrapper */ = {
-			isa = PBXGroup;
-			children = (
-				2B586D0327D2763C00833F2F /* Camera.cpp */,
-				2B586D0227D2763C00833F2F /* Camera.h */,
-				2B586D0127D2763C00833F2F /* Scene.cpp */,
-				2B586D0027D2763C00833F2F /* Scene.h */,
-			);
-			path = wrapper;
-			sourceTree = "<group>";
-		};
 		2BFE8AD027C3E360001F171C = {
 			isa = PBXGroup;
 			children = (
@@ -1660,6 +1646,8 @@
 				2B6003B327C7EC5C00B19562 /* Game.h */,
 				2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */,
 				2B586D0F27D332FB00833F2F /* CameraCtrlSystem.h */,
+				2B586D1527D4A58E00833F2F /* TestMoveSystem.cpp */,
+				2B586D1427D4A58E00833F2F /* TestMoveSystem.h */,
 			);
 			path = adid;
 			sourceTree = "<group>";
@@ -2010,7 +1998,6 @@
 				2BFE8C7127C47B30001F171C /* window */,
 				2B6008EC27C9545000B19562 /* io */,
 				2BFE8CA227C4A045001F171C /* utils */,
-				2B60092527CCBE6300B19562 /* wrapper */,
 				2B6008F227C954AB00B19562 /* res */,
 			);
 			path = fila;
@@ -2371,7 +2358,6 @@
 				2B60081227C7F7EA00B19562 /* _features.hpp in Sources */,
 				2B60081327C7F7EA00B19562 /* func_integer.inl in Sources */,
 				2B60081427C7F7EA00B19562 /* _vectorize.hpp in Sources */,
-				2B586D0527D2763D00833F2F /* Camera.cpp in Sources */,
 				2B60081527C7F7EA00B19562 /* func_geometric.inl in Sources */,
 				2B60081627C7F7EA00B19562 /* type_quat.hpp in Sources */,
 				2B60081727C7F7EA00B19562 /* func_common.inl in Sources */,
@@ -2427,6 +2413,7 @@
 				2B60084927C7F7EA00B19562 /* vec1.hpp in Sources */,
 				2B60084A27C7F7EA00B19562 /* type_precision.inl in Sources */,
 				2B60084B27C7F7EA00B19562 /* bitfield.inl in Sources */,
+				2B586D1627D4A58E00833F2F /* TestMoveSystem.cpp in Sources */,
 				2B60084C27C7F7EA00B19562 /* ulp.hpp in Sources */,
 				2B60084D27C7F7EA00B19562 /* round.inl in Sources */,
 				2B60084E27C7F7EA00B19562 /* packing.hpp in Sources */,
@@ -2506,7 +2493,6 @@
 				2B60089527C7F7EB00B19562 /* float_notmalize.inl in Sources */,
 				2B60089627C7F7EB00B19562 /* transform.hpp in Sources */,
 				2B60089727C7F7EB00B19562 /* bit.hpp in Sources */,
-				2B586D0427D2763D00833F2F /* Scene.cpp in Sources */,
 				2B60089827C7F7EB00B19562 /* number_precision.hpp in Sources */,
 				2B60089927C7F7EB00B19562 /* mixed_product.hpp in Sources */,
 				2B60089A27C7F7EB00B19562 /* closest_point.inl in Sources */,

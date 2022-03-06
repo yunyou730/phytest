@@ -11,6 +11,9 @@ public:
     void SetEntity(Entity* entity) { _entity = entity; }
     Entity* GetEntity() { return _entity;}
     
+    
+    static const char* ClsName();
+    
 protected:
     Entity* _entity = nullptr;
     

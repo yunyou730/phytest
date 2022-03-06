@@ -44,6 +44,7 @@ public:
 public:
     Entity* CreateEntity();
     std::vector<Entity*> QueryEntityWithCompSet(std::set<std::string> compSet);
+    Entity* GetEntity(const int entityID);
         
 protected:
     unsigned int NextEntityID();
