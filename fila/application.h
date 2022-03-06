@@ -13,7 +13,7 @@ public:
     Application();
     virtual ~Application();
     
-    virtual void OnPrepare(const fl::LaunchParam& launchParam);
+    virtual void OnPrepare(Window* window,const fl::LaunchParam& launchParam);
     virtual void OnCleanup();
     
     virtual void OnUpdate();
@@ -29,6 +29,8 @@ public:
     
     void SetShouldExit() {_bShallExit = true;}
     bool ShallExit() const { return _bShallExit; }
+    
+    Window* GetWindow() { return _window; }
     
 // managers
 public:
@@ -50,6 +52,8 @@ protected:
     
 // managers
     ShaderManager* _shaderManager = nullptr;
+    
+    Window* _window = nullptr;
 };
 
 }

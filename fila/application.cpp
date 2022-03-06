@@ -4,6 +4,7 @@
 
 #include "TestSystem.h"
 #include "RendererSystem.h"
+#include "ImGuiSystem.h"
 
 // managers
 #include "renderer/ShaderManager.h"
@@ -19,16 +20,19 @@ Application::Application()
 
 Application::~Application()
 {
-
+    
 }
 
-void Application::OnPrepare(const LaunchParam& launchParam)
+void Application::OnPrepare(Window* window,const LaunchParam& launchParam)
 {
+    _window = window;
+    
     _shaderManager = new ShaderManager();
     _framework = new Framework(this);
     
     // system
     _framework->RegisterSystem(new RendererSystem(_framework));
+    _framework->RegisterSystem(new ImGuiSystem(_framework));
     
     // world component
     auto globalRenderParam = new WCGlobalRenderParam();

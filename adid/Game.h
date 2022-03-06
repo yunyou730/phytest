@@ -14,7 +14,7 @@ public:
     Game();
     virtual ~Game();
     
-    virtual void OnPrepare(const fl::LaunchParam& launchParam);
+    virtual void OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam);
     virtual void OnCleanup();
     
     virtual void OnUpdate();

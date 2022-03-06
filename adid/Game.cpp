@@ -23,9 +23,9 @@ Game::~Game()
     
 }
 
-void Game::OnPrepare(const fl::LaunchParam& launchParam)
+void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
 {
-    fl::Application::OnPrepare(launchParam);
+    fl::Application::OnPrepare(window,launchParam);
     
     GetFramework()->RegisterSystem(new CameraCtrlSystem(GetFramework()));
     GetFramework()->RegisterSystem(new TestMoveSystem(GetFramework()));

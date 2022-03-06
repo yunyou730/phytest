@@ -64,12 +64,13 @@ bool Window::Create()
 
 void Window::MainLoop(Application* app,const LaunchParam& launchParam)
 {
-    app->OnPrepare(launchParam);
+    app->OnPrepare(this,launchParam);
     app->SetDesireFPS(60);
     
     _fpsTimeCounter = glfwGetTime();
     
-    while(!app->ShallExit())
+    
+    while(!app->ShallExit() || !glfwWindowShouldClose(_window))
     {
         float deltaTime = ProcessFPS(app->GetDesireFPS());
         app->SetDeltaTime(deltaTime);
@@ -77,6 +78,7 @@ void Window::MainLoop(Application* app,const LaunchParam& launchParam)
         app->ProcessInput(this);
         app->OnUpdate();
         
+            
         // Render code here
         glClear(GL_COLOR_BUFFER_BIT); // render begin
         app->OnRenderer();
