@@ -69,6 +69,13 @@ void Application::ProcessInput(Window* window)
     RefreshKeyState(window,input,GLFW_KEY_DOWN,EInputKey::KEY_DOWN);
     RefreshKeyState(window,input,GLFW_KEY_LEFT,EInputKey::KEY_LEFT);
     RefreshKeyState(window,input,GLFW_KEY_RIGHT,EInputKey::KEY_RIGHT);
+    RefreshKeyState(window,input,GLFW_KEY_W,EInputKey::KEY_W);
+    RefreshKeyState(window,input,GLFW_KEY_S,EInputKey::KEY_S);
+    RefreshKeyState(window,input,GLFW_KEY_A,EInputKey::KEY_A);
+    RefreshKeyState(window,input,GLFW_KEY_D,EInputKey::KEY_D);
+    RefreshKeyState(window,input,GLFW_KEY_Q,EInputKey::KEY_Q);
+    RefreshKeyState(window,input,GLFW_KEY_E,EInputKey::KEY_E);
+    
     
     if(input->GetState(EInputKey::KEY_ESC) == EKeyState::PRESS)
     {

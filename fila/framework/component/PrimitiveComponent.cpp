@@ -1,4 +1,4 @@
-#include "PremitiveComponent.h"
+#include "PrimitiveComponent.h"
 #include <cassert>
 
 namespace fl
@@ -15,13 +15,13 @@ static const int kNormalSize    = 3;
 static const int kTangentSize   = 3;
 static const int kBitangentSize = 3;
 
-PremitiveComponent::PremitiveComponent(EVertexAttrType vertAttrType)
+PrimitiveComponent::PrimitiveComponent(EVertexAttrType vertAttrType)
     :_vertAttrType(vertAttrType)
 {
     
 }
 
-void PremitiveComponent::AddVertex(const glm::vec3& pos)
+void PrimitiveComponent::AddVertex(const glm::vec3& pos)
 {
     _vertexData.push_back(pos.x);
     _vertexData.push_back(pos.y);
@@ -35,21 +35,21 @@ void PremitiveComponent::AddVertex(const glm::vec3& pos)
     }
 }
 
-void PremitiveComponent::AddVertex(const glm::vec3& pos,const glm::vec2& uv)
+void PrimitiveComponent::AddVertex(const glm::vec3& pos,const glm::vec2& uv)
 {
     assert(_vertAttrType >= EVertexAttrType::POS_UV);
     AddVertex(pos);
     SetVertexUV(GetVerticesCount() - 1,uv);
 }
 
-void PremitiveComponent::AddVertex(const glm::vec3& pos,const glm::vec2& uv,const glm::vec3& color)
+void PrimitiveComponent::AddVertex(const glm::vec3& pos,const glm::vec2& uv,const glm::vec3& color)
 {
     assert(_vertAttrType >= EVertexAttrType::POS_UV_COLOR);
     AddVertex(pos,uv);
     SetVertexColor(GetVerticesCount() - 1,color);
 }
 
-void PremitiveComponent::SetVertexPos(int vertexIndex,const glm::vec3& pos)
+void PrimitiveComponent::SetVertexPos(int vertexIndex,const glm::vec3& pos)
 {
     int subIndex = GetVertexStride() * vertexIndex;
     _vertexData[subIndex++] = pos.x;
@@ -58,7 +58,7 @@ void PremitiveComponent::SetVertexPos(int vertexIndex,const glm::vec3& pos)
 }
 
 
-void PremitiveComponent::SetVertexUV(int vertexIndex,const glm::vec2& uv)
+void PrimitiveComponent::SetVertexUV(int vertexIndex,const glm::vec2& uv)
 {
     assert(_vertAttrType >= EVertexAttrType::POS_UV);
     int subIndex = GetVertexStride() * vertexIndex + kPosSize;
@@ -66,7 +66,7 @@ void PremitiveComponent::SetVertexUV(int vertexIndex,const glm::vec2& uv)
     _vertexData[subIndex++] = uv.y;
 }
 
-void PremitiveComponent::SetVertexColor(int vertexIndex,const glm::vec3& color)
+void PrimitiveComponent::SetVertexColor(int vertexIndex,const glm::vec3& color)
 {
     assert(_vertAttrType >= EVertexAttrType::POS_UV_COLOR);
     int subIndex = GetVertexStride() * vertexIndex + kPosSize + kUVSize;
@@ -75,7 +75,7 @@ void PremitiveComponent::SetVertexColor(int vertexIndex,const glm::vec3& color)
     _vertexData[subIndex++] = color.b;
 }
 
-void PremitiveComponent::SetVertexNormal(int vertexIndex,const glm::vec3& normal)
+void PrimitiveComponent::SetVertexNormal(int vertexIndex,const glm::vec3& normal)
 {
     assert(_vertAttrType >= EVertexAttrType::POS_UV_COLOR_NORMAL);
     int subIndex = GetVertexStride() * vertexIndex + kPosSize + kUVSize + kColorSize;
@@ -84,7 +84,7 @@ void PremitiveComponent::SetVertexNormal(int vertexIndex,const glm::vec3& normal
     _vertexData[subIndex++] = normal.z;
 }
 
-void PremitiveComponent::SetVertexTangent(int vertexIndex,const glm::vec3& tangent)
+void PrimitiveComponent::SetVertexTangent(int vertexIndex,const glm::vec3& tangent)
 {
     assert(_vertAttrType >= EVertexAttrType::POS_UV_COLOR_NORMAL_TANGENT_BITANGENT);
     int subIndex = GetVertexStride() * vertexIndex + kPosSize + kUVSize + kColorSize + kNormalSize;
@@ -93,7 +93,7 @@ void PremitiveComponent::SetVertexTangent(int vertexIndex,const glm::vec3& tange
     _vertexData[subIndex++] = tangent.z;
 }
 
-void PremitiveComponent::SetVertexBitangent(int vertexIndex,const glm::vec3& bitangent)
+void PrimitiveComponent::SetVertexBitangent(int vertexIndex,const glm::vec3& bitangent)
 {
     assert(_vertAttrType >= EVertexAttrType::POS_UV_COLOR_NORMAL_TANGENT_BITANGENT);
     int subIndex = GetVertexStride() * vertexIndex + kPosSize + kUVSize + kColorSize + kNormalSize + kTangentSize;
@@ -102,7 +102,7 @@ void PremitiveComponent::SetVertexBitangent(int vertexIndex,const glm::vec3& bit
     _vertexData[subIndex++] = bitangent.z;
 }
 
-int PremitiveComponent::GetVertexStride() const
+int PrimitiveComponent::GetVertexStride() const
 {
     switch(_vertAttrType)
     {
@@ -122,7 +122,7 @@ int PremitiveComponent::GetVertexStride() const
     return 0;
 }
 
-void PremitiveComponent::Commit()
+void PrimitiveComponent::Commit()
 {
     assert(_vertexData.size() > 0);
     
@@ -190,13 +190,13 @@ void PremitiveComponent::Commit()
     glBindVertexArray(0);
 }
 
-GLuint PremitiveComponent::GetVAO() const
+GLuint PrimitiveComponent::GetVAO() const
 {
     
     return _vao;
 }
 
-int PremitiveComponent::GetVerticesCount() const
+int PrimitiveComponent::GetVerticesCount() const
 {
     return _vertexData.size() / GetVertexStride();
 }

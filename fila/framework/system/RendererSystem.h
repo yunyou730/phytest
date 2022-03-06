@@ -6,7 +6,7 @@ namespace fl {
 
 class Framework;
 class Entity;
-class PremitiveComponent;
+class PrimitiveComponent;
 class CameraComponent;
 class TransformComponent;
 class CameraComponent;
@@ -26,7 +26,7 @@ protected:
     std::vector<Entity*> GetCameraEntities();
     std::vector<Entity*> GetRenderableEntities();
     
-    void RenderPremitive(Entity* entity,CameraComponent* camComp);
+    void RenderPrimitive(Entity* entity,CameraComponent* camComp);
     GLuint HandlePrimitiveType(RenderStateComponent* renderStateComp);
     void HandleFillMode(RenderStateComponent* renderStateComp);
     void HandleMVP(ShaderProgram* shader,TransformComponent* targetTransform,TransformComponent* cameraTransform,CameraComponent* cameraComp);

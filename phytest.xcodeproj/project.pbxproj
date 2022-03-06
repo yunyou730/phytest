@@ -506,7 +506,7 @@
 		2BFE8CA727C4A045001F171C /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CA327C4A045001F171C /* common.cpp */; };
 		2BFE8CA827C4A045001F171C /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CA427C4A045001F171C /* log.cpp */; };
 		2BFE8CAE27C4A886001F171C /* WorldComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CAD27C4A886001F171C /* WorldComponent.cpp */; };
-		2BFE8CBD27C60276001F171C /* PremitiveComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CBC27C60276001F171C /* PremitiveComponent.cpp */; };
+		2BFE8CBD27C60276001F171C /* PrimitiveComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CBC27C60276001F171C /* PrimitiveComponent.cpp */; };
 		2BFE8CC127C6028B001F171C /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CC027C6028B001F171C /* Component.cpp */; };
 		2BFE8CC527C60540001F171C /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CC327C60540001F171C /* Entity.cpp */; };
 /* End PBXBuildFile section */
@@ -1108,8 +1108,8 @@
 		2BFE8CA627C4A045001F171C /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
 		2BFE8CAC27C4A886001F171C /* WorldComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldComponent.h; sourceTree = "<group>"; };
 		2BFE8CAD27C4A886001F171C /* WorldComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldComponent.cpp; sourceTree = "<group>"; };
-		2BFE8CBB27C60276001F171C /* PremitiveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PremitiveComponent.h; sourceTree = "<group>"; };
-		2BFE8CBC27C60276001F171C /* PremitiveComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PremitiveComponent.cpp; sourceTree = "<group>"; };
+		2BFE8CBB27C60276001F171C /* PrimitiveComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimitiveComponent.h; sourceTree = "<group>"; };
+		2BFE8CBC27C60276001F171C /* PrimitiveComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrimitiveComponent.cpp; sourceTree = "<group>"; };
 		2BFE8CBF27C6028A001F171C /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 		2BFE8CC027C6028B001F171C /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
 		2BFE8CC327C60540001F171C /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
@@ -2092,8 +2092,8 @@
 			children = (
 				2BFE8CBF27C6028A001F171C /* Component.h */,
 				2BFE8CC027C6028B001F171C /* Component.cpp */,
-				2BFE8CBB27C60276001F171C /* PremitiveComponent.h */,
-				2BFE8CBC27C60276001F171C /* PremitiveComponent.cpp */,
+				2BFE8CBB27C60276001F171C /* PrimitiveComponent.h */,
+				2BFE8CBC27C60276001F171C /* PrimitiveComponent.cpp */,
 				2B60090127C9F78600B19562 /* RenderStateComponent.cpp */,
 				2B60090027C9F78600B19562 /* RenderStateComponent.h */,
 				2B60091827CA904C00B19562 /* TransformComponent.cpp */,
@@ -2613,7 +2613,7 @@
 				2BFE8C8A27C485E7001F171C /* Framework.cpp in Sources */,
 				2BFE8C2527C476BC001F171C /* b2_contact_solver.cpp in Sources */,
 				2BFE8C9427C485F7001F171C /* RendererSystem.cpp in Sources */,
-				2BFE8CBD27C60276001F171C /* PremitiveComponent.cpp in Sources */,
+				2BFE8CBD27C60276001F171C /* PrimitiveComponent.cpp in Sources */,
 				2BFE8C2C27C476BC001F171C /* b2_edge_polygon_contact.cpp in Sources */,
 				2BFE8C3827C476BC001F171C /* b2_rope.cpp in Sources */,
 				2BFE8C2627C476BC001F171C /* b2_world_callbacks.cpp in Sources */,

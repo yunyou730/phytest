@@ -3,7 +3,7 @@
 #include <set>
 #include <string>
 
-#include "PremitiveComponent.h"
+#include "PrimitiveComponent.h"
 
 namespace fl {
 

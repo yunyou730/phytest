@@ -15,7 +15,8 @@ public:
     
 protected:
     void DumpKeyboardState();
-    void HandleCameraMove(fl::Entity* camEntity);
+    void HandleCameraMove(float deltaTime,fl::Entity* camEntity);
+    void HandleCameraRotate(float deltaTime,fl::Entity* camEntity);
     
 protected:
     fl::WCKeyboardInput* _keyboardInput = nullptr;

@@ -28,10 +28,15 @@ public:
     
     void SetLookDir(const glm::vec3& lookDir);
     
+    glm::vec3 LookDir() const;
+    glm::vec3 UpDir() const;
+    glm::vec3 RightDir() const;
+    
     glm::mat4& GetViewMatrix(const glm::vec3& cameraPos);
     glm::mat4& GetProjectionMatrix();
     
     float MoveSpeed() const { return _moveSpeed;}
+    float RotSpeed() const { return _rotateDegSpeed;}
     
 protected:
     
@@ -46,6 +51,7 @@ protected:
     float _fovY = 60.0f;
     
     glm::vec3 _lookDir;
+    glm::vec3 _upDir;
     
     glm::mat4 _viewMatrix;
     glm::mat4 _projectionMatrix;
@@ -54,6 +60,8 @@ protected:
     std::set<int> _renderLayers;
     
     float _moveSpeed = 2.0f;
+    float _rotateDegSpeed = 10.0f;
+    
 };
 
 }

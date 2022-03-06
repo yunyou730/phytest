@@ -46,6 +46,8 @@ enum class EInputKey
     KEY_A,
     KEY_D,
     
+    KEY_Q,
+    KEY_E,
     
     Max,
 };

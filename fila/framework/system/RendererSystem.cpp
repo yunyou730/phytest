@@ -8,7 +8,7 @@
 #include <string>
 
 #include "Entity.h"
-#include "PremitiveComponent.h"
+#include "PrimitiveComponent.h"
 #include "RenderStateComponent.h"
 #include "CameraComponent.h"
 #include "TransformComponent.h"
@@ -51,7 +51,7 @@ void RendererSystem::Renderer()
             RenderStateComponent* renderStateComp = entity->GetComponent<RenderStateComponent>(CLASS_NAME(RenderStateComponent));
             if(camComp->CheckLayer(renderStateComp->GetRenderLayer()))
             {
-                RenderPremitive(entity,camComp);
+                RenderPrimitive(entity,camComp);
             }
         }
     }
@@ -67,16 +67,16 @@ std::vector<Entity*> RendererSystem::GetCameraEntities()
 std::vector<Entity*> RendererSystem::GetRenderableEntities()
 {
     std::set<std::string> compSet;
-    compSet.insert(CLASS_NAME(PremitiveComponent));
+    compSet.insert(CLASS_NAME(PrimitiveComponent));
     compSet.insert(CLASS_NAME(RenderStateComponent));
     
     std::vector<Entity*> renderEntities = GetFramework()->QueryEntityWithCompSet(compSet);
     return renderEntities;
 }
 
-void RendererSystem::RenderPremitive(Entity* entity,CameraComponent* cameraComponent)
+void RendererSystem::RenderPrimitive(Entity* entity,CameraComponent* cameraComponent)
 {
-    auto premComp = entity->GetComponent<PremitiveComponent>(CLASS_NAME(PremitiveComponent));
+    auto premComp = entity->GetComponent<PrimitiveComponent>(CLASS_NAME(PrimitiveComponent));
     auto renderStateComp = entity->GetComponent<RenderStateComponent>(CLASS_NAME(RenderStateComponent));
     auto targetTransform = entity->GetComponent<TransformComponent>(CLASS_NAME(TransformComponent));
     auto cameraTransform = cameraComponent->GetEntity()->GetComponent<TransformComponent>(CLASS_NAME(TransformComponent));

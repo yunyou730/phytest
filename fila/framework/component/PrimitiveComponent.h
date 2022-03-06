@@ -18,10 +18,10 @@ enum class EVertexAttrType
     MAX,
 };
 
-class PremitiveComponent : public Component
+class PrimitiveComponent : public Component
 {
 public:
-    PremitiveComponent(EVertexAttrType vertAttrType = EVertexAttrType::POS);
+    PrimitiveComponent(EVertexAttrType vertAttrType = EVertexAttrType::POS);
     
     void AddVertex(const glm::vec3& pos);
     void AddVertex(const glm::vec3& pos,const glm::vec2& uv);
