@@ -154,9 +154,8 @@ void Game::CreateTest1()
     fl::Entity* entity = GetFramework()->CreateEntity();
     
     auto transform = entity->GetComponent<fl::TransformComponent>();
-    transform->SetScale(glm::vec3(1.0,1.2,1.0));
-//        transform->SetRotationZ(45);
-    transform->SetPosition(glm::vec3(0.0,0.0,0.0));
+//    transform->SetScale(glm::vec3(1.0,1.2,1.0));
+//    transform->SetPosition(glm::vec3(0.0,0.0,0.0));
     
     // primitve
     auto primitiveComp = new fl::PrimitiveComponent(fl::EVertexAttrType::POS_UV_COLOR);

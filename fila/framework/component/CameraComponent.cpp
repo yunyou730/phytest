@@ -62,7 +62,7 @@ glm::vec3 CameraComponent::UpDir() const
 
 glm::vec3 CameraComponent::RightDir() const
 {
-    glm::vec3 right = glm::cross(_lookDir,_upDir);
+    glm::vec3 right = -glm::cross(_lookDir,_upDir);
     return glm::normalize(right);
 }
 

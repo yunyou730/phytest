@@ -86,11 +86,9 @@ void CameraCtrlSystem::HandleCameraRotate(float deltaTime,fl::Entity* camEntity)
     
     auto camComp = camEntity->GetComponent<fl::CameraComponent>();
     
-    float rotDegSpeed = camComp->RotSpeed();
+    float rotDegSpeed = camComp->RotDegSpeed();
     float rotDeg = rotDegSpeed * deltaTime;
     
-    
-    // @miao @todo
     
     glm::mat4 rot(1.0);
     glm::vec3 rotByEachAxis(0.0);
@@ -106,11 +104,11 @@ void CameraCtrlSystem::HandleCameraRotate(float deltaTime,fl::Entity* camEntity)
     
     if(_keyboardInput->IsKeyPressed(fl::EInputKey::KEY_A))
     {
-        rotByEachAxis.y += rotDeg;
+        rotByEachAxis.y -= rotDeg;
     }
     if(_keyboardInput->IsKeyPressed(fl::EInputKey::KEY_D))
     {
-        rotByEachAxis.y -= rotDeg;
+        rotByEachAxis.y += rotDeg;
     }
     
     if(_keyboardInput->IsKeyPressed(fl::EInputKey::KEY_Q))
@@ -125,21 +123,18 @@ void CameraCtrlSystem::HandleCameraRotate(float deltaTime,fl::Entity* camEntity)
     
     if(glm::length(rotByEachAxis) > 0.0f)
     {
-        rot = glm::rotate(rot,glm::radians<float>(rotByEachAxis.x),glm::vec3(1,0,0));
-        rot = glm::rotate(rot,glm::radians<float>(rotByEachAxis.y),glm::vec3(0,1,0));
+        rot = glm::rotate(rot,glm::radians<float>(rotByEachAxis.x),camComp->RightDir());
+        rot = glm::rotate(rot,glm::radians<float>(rotByEachAxis.y),camComp->UpDir());
 //        rot = glm::rotate(rot,glm::radians<float>(rotByEachAxis.z),glm::vec3(0,0,1));
-        
 //        rot = rot * mat;
 //        rot = mat * rot;
         
         glm::vec4 from = glm::vec4(camComp->LookDir(),0.0);
         glm::vec4 to = from * rot;
         
-        fl::Log::Info(rot);
+//        fl::Log::Info(rot);
         
         camComp->SetLookDir(to);
-        
-        
     }
 }
 

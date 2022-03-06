@@ -38,7 +38,7 @@ public:
     glm::mat4& GetProjectionMatrix();
     
     float MoveSpeed() const { return _moveSpeed;}
-    float RotSpeed() const { return _rotateDegSpeed;}
+    float RotDegSpeed() const { return _rotateDegSpeed;}
     
 protected:
     
@@ -62,7 +62,7 @@ protected:
     std::set<int> _renderLayers;
     
     float _moveSpeed = 2.0f;
-    float _rotateDegSpeed = 10.0f;
+    float _rotateDegSpeed = 90.0f;
     
 };
 

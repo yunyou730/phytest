@@ -4,6 +4,9 @@
 namespace fl {
 
 TransformComponent::TransformComponent()
+    :_pos(glm::vec3(0.0))
+    ,_scale(glm::vec3(1.0))
+    ,_rotByEachAxis(glm::vec3(0.0))
 {
     
 }
@@ -104,7 +107,6 @@ void TransformComponent::CalcModelMatrix()
     rotByZ = glm::rotate(rotByX,glm::radians(_rotByEachAxis.z) , glm::vec3(0.0f, 0.0f, 1.0f));
     
     glm::mat4 rot = rotByX * rotByY * rotByZ;
-    
     
     // translate part
     glm::mat4 translate(1.0);
