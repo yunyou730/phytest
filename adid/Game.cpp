@@ -242,12 +242,19 @@ void Game::CreateBox()
     primComp->AddVertex(glm::vec3(-0.5, 0.5,-0.5),glm::vec2(1,1),glm::vec3(1,1,0));
     
     // right
+    primComp->AddVertex(glm::vec3( 0.5,-0.5,-0.5),glm::vec2(0,0),glm::vec3(1,0,0));
+    primComp->AddVertex(glm::vec3( 0.5,-0.5, 0.5),glm::vec2(1,0),glm::vec3(0,1,0));
+    primComp->AddVertex(glm::vec3( 0.5, 0.5,-0.5),glm::vec2(0,1),glm::vec3(0,0,1));
+    primComp->AddVertex(glm::vec3( 0.5, 0.5, 0.5),glm::vec2(1,1),glm::vec3(1,1,0));
     
+    // top & bottom
+    // todo
     
     primComp->SetIndexData({
         0,1,2,1,2,3,        // near
         4,5,6,5,6,7,        // far
-        8,9,10,9,10,11      // left
+        8,9,10,9,10,11,      // left
+        12,13,14,13,14,15,  // right
         
     });
     primComp->Commit();
