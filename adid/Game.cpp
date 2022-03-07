@@ -11,6 +11,7 @@
 #include "CameraCtrlSystem.h"
 #include "TestMoveSystem.h"
 #include "HierarchyGUISystem.h"
+#include "InspectorGuiSystem.h"
 
 #include "WorldComp.h"
 
@@ -35,6 +36,7 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
     GetFramework()->RegisterSystem(new CameraCtrlSystem(GetFramework()));
     GetFramework()->RegisterSystem(new TestMoveSystem(GetFramework()));
     GetFramework()->RegisterSystem(new HierarychyGUISystem(GetFramework()));
+    GetFramework()->RegisterSystem(new InspectorGuiSystem(GetFramework()));
         
     CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
 //    CreateOthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);

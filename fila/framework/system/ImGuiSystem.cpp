@@ -26,7 +26,7 @@ namespace fl {
 ImGuiSystem::ImGuiSystem(Framework* framework)
     :System(framework)
 {
-    
+    _bEnableDebug = true;   // @temp
 }
 
 void ImGuiSystem::Prepare(const LaunchParam& launchParam)

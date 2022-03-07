@@ -19,6 +19,7 @@
 		2B586D3627D5204900833F2F /* ImGuiSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D3527D5204900833F2F /* ImGuiSystem.cpp */; };
 		2B586D3A27D5CD4700833F2F /* HierarchyGUISystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D3927D5CD4700833F2F /* HierarchyGUISystem.cpp */; };
 		2B586D3F27D6693600833F2F /* WorldComp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D3D27D6693600833F2F /* WorldComp.cpp */; };
+		2B586D4327D671B100833F2F /* InspectorGuiSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D4127D671B000833F2F /* InspectorGuiSystem.cpp */; };
 		2B6003B427C7EC5C00B19562 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B227C7EC5C00B19562 /* Game.cpp */; };
 		2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */; };
 		2B60074227C7F7C400B19562 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60068527C7F7C400B19562 /* glm.cpp */; };
@@ -567,6 +568,8 @@
 		2B586D3927D5CD4700833F2F /* HierarchyGUISystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HierarchyGUISystem.cpp; sourceTree = "<group>"; };
 		2B586D3D27D6693600833F2F /* WorldComp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldComp.cpp; sourceTree = "<group>"; };
 		2B586D3E27D6693600833F2F /* WorldComp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldComp.h; sourceTree = "<group>"; };
+		2B586D4127D671B000833F2F /* InspectorGuiSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorGuiSystem.cpp; sourceTree = "<group>"; };
+		2B586D4227D671B000833F2F /* InspectorGuiSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorGuiSystem.h; sourceTree = "<group>"; };
 		2B6003B227C7EC5C00B19562 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		2B6003B327C7EC5C00B19562 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
@@ -1713,6 +1716,8 @@
 				2B586D1427D4A58E00833F2F /* TestMoveSystem.h */,
 				2B586D3927D5CD4700833F2F /* HierarchyGUISystem.cpp */,
 				2B586D3827D5CD4700833F2F /* HierarchyGUISystem.h */,
+				2B586D4127D671B000833F2F /* InspectorGuiSystem.cpp */,
+				2B586D4227D671B000833F2F /* InspectorGuiSystem.h */,
 				2B586D3D27D6693600833F2F /* WorldComp.cpp */,
 				2B586D3E27D6693600833F2F /* WorldComp.h */,
 			);
@@ -2705,6 +2710,7 @@
 				2BFE8C4627C476BC001F171C /* b2_polygon_shape.cpp in Sources */,
 				2BFE8ADD27C3E360001F171C /* main.cpp in Sources */,
 				2BFE8CC127C6028B001F171C /* Component.cpp in Sources */,
+				2B586D4327D671B100833F2F /* InspectorGuiSystem.cpp in Sources */,
 				2BFE8C3627C476BC001F171C /* b2_prismatic_joint.cpp in Sources */,
 				2BFE8C2D27C476BC001F171C /* b2_edge_circle_contact.cpp in Sources */,
 				2BFE8C3127C476BC001F171C /* b2_motor_joint.cpp in Sources */,

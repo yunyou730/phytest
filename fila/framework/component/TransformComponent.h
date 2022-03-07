@@ -32,7 +32,8 @@ public:
 protected:
     void CalcModelMatrix();
     
-protected:
+//protected:
+public:
     glm::vec3   _scale;
     glm::vec3   _rotByEachAxis; // in degree
     glm::vec3   _pos;
