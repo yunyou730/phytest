@@ -165,7 +165,7 @@ void RendererSystem::HandleMVP(ShaderProgram* shader,TransformComponent* targetT
     {
         glm::mat4 projection = cameraComp->GetProjectionMatrix();
         
-        fl::Log::Info(projection);
+//        fl::Log::Info(projection);
         shader->SetUniformMat4x4("u_Projection",&projection[0][0]);
     }
 }

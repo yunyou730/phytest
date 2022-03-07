@@ -32,7 +32,7 @@ ImGuiSystem::ImGuiSystem(Framework* framework)
 void ImGuiSystem::Prepare(const LaunchParam& launchParam)
 {
     const char* glsl_version = "#version 330";
-    bool show_demo_window = true;
+    
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -49,21 +49,29 @@ void ImGuiSystem::Prepare(const LaunchParam& launchParam)
     ImGui_ImplOpenGL3_Init(glsl_version);
 }
 
-void ImGuiSystem::Renderer()
+void ImGuiSystem::BeforeGUI()
 {
-    bool show_demo_window = true;
-//     Start the Dear ImGui frame
+
+    //     Start the Dear ImGui frame
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
+}
 
-    if(show_demo_window)
-        ImGui::ShowDemoWindow(&show_demo_window);
-
-
-
+void ImGuiSystem::AfterGUI()
+{
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+}
+
+void ImGuiSystem::OnGUI()
+{
+    if(_bEnableDebug)
+    {
+        bool show_demo_window = true;
+        if(show_demo_window)
+            ImGui::ShowDemoWindow(&show_demo_window);
+    }
 }
 
 void ImGuiSystem::CleanUp()
@@ -72,7 +80,6 @@ void ImGuiSystem::CleanUp()
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
 }
-
 
 }
 

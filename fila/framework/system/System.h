@@ -44,4 +44,19 @@ public:
     virtual void CleanUp() = 0;
 };
 
+// Before render
+class ISysGUISupport
+{
+public:
+    virtual void BeforeGUI() = 0;
+    virtual void AfterGUI() = 0;
+};
+
+// GUI
+class ISysGUI
+{
+public:
+    virtual void OnGUI() = 0;
+};
+
 }

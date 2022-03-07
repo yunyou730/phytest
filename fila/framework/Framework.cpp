@@ -30,6 +30,8 @@ void Framework::RegisterSystem(System* sys)
     RegisterSysByType(sys,ISysUpdate,_updateSysList);
     RegisterSysByType(sys,ISysRenderer,_renderSysList);
     RegisterSysByType(sys,ISysCleanup,_cleanupSysList);
+    RegisterSysByType(sys,ISysGUISupport,_guiSupportSysList);
+    RegisterSysByType(sys,ISysGUI,_guiSysList);
 }
 
 void Framework::RegisterWorldComponent(const std::string& wcClsName,WorldComponent* comp)
@@ -71,9 +73,26 @@ void Framework::OnUpdate()
 
 void Framework::OnRender()
 {
+    // Render
     for(auto it = _renderSysList.begin();it != _renderSysList.end();it++)
     {
         (*it)->Renderer();
+    }
+    
+    // GUI
+    for(auto it = _guiSupportSysList.begin();it != _guiSupportSysList.end();it++)
+    {
+        (*it)->BeforeGUI();
+    }
+    
+    for(auto it = _guiSysList.begin();it != _guiSysList.end();it++)
+    {
+        (*it)->OnGUI();
+    }
+    
+    for(auto it = _guiSupportSysList.begin();it != _guiSupportSysList.end();it++)
+    {
+        (*it)->AfterGUI();
     }
 }
 

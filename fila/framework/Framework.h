@@ -25,6 +25,7 @@ public:
     void OnUpdate();
     void OnRender();
     void OnCleanUp();
+    void OnGUI();
     
 public:
     void RegisterSystem(System* sys);
@@ -40,11 +41,20 @@ public:
         }
         return nullptr;
     }
+    
+    
+    template<typename WCType>
+    WCType* GetWorldComponent()
+    {
+        return GetWorldComponent<WCType>(WCType::ClsName());
+    }
         
 public:
     Entity* CreateEntity();
     std::vector<Entity*> QueryEntityWithCompSet(std::set<std::string> compSet);
     Entity* GetEntity(const int entityID);
+    
+    const std::map<unsigned int,Entity*>& GetEntityMap() { return _entityMap;}
         
 protected:
     unsigned int NextEntityID();
@@ -54,14 +64,17 @@ protected:
     std::vector<ISysUpdate*>        _updateSysList;
     std::vector<ISysRenderer*>      _renderSysList;
     std::vector<ISysCleanup*>       _cleanupSysList;
+    std::vector<ISysGUISupport*>    _guiSupportSysList;
+    std::vector<ISysGUI*>           _guiSysList;
     
+protected:
     std::map<std::string,WorldComponent*>    _worldCompMap;
     
-    
+protected:
     std::map<unsigned int,Entity*>  _entityMap;
     unsigned int                    _entityIdSeed = 0;
     
-    
+protected:
     Application*    _app = nullptr;
 };
 

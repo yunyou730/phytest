@@ -9,8 +9,6 @@
 // managers
 #include "renderer/ShaderManager.h"
 
-
-
 namespace fl {
 
 Application::Application()
@@ -42,7 +40,7 @@ void Application::OnPrepare(Window* window,const LaunchParam& launchParam)
     
     _framework->RegisterWorldComponent(CLASS_NAME(WCGlobalRenderParam),globalRenderParam);
     _framework->RegisterWorldComponent(CLASS_NAME(WCKeyboardInput),keyboardInput);
-
+    
     // Prepare
     _framework->OnPrepare(launchParam);
 }
@@ -79,7 +77,6 @@ void Application::ProcessInput(Window* window)
     RefreshKeyState(window,input,GLFW_KEY_D,EInputKey::KEY_D);
     RefreshKeyState(window,input,GLFW_KEY_Q,EInputKey::KEY_Q);
     RefreshKeyState(window,input,GLFW_KEY_E,EInputKey::KEY_E);
-    
     
     if(input->GetState(EInputKey::KEY_ESC) == EKeyState::PRESS)
     {

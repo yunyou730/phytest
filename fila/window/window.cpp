@@ -70,7 +70,7 @@ void Window::MainLoop(Application* app,const LaunchParam& launchParam)
     _fpsTimeCounter = glfwGetTime();
     
     
-    while(!app->ShallExit() || !glfwWindowShouldClose(_window))
+    while(!app->ShallExit() && !glfwWindowShouldClose(_window))
     {
         float deltaTime = ProcessFPS(app->GetDesireFPS());
         app->SetDeltaTime(deltaTime);

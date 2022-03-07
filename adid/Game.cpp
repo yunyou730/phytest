@@ -10,6 +10,9 @@
 
 #include "CameraCtrlSystem.h"
 #include "TestMoveSystem.h"
+#include "HierarchyGUISystem.h"
+
+#include "WorldComp.h"
 
 namespace ad {
 
@@ -27,8 +30,11 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
 {
     fl::Application::OnPrepare(window,launchParam);
     
+    GetFramework()->RegisterWorldComponent(WCEntitySelection::ClsName(), new WCEntitySelection());
+    
     GetFramework()->RegisterSystem(new CameraCtrlSystem(GetFramework()));
     GetFramework()->RegisterSystem(new TestMoveSystem(GetFramework()));
+    GetFramework()->RegisterSystem(new HierarychyGUISystem(GetFramework()));
         
     CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
 //    CreateOthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
