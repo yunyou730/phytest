@@ -21,9 +21,13 @@ namespace fl {
 class RenderUtil
 {
 public:
+    static void RenderPrimitive(ShaderManager* shaderManager,Entity* entity,CameraComponent* cameraComponent);
+    
+protected:
     static GLuint HandlePrimitiveType(RenderStateComponent* renderStateComp);
     static void HandleFillMode(RenderStateComponent* renderStateComp);
+    static void HandleDepthStencilTest(RenderStateComponent* renderStateComp);
     static void HandleMVP(ShaderProgram* shader,TransformComponent* targetTransform,TransformComponent* cameraTransform,CameraComponent* cameraComp);
-    static void RenderPrimitive(ShaderManager* shaderManager,Entity* entity,CameraComponent* cameraComponent);
+
 };
 }

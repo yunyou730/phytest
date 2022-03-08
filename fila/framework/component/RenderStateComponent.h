@@ -51,11 +51,16 @@ public:
     void SetRenderLayer(int layerIndex) { _renderLayerInex = layerIndex; }
     int GetRenderLayer() const { return _renderLayerInex;}
     
+    void SetZTestEnable(bool bEnable) {_bEnableDepthTest = bEnable;}
+    bool IsEnableZTest() const { return _bEnableDepthTest;}
+    
 protected:
     unsigned int _shaderId = 0;
     ERenderPrimitiveType  _primitiveType = ERenderPrimitiveType::Triangle;
     ERenderFillMode     _fillMode = ERenderFillMode::Fill;
     float _pointSize = 20.0f;
+    
+    bool _bEnableDepthTest = true;
     
     int _renderLayerInex = 1;
 };

@@ -38,6 +38,11 @@ void RenderUtil::HandleFillMode(RenderStateComponent* renderStateComp)
     }
 }
 
+void RenderUtil::HandleDepthStencilTest(RenderStateComponent* renderStateComp)
+{
+    renderStateComp->IsEnableZTest() ? glEnable(GL_DEPTH_TEST) : glDisable(GL_DEPTH_TEST);
+}
+
 void RenderUtil::HandleMVP(ShaderProgram* shader,TransformComponent* targetTransform,TransformComponent* cameraTransform,CameraComponent* cameraComp)
 {
     if(shader->CheckUniform("u_Model"))
@@ -77,11 +82,15 @@ void RenderUtil::RenderPrimitive(ShaderManager* shaderManager,Entity* entity,Cam
 
     GLuint primitiveType = RenderUtil::HandlePrimitiveType(renderStateComp);
     RenderUtil::HandleFillMode(renderStateComp);
+    RenderUtil::HandleDepthStencilTest(renderStateComp);
+    
 
     ShaderProgram* shader = shaderManager->GetShader(shaderId);
     shader->Use();
 
     RenderUtil::HandleMVP(shader,targetTransform,cameraTransform,cameraComponent);
+    
+
 
     glBindVertexArray(vao);
 
