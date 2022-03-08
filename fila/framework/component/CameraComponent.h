@@ -41,8 +41,7 @@ public:
     
     void SetCameraType(ECameraType camType) { _cameraType = camType;}
     
-protected:
-    
+public:
     ECameraType _cameraType = ECameraType::Perspective;
     
     float _viewportWidth = 800.0f;

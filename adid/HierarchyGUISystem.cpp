@@ -17,17 +17,18 @@ namespace ad {
 HierarychyGUISystem::HierarychyGUISystem(fl::Framework* framework)
     :System(framework)
 {
-    
+    _entitySelection = GetFramework()->GetWorldComponent<WCEntitySelection>();
 }
 
 void HierarychyGUISystem::OnGUI()
 {
-    
     ImGuiWindowFlags window_flags = 0;
     bool* p_open = nullptr;
     
     if (ImGui::Begin("Hierarchy", p_open, window_flags))
     {
+        ImGui::SetNextItemOpen(_hierarchyExpand);
+        
         const std::map<unsigned int,fl::Entity*>& entityMap = GetFramework()->GetEntityMap();
         if (ImGui::TreeNode("Root"))
         {
@@ -36,23 +37,17 @@ void HierarychyGUISystem::OnGUI()
                 fl::Entity* entity = it->second;
                 
                 std::stringstream ss;
-                ss << entity->GetID();
+                ss << "[Entity ID] " << entity->GetID();
                 
-                if(ImGui::Button(ss.str().c_str()))
+                if(ImGui::Selectable(ss.str().c_str(),entity->GetID() == _entitySelection->selectedEntityID))
                 {
-                    auto entitySel = GetFramework()->GetWorldComponent<WCEntitySelection>();
-                    entitySel->selectedEntityID = entity->GetID();
+                    _entitySelection->selectedEntityID = entity->GetID();
                 }
             }
             ImGui::TreePop();
         }
-
-
     }
     ImGui::End();
-    
-    
-
 }
 
 

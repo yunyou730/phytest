@@ -40,14 +40,46 @@ void InspectorGuiSystem::RefreshInspector(fl::Entity* entity)
 {
     ImGui::Text("[EntityID] %d",entity->GetID());
     
-    if (ImGui::CollapsingHeader("TransformComponent"))
+    if (ImGui::CollapsingHeader(fl::TransformComponent::ClsName(),true))
     {
         auto transform = entity->GetComponent<fl::TransformComponent>();
         
         ImGui::Text("Position");
-        ImGui::InputFloat("x", &transform->_pos.x);
-        ImGui::InputFloat("y", &transform->_pos.y);
-        ImGui::InputFloat("z", &transform->_pos.z);
+        ImGui::DragFloat("px", &transform->_pos.x, 0.01f, 0.0f, 0.0f);
+        ImGui::DragFloat("py", &transform->_pos.y, 0.01f, 0.0f, 0.0f);
+        ImGui::DragFloat("pz", &transform->_pos.z, 0.01f, 0.0f, 0.0f);
+        
+        ImGui::Text("Rotation");
+        ImGui::DragFloat("rx", &transform->_rotByEachAxis.x, 0.1f, 0.f, 360.f);
+        ImGui::DragFloat("ry", &transform->_rotByEachAxis.y, 0.1f, 0.f, 360.f);
+        ImGui::DragFloat("rz", &transform->_rotByEachAxis.z, 0.1f, 0.f, 360.f);
+        
+        ImGui::Text("Scale");
+        ImGui::DragFloat("sx", &transform->_scale.x, 0.1f, 0.f, 0.f);
+        ImGui::DragFloat("sy", &transform->_scale.y, 0.1f, 0.f, 0.f);
+        ImGui::DragFloat("sz", &transform->_scale.z, 0.1f, 0.f, 0.f);
+    }
+    
+    auto camera = entity->GetComponent<fl::CameraComponent>();
+    if(camera != nullptr && ImGui::CollapsingHeader(fl::CameraComponent::ClsName(),true))
+    {
+        ImGui::DragInt("camera_sort",&camera->_sort,1,0,20);
+        ImGui::DragFloat("camera_fov_y", &camera->_fovY,1.f,0.f,180.f);
+        
+        ImGui::DragFloat("camera_move_speed",&camera->_moveSpeed,1.f,0.f,30.f);
+        ImGui::DragFloat("camera_rot_speed",&camera->_rotateDegSpeed,1.f,0.f,360.f);
+        
+        // look dir
+        std::stringstream ss;
+        ImGui::Text("look dir(%.3f,%.3f,%.3f)",camera->LookDir().x,camera->LookDir().y,camera->LookDir().z);
+        
+        // render layers
+        ss.clear();
+        for(auto it = camera->_renderLayers.begin();it != camera->_renderLayers.end();it++)
+        {
+            ss << *it << ",";
+        }
+        ImGui::Text("render layers [%s]",ss.str().c_str());
     }
 }
 

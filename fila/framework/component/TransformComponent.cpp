@@ -85,7 +85,7 @@ void TransformComponent::SetRotationZ(float degree)
 
 const glm::mat4& TransformComponent::GetModelMatrix()
 {
-    if(_bDirty)
+//    if(_bDirty)
     {
         CalcModelMatrix();
         _bDirty = false;
@@ -102,9 +102,9 @@ void TransformComponent::CalcModelMatrix()
     // rotation part
     glm::mat4 rotByX(1.0),rotByY(1.0),rotByZ(1.0);
     
-    rotByX = glm::rotate(rotByX,glm::radians(_rotByEachAxis.x) , glm::vec3(1.0f, 0.0f, 0.0f));
-    rotByY = glm::rotate(rotByX,glm::radians(_rotByEachAxis.y) , glm::vec3(0.0f, 1.0f, 0.0f));
-    rotByZ = glm::rotate(rotByX,glm::radians(_rotByEachAxis.z) , glm::vec3(0.0f, 0.0f, 1.0f));
+    rotByX = glm::rotate(rotByX,glm::radians(_rotByEachAxis.x), glm::vec3(1.0f, 0.0f, 0.0f));
+    rotByY = glm::rotate(rotByY,glm::radians(_rotByEachAxis.y), glm::vec3(0.0f, 1.0f, 0.0f));
+    rotByZ = glm::rotate(rotByZ,glm::radians(_rotByEachAxis.z), glm::vec3(0.0f, 0.0f, 1.0f));
     
     glm::mat4 rot = rotByX * rotByY * rotByZ;
     

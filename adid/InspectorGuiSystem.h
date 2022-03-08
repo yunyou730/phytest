@@ -11,10 +11,9 @@ class InspectorGuiSystem : public fl::System,public fl::ISysGUI
 {
 public:
     InspectorGuiSystem(fl::Framework* framework);
-
     virtual void OnGUI() override;
     
-    
+protected:
     void RefreshInspector(fl::Entity* entity);
     
 protected:
