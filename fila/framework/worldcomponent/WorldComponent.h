@@ -13,12 +13,15 @@ public:
 class WCGlobalRenderParam : public WorldComponent
 {
 public:
+    static const char* ClsName() { return "WCGlobalRenderParam"; }
     LaunchParam launchParam;
+    bool bLaunchParamDirty = false;
 };
 
 class WCKeyboardInput : public WorldComponent
 {
 public:
+    static const char* ClsName() { return "WCKeyboardInput"; }
     WCKeyboardInput();
     
     void SetState(EInputKey key,EKeyState state);
@@ -28,5 +31,6 @@ public:
     
     std::map<EInputKey,EKeyState>   _keyStateMap;
 };
+
 
 }

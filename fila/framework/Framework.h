@@ -30,18 +30,7 @@ public:
 public:
     void RegisterSystem(System* sys);
     void RegisterWorldComponent(const std::string& wcClsName,WorldComponent* comp);
-    
-    template<typename WCType>
-    WCType* GetWorldComponent(const std::string& wcClsName)
-    {
-        auto it = _worldCompMap.find(wcClsName);
-        if(it != _worldCompMap.end())
-        {
-            return dynamic_cast<WCType*>(it->second);
-        }
-        return nullptr;
-    }
-    
+        
     
     template<typename WCType>
     WCType* GetWorldComponent()
@@ -58,6 +47,17 @@ public:
         
 protected:
     unsigned int NextEntityID();
+    
+    template<typename WCType>
+    WCType* GetWorldComponent(const std::string& wcClsName)
+    {
+        auto it = _worldCompMap.find(wcClsName);
+        if(it != _worldCompMap.end())
+        {
+            return dynamic_cast<WCType*>(it->second);
+        }
+        return nullptr;
+    }
     
 protected:
     std::vector<ISysPrepare*>       _prepareSysList;

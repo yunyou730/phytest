@@ -60,9 +60,15 @@ void InspectorGuiSystem::RefreshInspector(fl::Entity* entity)
         ImGui::DragFloat("sz", &transform->_scale.z, 0.1f, 0.f, 0.f);
     }
     
+    
+    const static char* cameraTypeItems[] = {"Perspective","Ortho"};
     auto camera = entity->GetComponent<fl::CameraComponent>();
     if(camera != nullptr && ImGui::CollapsingHeader(fl::CameraComponent::ClsName(),true))
     {
+        int selectIndex = (int)camera->_cameraType;
+        ImGui::Combo("camera_type", &selectIndex, cameraTypeItems, IM_ARRAYSIZE(cameraTypeItems));
+        camera->_cameraType = (fl::ECameraType)selectIndex;
+        
         ImGui::DragInt("camera_sort",&camera->_sort,1,0,20);
         ImGui::DragFloat("camera_fov_y", &camera->_fovY,1.f,0.f,180.f);
         

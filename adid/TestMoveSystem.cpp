@@ -12,7 +12,7 @@ namespace ad {
 TestMoveSystem::TestMoveSystem(fl::Framework* framework)
     :System(framework)
 {
-    _keyboardInput = _framework->GetWorldComponent<fl::WCKeyboardInput>(CLASS_NAME(WCKeyboardInput));
+    _keyboardInput = _framework->GetWorldComponent<fl::WCKeyboardInput>();
 }
 
 void TestMoveSystem::Update()

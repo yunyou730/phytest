@@ -23,8 +23,7 @@ bool CameraComponent::CheckLayer(int layer)
 
 void CameraComponent::SetLookDir(const glm::vec3& lookDir)
 {
-    _lookDir = glm::normalize(lookDir);
-    
+    _lookDir = glm::normalize(lookDir);    
     // @miao @todo
     // 这里可能需要重新计算 up, right ，
     // 也可能不需要， glm::lookAt 可能里面给封装好了

@@ -12,7 +12,7 @@ namespace ad {
 CameraCtrlSystem::CameraCtrlSystem(fl::Framework* framework)
     :System(framework)
 {
-    _keyboardInput = _framework->GetWorldComponent<fl::WCKeyboardInput>(CLASS_NAME(WCKeyboardInput));
+    _keyboardInput = _framework->GetWorldComponent<fl::WCKeyboardInput>();
 }
 
 void CameraCtrlSystem::Update()

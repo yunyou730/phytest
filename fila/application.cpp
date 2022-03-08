@@ -38,8 +38,8 @@ void Application::OnPrepare(Window* window,const LaunchParam& launchParam)
     
     auto keyboardInput = new WCKeyboardInput();
     
-    _framework->RegisterWorldComponent(CLASS_NAME(WCGlobalRenderParam),globalRenderParam);
-    _framework->RegisterWorldComponent(CLASS_NAME(WCKeyboardInput),keyboardInput);
+    _framework->RegisterWorldComponent(WCGlobalRenderParam::ClsName(),globalRenderParam);
+    _framework->RegisterWorldComponent(WCKeyboardInput::ClsName(),keyboardInput);
     
     // Prepare
     _framework->OnPrepare(launchParam);
@@ -64,7 +64,7 @@ void Application::OnRenderer()
 
 void Application::ProcessInput(Window* window)
 {
-    auto input = _framework->GetWorldComponent<WCKeyboardInput>(CLASS_NAME(WCKeyboardInput));
+    auto input = _framework->GetWorldComponent<WCKeyboardInput>();
 
     RefreshKeyState(window,input,GLFW_KEY_ESCAPE,EInputKey::KEY_ESC);
     RefreshKeyState(window,input,GLFW_KEY_UP,EInputKey::KEY_UP);
@@ -92,6 +92,14 @@ void Application::RefreshKeyState(Window* window,
     int glfwState = glfwGetKey(window->GLFWWindow(), glfwKeyCode);
     fl::EKeyState state = (glfwState  == GLFW_PRESS) ? fl::EKeyState::PRESS : fl::EKeyState::RELEASE;
     input->SetState(keyCode, state);
+}
+
+void Application::OnViewportSizeChange(int width,int height)
+{
+    WCGlobalRenderParam* renderParam = _framework->GetWorldComponent<WCGlobalRenderParam>();
+    renderParam->bLaunchParamDirty = true;
+    renderParam->launchParam.viewportWidth = width;
+    renderParam->launchParam.viewportHeight = height;
 }
 
 }

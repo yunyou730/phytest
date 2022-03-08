@@ -6,7 +6,7 @@ namespace fl
 {
 
 extern void framebufferSizeCallback(GLFWwindow* window,int width,int height);
-//extern void processInput(GLFWwindow *window);
+static Window* s_windowInstance = nullptr;
 
 Window::Window(const std::string& name,const LaunchParam& launchParam)
     :_name(name)
@@ -14,11 +14,12 @@ Window::Window(const std::string& name,const LaunchParam& launchParam)
     ,_height(launchParam.viewportHeight)
 {
     InitEnv();
+    s_windowInstance = this;
 }
 
 Window::~Window()
 {
-    
+    s_windowInstance = nullptr;
 }
 
 void Window::InitEnv()
@@ -58,12 +59,12 @@ bool Window::Create()
     }
     
     glfwSetFramebufferSizeCallback(_window,framebufferSizeCallback);
-    
     return true;
 }
 
 void Window::MainLoop(Application* app,const LaunchParam& launchParam)
 {
+    _runningApp = app;
     app->OnPrepare(this,launchParam);
     app->SetDesireFPS(60);
     
@@ -77,7 +78,6 @@ void Window::MainLoop(Application* app,const LaunchParam& launchParam)
         
         app->ProcessInput(this);
         app->OnUpdate();
-        
             
         // Render code here
         glClear(GL_COLOR_BUFFER_BIT); // render begin
@@ -89,11 +89,20 @@ void Window::MainLoop(Application* app,const LaunchParam& launchParam)
     }
     
     app->OnCleanup();
+    _runningApp = nullptr;
 }
 
 void Window::Destroy()
 {
     glfwTerminate();
+}
+
+void Window::OnSizeChanged(int width,int height)
+{
+    if(_runningApp != nullptr)
+    {
+        _runningApp->OnViewportSizeChange(width,height);
+    }
 }
 
 float Window::ProcessFPS(int desireFPS)
@@ -117,14 +126,12 @@ float Window::ProcessFPS(int desireFPS)
 
 void framebufferSizeCallback(GLFWwindow* window,int width,int height)
 {
-    glViewport(0,0,width,height);
-    printf("%d,%d\n",width,height);
+//    glViewport(0,0,width,height);
+//    printf("%d,%d\n",width,height);
+    if(s_windowInstance != nullptr)
+    {
+        s_windowInstance->OnSizeChanged(width,height);
+    }
 }
-
-//void processInput(GLFWwindow *window)
-//{
-//    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-//        glfwSetWindowShouldClose(window, true);
-//}
 
 }

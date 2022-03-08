@@ -13,26 +13,23 @@ class CameraComponent;
 
 class ShaderManager;
 class ShaderProgram;
+class WCGlobalRenderParam;
 
-class RendererSystem : public System, public ISysRenderer,public ISysPrepare
+class RendererSystem : public System, public ISysRenderer,public ISysPrepare,public ISysUpdate
 {
 public:
     RendererSystem(Framework* framework);
     
+    virtual void Update() override;
     virtual void Prepare(const LaunchParam& launchParam) override;
     virtual void Renderer() override;
     
 protected:
     std::vector<Entity*> GetCameraEntities();
     std::vector<Entity*> GetRenderableEntities();
-    
-    void RenderPrimitive(Entity* entity,CameraComponent* camComp);
-    GLuint HandlePrimitiveType(RenderStateComponent* renderStateComp);
-    void HandleFillMode(RenderStateComponent* renderStateComp);
-    void HandleMVP(ShaderProgram* shader,TransformComponent* targetTransform,TransformComponent* cameraTransform,CameraComponent* cameraComp);
-    
 protected:
     ShaderManager*  _shaderManager = nullptr;
+    WCGlobalRenderParam*    _renderParam = nullptr;
 };
 
 }

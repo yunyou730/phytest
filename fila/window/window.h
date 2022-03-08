@@ -17,6 +17,7 @@ public:
     bool Create();
     void MainLoop(Application* app,const fl::LaunchParam& launchParam);
     void Destroy();
+    void OnSizeChanged(int width,int height);
     
     GLFWwindow* GLFWWindow() { return _window;}
     
@@ -32,6 +33,7 @@ protected:
     int _height = 600;
     
     float _fpsTimeCounter = 0.0f;
+    Application*    _runningApp = nullptr;
 };
 
 

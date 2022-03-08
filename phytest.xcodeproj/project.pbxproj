@@ -20,6 +20,7 @@
 		2B586D3A27D5CD4700833F2F /* HierarchyGUISystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D3927D5CD4700833F2F /* HierarchyGUISystem.cpp */; };
 		2B586D3F27D6693600833F2F /* WorldComp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D3D27D6693600833F2F /* WorldComp.cpp */; };
 		2B586D4327D671B100833F2F /* InspectorGuiSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D4127D671B000833F2F /* InspectorGuiSystem.cpp */; };
+		2B586D4727D77DB200833F2F /* UtilFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D4527D77DB200833F2F /* UtilFunc.cpp */; };
 		2B6003B427C7EC5C00B19562 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B227C7EC5C00B19562 /* Game.cpp */; };
 		2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */; };
 		2B60074227C7F7C400B19562 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60068527C7F7C400B19562 /* glm.cpp */; };
@@ -570,6 +571,8 @@
 		2B586D3E27D6693600833F2F /* WorldComp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldComp.h; sourceTree = "<group>"; };
 		2B586D4127D671B000833F2F /* InspectorGuiSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorGuiSystem.cpp; sourceTree = "<group>"; };
 		2B586D4227D671B000833F2F /* InspectorGuiSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorGuiSystem.h; sourceTree = "<group>"; };
+		2B586D4527D77DB200833F2F /* UtilFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UtilFunc.cpp; sourceTree = "<group>"; };
+		2B586D4627D77DB200833F2F /* UtilFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilFunc.h; sourceTree = "<group>"; };
 		2B6003B227C7EC5C00B19562 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		2B6003B327C7EC5C00B19562 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
@@ -2103,6 +2106,8 @@
 				2BFE8CC427C60540001F171C /* Entity.h */,
 				2BFE8C8927C485E7001F171C /* Framework.cpp */,
 				2BFE8C8827C485E7001F171C /* Framework.h */,
+				2B586D4527D77DB200833F2F /* UtilFunc.cpp */,
+				2B586D4627D77DB200833F2F /* UtilFunc.h */,
 				2BFE8CBA27C60276001F171C /* component */,
 				2BFE8CAB27C4A886001F171C /* worldcomponent */,
 				2BFE8C8C27C485F7001F171C /* system */,
@@ -2273,6 +2278,7 @@
 				2B60077227C7F7EA00B19562 /* matrix_uint3x3_sized.hpp in Sources */,
 				2B60077327C7F7EA00B19562 /* quaternion_transform.inl in Sources */,
 				2B60077427C7F7EA00B19562 /* matrix_double4x2_precision.hpp in Sources */,
+				2B586D4727D77DB200833F2F /* UtilFunc.cpp in Sources */,
 				2B60077527C7F7EA00B19562 /* matrix_clip_space.inl in Sources */,
 				2B60077627C7F7EA00B19562 /* vector_double4_precision.hpp in Sources */,
 				2B586D3A27D5CD4700833F2F /* HierarchyGUISystem.cpp in Sources */,

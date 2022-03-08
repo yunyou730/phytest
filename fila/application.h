@@ -19,6 +19,8 @@ public:
     virtual void OnUpdate();
     virtual void OnRenderer();
     
+    virtual void OnViewportSizeChange(int width,int height);
+    
     virtual void ProcessInput(Window* window);
     
     void SetDeltaTime(float deltaTime) { _deltaTimeThisFrame = deltaTime; }
