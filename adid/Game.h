@@ -5,6 +5,7 @@
 namespace fl
 {
 class Window;
+class Entity;
 }
 
 namespace ad {
@@ -30,7 +31,8 @@ protected:
     void CreateBox();
 
     void CreatePhyBox(const glm::vec3& pos);
-    void CreatePhyGround(const glm::vec3& pos);
+    fl::Entity* CreatePhyGround(const glm::vec3& pos);
+    fl::Entity* CreatePhyGround(const glm::vec3& pos,const std::vector<b2Vec2>& polygonPoints);
 };
 
 }

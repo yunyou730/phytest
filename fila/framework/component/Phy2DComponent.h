@@ -28,6 +28,8 @@ public:
     Phy2DComponent();
     
     void SetBodyType(BodyType bodyType) { _bodyType = bodyType; }
+    void SetPolygonShapePoints(const std::vector<b2Vec2>& points);
+    
     
     b2Body* GetBody() { return _body; }
     bool HasBodyCreated() { return GetBody() != nullptr; }
@@ -48,8 +50,7 @@ public:
     b2Body*         _body = nullptr;
     b2Fixture*      _fixture = nullptr;
     BodyType        _bodyType = BodyType::Dynamic;
-    
-    
+    std::vector<b2Vec2>     _polygonShapePoints;
     
 public:
     // display debug
