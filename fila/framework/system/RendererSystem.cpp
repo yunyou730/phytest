@@ -45,7 +45,7 @@ void RendererSystem::Update()
     if(_renderParam->bLaunchParamDirty)
     {
         _renderParam->bLaunchParamDirty = false;
-        std::vector<Entity*> cameraEntities = GetCameraEntities();
+        std::vector<Entity*> cameraEntities = RenderUtil::GetCameraEntities(GetFramework());
         for(auto it = cameraEntities.begin();it != cameraEntities.end();it++)
         {
             auto camComp = (*it)->GetComponent<CameraComponent>();
@@ -57,8 +57,8 @@ void RendererSystem::Update()
 
 void RendererSystem::Renderer()
 {
-    std::vector<Entity*> cameraEntities = GetCameraEntities();
-    std::vector<Entity*> toRenderEntities = GetRenderableEntities();
+    std::vector<Entity*> cameraEntities = RenderUtil::GetCameraEntities(GetFramework());
+    std::vector<Entity*> toRenderEntities = RenderUtil::GetRenderableEntities(GetFramework());
     
     // Each camera renders each entity.
     for(auto camIt = cameraEntities.begin();camIt != cameraEntities.end();camIt++)
@@ -74,23 +74,6 @@ void RendererSystem::Renderer()
             }
         }
     }
-}
-
-std::vector<Entity*> RendererSystem::GetCameraEntities()
-{
-    std::set<std::string> compSet;
-    compSet.insert(CLASS_NAME(CameraComponent));
-    return GetFramework()->QueryEntityWithCompSet(compSet);
-}
-
-std::vector<Entity*> RendererSystem::GetRenderableEntities()
-{
-    std::set<std::string> compSet;
-    compSet.insert(CLASS_NAME(PrimitiveComponent));
-    compSet.insert(CLASS_NAME(RenderStateComponent));
-    
-    std::vector<Entity*> renderEntities = GetFramework()->QueryEntityWithCompSet(compSet);
-    return renderEntities;
 }
 
 }

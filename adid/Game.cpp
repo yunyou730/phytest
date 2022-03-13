@@ -41,8 +41,8 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
     GetFramework()->RegisterSystem(new HierarychyGUISystem(GetFramework()));
     GetFramework()->RegisterSystem(new InspectorGuiSystem(GetFramework()));
         
-    CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
-//    CreateOthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
+//    CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
+    CreateOthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
     
 //    CreateVBOTest();
 //    CreateEBOTest();
@@ -304,7 +304,6 @@ void Game::CreatePhyBox()
         4,5,6,5,6,7,        // far
         8,9,10,9,10,11,      // left
         12,13,14,13,14,15,  // right
-        
     });
     primComp->Commit();
     

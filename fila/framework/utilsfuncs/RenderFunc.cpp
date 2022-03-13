@@ -1,4 +1,5 @@
 #include "RenderFunc.h"
+#include <glm/gtc/matrix_transform.hpp>
 
 namespace fl {
 
@@ -51,10 +52,15 @@ void RenderUtil::HandleMVP(ShaderProgram* shader,TransformComponent* targetTrans
 {
     if(shader->CheckUniform("u_Model"))
     {
-        glm::mat4 model = targetTransform->GetModelMatrix();
+//        glm::mat4 model = targetTransform->GetModelMatrix();
+        glm::mat4 model = CalcModelMatrix(targetTransform->_pos,targetTransform->_scale,targetTransform->_rotByEachAxis);
         shader->SetUniformMat4x4("u_Model", &model[0][0]);
     }
-    
+    HandleVP(shader,cameraTransform,cameraComp);
+}
+
+void RenderUtil::HandleVP(ShaderProgram* shader,TransformComponent* cameraTransform,CameraComponent* cameraComp)
+{
     if(shader->CheckUniform("u_View"))
     {
         glm::mat4 view = cameraComp->GetViewMatrix(cameraTransform->GetPos());
@@ -111,12 +117,48 @@ void RenderUtil::RenderPrimitive(ShaderManager* shaderManager,Entity* entity,Cam
 }
 
 
+std::vector<Entity*> RenderUtil::GetCameraEntities(Framework* framework)
+{
+    std::set<std::string> compSet;
+    compSet.insert(CLASS_NAME(CameraComponent));
+    return framework->QueryEntityWithCompSet(compSet);
+}
 
+std::vector<Entity*> RenderUtil::GetRenderableEntities(Framework* framework)
+{
+    std::set<std::string> compSet;
+    compSet.insert(CLASS_NAME(PrimitiveComponent));
+    compSet.insert(CLASS_NAME(RenderStateComponent));
+    
+    std::vector<Entity*> renderEntities = framework->QueryEntityWithCompSet(compSet);
+    return renderEntities;
+}
 
-/*
- Phy2d Util
- **/
-
-
+glm::mat4 RenderUtil::CalcModelMatrix(const glm::vec3& translate,const glm::vec3& scale,glm::vec3& rotByEachAxis)
+{
+    glm::mat4 result(1.0);
+    
+    // scale part
+    glm::mat4 scaleMat(1.0);
+    scaleMat = glm::scale(scaleMat,scale);
+    
+    // rotation part
+    glm::mat4 rotByX(1.0),rotByY(1.0),rotByZ(1.0);
+    
+    rotByX = glm::rotate(rotByX,glm::radians(rotByEachAxis.x), glm::vec3(1.0f, 0.0f, 0.0f));
+    rotByY = glm::rotate(rotByY,glm::radians(rotByEachAxis.y), glm::vec3(0.0f, 1.0f, 0.0f));
+    rotByZ = glm::rotate(rotByZ,glm::radians(rotByEachAxis.z), glm::vec3(0.0f, 0.0f, 1.0f));
+    
+    glm::mat4 rotMat = rotByX * rotByY * rotByZ;
+    
+    // translate part
+    glm::mat4 translateMat(1.0);
+    translateMat = glm::translate(translateMat,translate);
+    
+    
+    result = scaleMat * rotMat * translateMat;
+    
+    return result;
+}
 
 }

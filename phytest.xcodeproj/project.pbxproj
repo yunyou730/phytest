@@ -23,6 +23,8 @@
 		2B586D4B27D7EBAE00833F2F /* Phy2DComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D4A27D7EBAE00833F2F /* Phy2DComponent.cpp */; };
 		2B586D5027DDBC7E00833F2F /* RenderFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D4E27DDBC7E00833F2F /* RenderFunc.cpp */; };
 		2B586D5527DDBD8600833F2F /* Phy2dFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D5427DDBD8600833F2F /* Phy2dFunc.cpp */; };
+		2B586D5927DDD52B00833F2F /* phy2d_debug.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B586D5727DDD51900833F2F /* phy2d_debug.fsh */; };
+		2B586D5A27DDD52B00833F2F /* phy2d_debug.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B586D5827DDD51900833F2F /* phy2d_debug.vsh */; };
 		2B6003B427C7EC5C00B19562 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B227C7EC5C00B19562 /* Game.cpp */; };
 		2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */; };
 		2B60074227C7F7C400B19562 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60068527C7F7C400B19562 /* glm.cpp */; };
@@ -531,6 +533,8 @@
 			dstPath = res;
 			dstSubfolderSpec = 16;
 			files = (
+				2B586D5927DDD52B00833F2F /* phy2d_debug.fsh in CopyFiles */,
+				2B586D5A27DDD52B00833F2F /* phy2d_debug.vsh in CopyFiles */,
 				2B60091427CA8CB300B19562 /* standard_mvp.fsh in CopyFiles */,
 				2B60091527CA8CB300B19562 /* standard_mvp.vsh in CopyFiles */,
 				2B60090D27CA0DF800B19562 /* attr_pos_uv_col.fsh in CopyFiles */,
@@ -579,6 +583,8 @@
 		2B586D4F27DDBC7E00833F2F /* RenderFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderFunc.h; sourceTree = "<group>"; };
 		2B586D5327DDBD8600833F2F /* Phy2dFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phy2dFunc.h; sourceTree = "<group>"; };
 		2B586D5427DDBD8600833F2F /* Phy2dFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Phy2dFunc.cpp; sourceTree = "<group>"; };
+		2B586D5727DDD51900833F2F /* phy2d_debug.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = phy2d_debug.fsh; sourceTree = "<group>"; };
+		2B586D5827DDD51900833F2F /* phy2d_debug.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = phy2d_debug.vsh; sourceTree = "<group>"; };
 		2B6003B227C7EC5C00B19562 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		2B6003B327C7EC5C00B19562 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
@@ -1692,6 +1698,8 @@
 		2B6008F227C954AB00B19562 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				2B586D5727DDD51900833F2F /* phy2d_debug.fsh */,
+				2B586D5827DDD51900833F2F /* phy2d_debug.vsh */,
 				2B60090A27CA0DED00B19562 /* attr_pos_uv_col.fsh */,
 				2B60090C27CA0DED00B19562 /* attr_pos_uv_col.vsh */,
 				2B60090B27CA0DED00B19562 /* attr_pos_uv.fsh */,

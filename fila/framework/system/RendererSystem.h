@@ -23,10 +23,7 @@ public:
     virtual void Update() override;
     virtual void Prepare(const LaunchParam& launchParam) override;
     virtual void Renderer() override;
-    
-protected:
-    std::vector<Entity*> GetCameraEntities();
-    std::vector<Entity*> GetRenderableEntities();
+
 protected:
     ShaderManager*  _shaderManager = nullptr;
     WCGlobalRenderParam*    _renderParam = nullptr;

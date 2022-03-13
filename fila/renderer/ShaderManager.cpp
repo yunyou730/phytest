@@ -31,6 +31,7 @@ void ShaderManager::CreateBuiltinShaders()
     CreateShaderWithFile("res/attr_pos_uv.vsh","res/attr_pos_uv.fsh");
     CreateShaderWithFile("res/attr_pos_uv_col.vsh","res/attr_pos_uv_col.fsh");
     CreateShaderWithFile("res/standard_mvp.vsh","res/standard_mvp.fsh");
+    CreateShaderWithFile("res/phy2d_debug.vsh","res/phy2d_debug.fsh");
 }
 
 ShaderProgram* ShaderManager::GetShader(unsigned int shaderId) const

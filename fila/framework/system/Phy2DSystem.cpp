@@ -6,6 +6,7 @@
 #include "Entity.h"
 
 #include "Phy2dFunc.h"
+#include "RenderFunc.h"
 
 namespace fl
 {
@@ -13,13 +14,18 @@ namespace fl
 Phy2DSystem::Phy2DSystem(Framework* framework)
     :System(framework)
 {
-
+    
 }
 
 void Phy2DSystem::Prepare(const LaunchParam& launchParam)
 {
+    _compSetWithPhy2d.insert(TransformComponent::ClsName());
+    _compSetWithPhy2d.insert(Phy2DComponent::ClsName());
+    
     _phy2dSettings = GetFramework()->GetWorldComponent<WCPhy2DSettings>();
     _world = new b2World(_phy2dSettings->_gravity);
+    
+    _shaderManager = GetFramework()->GetApp()->GetShaderManager();
 }
 
 void Phy2DSystem::Update()
@@ -49,11 +55,7 @@ void Phy2DSystem::OnPhyTick()
 
 void Phy2DSystem::CheckAndCreateBody()
 {
-    std::set<std::string> compSet;
-    compSet.insert(TransformComponent::ClsName());
-    compSet.insert(Phy2DComponent::ClsName());
-    
-    std::vector<fl::Entity*> entities = GetFramework()->QueryEntityWithCompSet(compSet);
+    std::vector<fl::Entity*> entities = GetFramework()->QueryEntityWithCompSet(_compSetWithPhy2d);
     
     for(auto it = entities.begin();it != entities.end();it++)
     {
@@ -61,26 +63,39 @@ void Phy2DSystem::CheckAndCreateBody()
         if(!phy2dComp->HasBodyCreated())
         {
             TransformComponent* transform = (*it)->GetComponent<TransformComponent>();
-            
             phy2dComp->CreateBody(_world,transform->GetPos());
-            // @miao @todo
-            // refresh renderer
-
         }
     }
 }
 
 void Phy2DSystem::SyncPhyPropToTransform()
 {
-    std::set<std::string> compSet;
-    compSet.insert(TransformComponent::ClsName());
-    compSet.insert(Phy2DComponent::ClsName());
-    
-    std::vector<fl::Entity*> entities = GetFramework()->QueryEntityWithCompSet(compSet);
+    std::vector<fl::Entity*> entities = GetFramework()->QueryEntityWithCompSet(_compSetWithPhy2d);
     for(auto it = entities.begin();it != entities.end();it++)
     {
         Entity* entity = *it;
         Phy2dFunc::SyncPhyAndTransform(_phy2dSettings,entity);
+    }
+}
+
+void Phy2DSystem::Renderer()
+{
+    std::vector<Entity*> cameraEntities = RenderUtil::GetCameraEntities(GetFramework());
+    std::vector<fl::Entity*> toRenderEntities = GetFramework()->QueryEntityWithCompSet(_compSetWithPhy2d);
+    
+    // Each camera renders each entity.
+    for(auto camIt = cameraEntities.begin();camIt != cameraEntities.end();camIt++)
+    {
+        auto camComp = (*camIt)->GetComponent<CameraComponent>();
+        for(auto it = toRenderEntities.begin();it != toRenderEntities.end();it++)
+        {
+            Entity* entity = *it;
+            RenderStateComponent* renderStateComp = entity->GetComponent<RenderStateComponent>();
+            if(camComp->CheckLayer(renderStateComp->GetRenderLayer()))
+            {
+                Phy2dFunc::DrawDebugWire(_shaderManager,_phy2dSettings,entity->GetComponent<Phy2DComponent>(),camComp);
+            }
+        }
     }
 }
 

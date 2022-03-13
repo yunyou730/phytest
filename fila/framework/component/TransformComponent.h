@@ -21,6 +21,7 @@ public:
     void SetScaleY(float sy);
     void SetScaleZ(float sz);
     void SetScale(const glm::vec3& scale);
+    void SetScale(float scale);
     
     void SetRotation(float rotByX,float rotByY,float rotByZ);
     void SetRotationX(float degree);

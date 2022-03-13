@@ -11,6 +11,7 @@ enum class EBuiltinShaderId
     BuiltinAttrPosUVCol,
     
     Builtin_StardardMVP,
+    Builtin_Phy2dDebug,
     
     Max,
 };

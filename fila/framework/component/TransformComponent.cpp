@@ -59,6 +59,12 @@ void TransformComponent::SetScale(const glm::vec3& scale)
     _bDirty = true;
 }
 
+void TransformComponent::SetScale(float scale)
+{
+    _scale = glm::vec3(scale,scale,scale);
+    _bDirty = true;    
+}
+
 void TransformComponent::SetRotation(float rotByX,float rotByY,float rotByZ)
 {
     _rotByEachAxis = glm::vec3(rotByX,rotByY,rotByZ);
