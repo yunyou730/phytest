@@ -23,7 +23,7 @@ bool CameraComponent::CheckLayer(int layer)
 
 void CameraComponent::SetLookDir(const glm::vec3& lookDir)
 {
-    _lookDir = glm::normalize(lookDir);    
+    _lookDir = glm::normalize(lookDir);
     // @miao @todo
     // 这里可能需要重新计算 up, right ，
     // 也可能不需要， glm::lookAt 可能里面给封装好了
@@ -47,8 +47,13 @@ glm::mat4& CameraComponent::GetProjectionMatrix()
             _projectionMatrix = glm::perspective(glm::radians(_fovY), aspect, _zNear, _zFar);
             break;
         case ECameraType::Ortho:
-            _projectionMatrix = glm::ortho<float>(-aspect,aspect,-1.,1.,_zNear,_zFar);  // fix height,adapth width
-//            _projectionMatrix = glm::ortho<float>(-1,1,-1/aspect,1/aspect,_zNear,_zFar); // fix width,adapth height
+            
+        {
+            float widthField = (_orthoHalf + _orthoHalf) * aspect;
+            _projectionMatrix = glm::ortho<float>(-widthField * 0.5,widthField * 0.5,-_orthoHalf,_orthoHalf,_zNear,_zFar);  // fix height,adapth width
+            //            _projectionMatrix = glm::ortho<float>(-1,1,-1/aspect,1/aspect,_zNear,_zFar); // fix width,adapth height
+        }
+
             break;
         default:
             break;

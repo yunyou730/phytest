@@ -1,5 +1,6 @@
 #pragma once
 #include "application.h"
+#include "glm.hpp"
 
 namespace fl
 {
@@ -27,10 +28,9 @@ protected:
     void CreateVBOTest();
     void CreateEBOTest();
     void CreateBox();
-    void CreatePhyGround();
-    
-    
-    void CreatePhyBox();
+
+    void CreatePhyBox(const glm::vec3& pos);
+    void CreatePhyGround(const glm::vec3& pos);
 };
 
 }

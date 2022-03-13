@@ -64,6 +64,9 @@ public:
     float _moveSpeed = 2.0f;
     float _rotateDegSpeed = 90.0f;
     
+    
+    float _orthoHalf = 1.0f;
+    
 };
 
 }

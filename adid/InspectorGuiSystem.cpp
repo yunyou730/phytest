@@ -75,6 +75,10 @@ void InspectorGuiSystem::RefreshInspector(fl::Entity* entity)
         ImGui::DragFloat("camera_move_speed",&camera->_moveSpeed,1.f,0.f,30.f);
         ImGui::DragFloat("camera_rot_speed",&camera->_rotateDegSpeed,1.f,0.f,360.f);
         
+        
+        ImGui::DragFloat("camera_ortho_half",&camera->_orthoHalf,0.5f,0.3f,30.f);
+
+        
         // look dir
         std::stringstream ss;
         ImGui::Text("look dir(%.3f,%.3f,%.3f)",camera->LookDir().x,camera->LookDir().y,camera->LookDir().z);

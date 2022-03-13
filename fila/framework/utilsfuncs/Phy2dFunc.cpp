@@ -28,12 +28,10 @@ void Phy2dFunc::SyncPhyAndTransform(const WCPhy2DSettings* phy2dSettings, Entity
 //    float _ratio = 0.04;
     
     const b2Vec2& pos = phy2d->GetBody()->GetPosition();
-    trans->SetX(pos.x * phy2dSettings->Ratio());
-    trans->SetY(pos.y * phy2dSettings->Ratio());
-  
-    
-//    trans->SetX(pos.x);
-//    trans->SetY(pos.y);
+    trans->SetX(pos.x);
+    trans->SetY(pos.y);
+//    trans->SetX(pos.x * phy2dSettings->Ratio());
+//    trans->SetY(pos.y * phy2dSettings->Ratio());
 }
 
 void Phy2dFunc::DrawDebugWire(ShaderManager* shaderManager,const WCPhy2DSettings* phy2dSettings,Phy2DComponent* phy2d,CameraComponent* cam)
@@ -52,16 +50,20 @@ void Phy2dFunc::DrawDebugWire(ShaderManager* shaderManager,const WCPhy2DSettings
     
     if(shader->CheckUniform("u_Model"))
     {
-//        glm::vec3 pos = transform->_pos * phy2dSettings->Ratio();
-        glm::vec3 pos = transform->_pos;// * phy2dSettings->Ratio();
-        glm::vec3 scale = glm::vec3(phy2dSettings->Ratio());
+
+//        glm::vec3 pos = transform->_pos;// * phy2dSettings->Ratio();
+//        glm::vec3 scale = glm::vec3(phy2dSettings->Ratio());
+        
+        glm::vec3 pos = transform->_pos;
+        glm::vec3 scale = glm::vec3(1.0);
+
         glm::mat4 model = RenderUtil::CalcModelMatrix(pos,scale,transform->_rotByEachAxis);
         shader->SetUniformMat4x4("u_Model", &model[0][0]);
     }
     
     RenderUtil::HandleVP(shader, cam->GetEntity()->GetComponent<TransformComponent>(), cam);
     glBindVertexArray(phy2d->_vao);
-    glDrawElements(GL_POINTS,(int)phy2d->_indicesData.size(),GL_UNSIGNED_INT,0);
+    glDrawElements(GL_LINES,(int)phy2d->_indicesData.size(),GL_UNSIGNED_INT,0);
     
     glBindVertexArray(0);
     shader->UnUse();

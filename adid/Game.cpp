@@ -47,8 +47,14 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
 //    CreateVBOTest();
 //    CreateEBOTest();
 //    CreateBox();
-    CreatePhyBox();
-    CreatePhyGround();
+    
+//    CreatePhyBox(glm::vec3(0,20,0));
+//    CreatePhyBox(glm::vec3(0,40,0));
+//    CreatePhyBox(glm::vec3(-5,40,0));
+    
+    CreatePhyGround(glm::vec3(0,-10,0));
+    CreatePhyGround(glm::vec3(2,0,0));
+    CreatePhyGround(glm::vec3(-1,0,0));
     
     /*
     
@@ -264,11 +270,11 @@ void Game::CreateBox()
     
 }
 
-void Game::CreatePhyBox()
+void Game::CreatePhyBox(const glm::vec3& pos)
 {
-    // @miao @todo
     fl::Entity* entity = GetFramework()->CreateEntity();
-
+    auto transform = entity->GetComponent<fl::TransformComponent>();
+    transform->SetPosition(pos);
     
     auto primComp = new fl::PrimitiveComponent(fl::EVertexAttrType::POS_UV_COLOR,true);
     
@@ -322,13 +328,13 @@ void Game::CreatePhyBox()
     entity->AddComponent(fl::Phy2DComponent::ClsName(),phy2dComp);
 }
 
-void Game::CreatePhyGround()
+void Game::CreatePhyGround(const glm::vec3& pos)
 {
     // @miao @todo
     fl::Entity* entity = GetFramework()->CreateEntity();
     
     auto transform = entity->GetComponent<fl::TransformComponent>();
-    transform->SetPosition(glm::vec3(0,-10,-1));
+    transform->SetPosition(pos);
     
     auto primComp = new fl::PrimitiveComponent(fl::EVertexAttrType::POS_UV_COLOR,true);
     
