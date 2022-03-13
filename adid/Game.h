@@ -27,6 +27,7 @@ protected:
     void CreateVBOTest();
     void CreateEBOTest();
     void CreateBox();
+    void CreatePhyGround();
     
     
     void CreatePhyBox();

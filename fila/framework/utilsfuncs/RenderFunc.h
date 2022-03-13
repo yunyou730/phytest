@@ -30,4 +30,5 @@ protected:
     static void HandleMVP(ShaderProgram* shader,TransformComponent* targetTransform,TransformComponent* cameraTransform,CameraComponent* cameraComp);
 
 };
+
 }

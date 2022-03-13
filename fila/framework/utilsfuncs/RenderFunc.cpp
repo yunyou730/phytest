@@ -1,6 +1,10 @@
-#include "UtilFunc.h"
+#include "RenderFunc.h"
 
 namespace fl {
+
+/*
+ Render Util
+ **/
 GLuint RenderUtil::HandlePrimitiveType(RenderStateComponent* renderStateComp)
 {
     auto primitiveType = renderStateComp->GetPrimitiveType();
@@ -105,5 +109,14 @@ void RenderUtil::RenderPrimitive(ShaderManager* shaderManager,Entity* entity,Cam
     glBindVertexArray(0);
     shader->UnUse();
 }
+
+
+
+
+/*
+ Phy2d Util
+ **/
+
+
 
 }

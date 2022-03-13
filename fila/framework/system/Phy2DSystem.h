@@ -15,8 +15,10 @@ public:
     virtual void Update() override;
     
 protected:
-    
+    void ProcessTickRate();
     void OnPhyTick();
+    void CheckAndCreateBody();
+    void SyncPhyPropToTransform();
     
 protected:
     b2World*            _world = nullptr;
