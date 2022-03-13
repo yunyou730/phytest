@@ -8,7 +8,7 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "box2d.h"
+
 
 #include "../fila/fila.h"
 #include "common.h"
@@ -16,6 +16,10 @@
 #include "Game.h"
 
 #include "log.h"
+
+
+#include "box2d.h"
+
 
 void TestBox2D()
 {
@@ -97,8 +101,10 @@ void TestMath()
     
 }
 
+
 int main(int argc, const char * argv[])
 {
+    TestBox2D();
     TestMath();
     
     fl::LaunchParam param;

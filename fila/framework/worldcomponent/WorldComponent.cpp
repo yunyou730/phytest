@@ -2,6 +2,10 @@
 
 namespace fl {
 
+// -------------
+/*
+ Keyboard input
+ **/
 WCKeyboardInput::WCKeyboardInput()
 {
     for(int i = 0;i < (int)EInputKey::Max;i++)
@@ -27,5 +31,21 @@ EKeyState WCKeyboardInput::GetState(EInputKey key) const
     }
     return result;
 }
+
+/*
+ 2D physics settings
+ **/
+
+WCPhy2DSettings::WCPhy2DSettings()
+{
+    _gravity = b2Vec2(0.0f,-10.f);
+}
+
+
+float WCPhy2DSettings::TimeStep() const
+{
+    return 1.0 / float(_phyFPS);
+}
+
 
 }

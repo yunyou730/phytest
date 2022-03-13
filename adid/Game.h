@@ -20,7 +20,6 @@ public:
     virtual void OnUpdate();
     virtual void OnRenderer();
     
-    
 protected:
     void CreatePersCamera(int viewportWidth,int viewportHeight);
     void CreateOthoCamera(int viewportWidth,int viewportHeight);
@@ -28,6 +27,9 @@ protected:
     void CreateVBOTest();
     void CreateEBOTest();
     void CreateBox();
+    
+    
+    void CreatePhyBox();
 };
 
 }

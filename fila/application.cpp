@@ -5,8 +5,8 @@
 #include "TestSystem.h"
 #include "RendererSystem.h"
 #include "ImGuiSystem.h"
+#include "Phy2DSystem.h"
 
-// managers
 #include "renderer/ShaderManager.h"
 
 namespace fl {
@@ -31,15 +31,15 @@ void Application::OnPrepare(Window* window,const LaunchParam& launchParam)
     // system
     _framework->RegisterSystem(new RendererSystem(_framework));
     _framework->RegisterSystem(new ImGuiSystem(_framework));
+    _framework->RegisterSystem(new Phy2DSystem(_framework));
     
     // world component
     auto globalRenderParam = new WCGlobalRenderParam();
     globalRenderParam->launchParam = launchParam;
     
-    auto keyboardInput = new WCKeyboardInput();
-    
     _framework->RegisterWorldComponent(WCGlobalRenderParam::ClsName(),globalRenderParam);
-    _framework->RegisterWorldComponent(WCKeyboardInput::ClsName(),keyboardInput);
+    _framework->RegisterWorldComponent(WCKeyboardInput::ClsName(),new WCKeyboardInput());
+    _framework->RegisterWorldComponent(WCPhy2DSettings::ClsName(),new WCPhy2DSettings());
     
     // Prepare
     _framework->OnPrepare(launchParam);

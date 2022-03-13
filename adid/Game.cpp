@@ -38,33 +38,15 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
     GetFramework()->RegisterSystem(new HierarychyGUISystem(GetFramework()));
     GetFramework()->RegisterSystem(new InspectorGuiSystem(GetFramework()));
         
-    CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
-//    CreateOthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
+//    CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
+    CreateOthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
     
 //    CreateVBOTest();
 //    CreateEBOTest();
     CreateBox();
+    CreatePhyBox();
+    
     /*
-    // Create entity1 ,render rectangle
-    {
-        fl::Entity* entity = GetFramework()->CreateEntity();
-        
-        auto primitiveComp = new fl::PrimitiveComponent(fl::EVertexAttrType::POS);
-        primitiveComp->AddVertex(glm::vec3(-0.5,-0.5,0.0));
-        primitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
-        primitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
-        primitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
-        primitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
-        primitiveComp->AddVertex(glm::vec3( 0.5, 0.5,0.0));
-        primitiveComp->Commit();
-        entity->AddComponent(CLASS_NAME(PrimitiveComponent), primitiveComp);
-        
-        auto renderStateComp = new fl::RenderStateComponent();
-        renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::BuiltinAttrPos);
-        renderStateComp->SetPrimitiveType(fl::ERenderPrimitiveType::Triangle);
-        renderStateComp->SetFillMode(fl::ERenderFillMode::Fill);
-        entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
-    }
     
     // Create entity2
     {
@@ -275,6 +257,12 @@ void Game::CreateBox()
     renderStateComp->SetPrimitiveType(fl::ERenderPrimitiveType::Triangle);
     renderStateComp->SetFillMode(fl::ERenderFillMode::Fill);
     entity->AddComponent(fl::RenderStateComponent::ClsName(),renderStateComp);
+    
+}
+
+void Game::CreatePhyBox()
+{
+    // @miao @todo
     
 }
 
