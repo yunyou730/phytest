@@ -90,8 +90,7 @@ void Phy2DSystem::Renderer()
         for(auto it = toRenderEntities.begin();it != toRenderEntities.end();it++)
         {
             Entity* entity = *it;
-            RenderStateComponent* renderStateComp = entity->GetComponent<RenderStateComponent>();
-            if(camComp->CheckLayer(renderStateComp->GetRenderLayer()))
+            if(camComp->IsDrawDebugInfo())
             {
                 Phy2dFunc::DrawDebugWire(_shaderManager,_phy2dSettings,entity->GetComponent<Phy2DComponent>(),camComp);
             }

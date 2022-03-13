@@ -38,7 +38,11 @@ public:
 protected:
     void CreateAsDynamic(b2World* world,const glm::vec3& pos);
     void CreateAsStatic(b2World* world,const glm::vec3& pos);
+    
     void CreateDebugDisplay();
+    void BuildDebugVertices();
+    void BuildDebugVAO();
+    
     
 protected:
     b2Body*         _body = nullptr;

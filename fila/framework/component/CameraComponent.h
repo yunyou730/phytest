@@ -41,6 +41,11 @@ public:
     
     void SetCameraType(ECameraType camType) { _cameraType = camType;}
     
+    void SetOrthoHalf(float orthoHalf) {_orthoHalf = orthoHalf;}
+    
+    void SetDrawDebugInfo(bool bDrawDebugInfo) { _bDrawDebugInfo = bDrawDebugInfo; }
+    bool IsDrawDebugInfo() const { return _bDrawDebugInfo; }
+    
 public:
     ECameraType _cameraType = ECameraType::Perspective;
     
@@ -64,9 +69,9 @@ public:
     float _moveSpeed = 2.0f;
     float _rotateDegSpeed = 90.0f;
     
-    
     float _orthoHalf = 1.0f;
     
+    bool    _bDrawDebugInfo = false;
 };
 
 }
