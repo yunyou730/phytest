@@ -44,7 +44,7 @@ protected:
     void BuildDebugVAO();
     
     
-protected:
+public:
     b2Body*         _body = nullptr;
     b2Fixture*      _fixture = nullptr;
     BodyType        _bodyType = BodyType::Dynamic;

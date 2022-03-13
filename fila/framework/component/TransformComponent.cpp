@@ -62,7 +62,7 @@ void TransformComponent::SetScale(const glm::vec3& scale)
 void TransformComponent::SetScale(float scale)
 {
     _scale = glm::vec3(scale,scale,scale);
-    _bDirty = true;    
+    _bDirty = true;
 }
 
 void TransformComponent::SetRotation(float rotByX,float rotByY,float rotByZ)
@@ -119,7 +119,7 @@ void TransformComponent::CalcModelMatrix()
     translate = glm::translate(translate,_pos);
     
     
-    _modelMatrix = scale * rot * translate;
+    _modelMatrix = translate * rot * scale;
     
 }
 

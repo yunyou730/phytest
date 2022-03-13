@@ -156,7 +156,7 @@ glm::mat4 RenderUtil::CalcModelMatrix(const glm::vec3& translate,const glm::vec3
     translateMat = glm::translate(translateMat,translate);
     
     
-    result = scaleMat * rotMat * translateMat;
+    result = translateMat * rotMat * scaleMat;//scaleMat * rotMat * translateMat;
     
     return result;
 }

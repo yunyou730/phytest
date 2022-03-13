@@ -77,7 +77,14 @@ void Phy2DComponent::CreateAsStatic(b2World* world,const glm::vec3& pos)
     
     
     b2PolygonShape shape;
-    shape.SetAsBox(1.0f,1.0f);
+//    shape.SetAsBox(1.0f,1.0f);
+    
+//    void Set(const b2Vec2* points, int32 count);
+    
+    std::vector<b2Vec2> points = {b2Vec2(0,0),b2Vec2(0,1),b2Vec2(1,0)/*,b2Vec2(1,1)*/};
+    shape.Set(&points[0],(int)points.size());
+    
+    
     
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &shape;

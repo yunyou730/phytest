@@ -25,6 +25,7 @@
 		2B586D5527DDBD8600833F2F /* Phy2dFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D5427DDBD8600833F2F /* Phy2dFunc.cpp */; };
 		2B586D5927DDD52B00833F2F /* phy2d_debug.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B586D5727DDD51900833F2F /* phy2d_debug.fsh */; };
 		2B586D5A27DDD52B00833F2F /* phy2d_debug.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B586D5827DDD51900833F2F /* phy2d_debug.vsh */; };
+		2B586D5F27DE5B7B00833F2F /* TestSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D5E27DE5B7B00833F2F /* TestSystem.cpp */; };
 		2B6003B427C7EC5C00B19562 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B227C7EC5C00B19562 /* Game.cpp */; };
 		2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */; };
 		2B60074227C7F7C400B19562 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60068527C7F7C400B19562 /* glm.cpp */; };
@@ -517,7 +518,6 @@
 		2BFE8C9327C485F7001F171C /* Phy2DSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C8D27C485F7001F171C /* Phy2DSystem.cpp */; };
 		2BFE8C9427C485F7001F171C /* RendererSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C8E27C485F7001F171C /* RendererSystem.cpp */; };
 		2BFE8C9527C485F7001F171C /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C9127C485F7001F171C /* System.cpp */; };
-		2BFE8C9B27C48E5C001F171C /* TestSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8C9927C48E5C001F171C /* TestSystem.cpp */; };
 		2BFE8CA727C4A045001F171C /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CA327C4A045001F171C /* common.cpp */; };
 		2BFE8CA827C4A045001F171C /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CA427C4A045001F171C /* log.cpp */; };
 		2BFE8CAE27C4A886001F171C /* WorldComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8CAD27C4A886001F171C /* WorldComponent.cpp */; };
@@ -585,6 +585,8 @@
 		2B586D5427DDBD8600833F2F /* Phy2dFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Phy2dFunc.cpp; sourceTree = "<group>"; };
 		2B586D5727DDD51900833F2F /* phy2d_debug.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = phy2d_debug.fsh; sourceTree = "<group>"; };
 		2B586D5827DDD51900833F2F /* phy2d_debug.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = phy2d_debug.vsh; sourceTree = "<group>"; };
+		2B586D5D27DE5B7B00833F2F /* TestSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSystem.h; sourceTree = "<group>"; };
+		2B586D5E27DE5B7B00833F2F /* TestSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestSystem.cpp; sourceTree = "<group>"; };
 		2B6003B227C7EC5C00B19562 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		2B6003B327C7EC5C00B19562 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
@@ -1147,8 +1149,6 @@
 		2BFE8C9027C485F7001F171C /* Phy2DSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phy2DSystem.h; sourceTree = "<group>"; };
 		2BFE8C9127C485F7001F171C /* System.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
 		2BFE8C9227C485F7001F171C /* System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System.h; sourceTree = "<group>"; };
-		2BFE8C9927C48E5C001F171C /* TestSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestSystem.cpp; sourceTree = "<group>"; };
-		2BFE8C9A27C48E5C001F171C /* TestSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSystem.h; sourceTree = "<group>"; };
 		2BFE8CA327C4A045001F171C /* common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = common.cpp; sourceTree = "<group>"; };
 		2BFE8CA427C4A045001F171C /* log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = log.cpp; sourceTree = "<group>"; };
 		2BFE8CA527C4A045001F171C /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
@@ -1746,6 +1746,8 @@
 				2B586D3827D5CD4700833F2F /* HierarchyGUISystem.h */,
 				2B586D4127D671B000833F2F /* InspectorGuiSystem.cpp */,
 				2B586D4227D671B000833F2F /* InspectorGuiSystem.h */,
+				2B586D5E27DE5B7B00833F2F /* TestSystem.cpp */,
+				2B586D5D27DE5B7B00833F2F /* TestSystem.h */,
 				2B586D3D27D6693600833F2F /* WorldComp.cpp */,
 				2B586D3E27D6693600833F2F /* WorldComp.h */,
 			);
@@ -2148,8 +2150,6 @@
 				2BFE8C8F27C485F7001F171C /* RendererSystem.h */,
 				2B586D3527D5204900833F2F /* ImGuiSystem.cpp */,
 				2B586D3427D5204900833F2F /* ImGuiSystem.h */,
-				2BFE8C9927C48E5C001F171C /* TestSystem.cpp */,
-				2BFE8C9A27C48E5C001F171C /* TestSystem.h */,
 				2BFE8C9127C485F7001F171C /* System.cpp */,
 				2BFE8C9227C485F7001F171C /* System.h */,
 			);
@@ -2710,6 +2710,7 @@
 				2BFE8C4327C476BC001F171C /* b2_chain_shape.cpp in Sources */,
 				2BFE8C3727C476BC001F171C /* b2_fixture.cpp in Sources */,
 				2BFE8C3427C476BC001F171C /* b2_mouse_joint.cpp in Sources */,
+				2B586D5F27DE5B7B00833F2F /* TestSystem.cpp in Sources */,
 				2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */,
 				2BFE8C3E27C476BC001F171C /* b2_math.cpp in Sources */,
 				2BFE8C8A27C485E7001F171C /* Framework.cpp in Sources */,
@@ -2736,7 +2737,6 @@
 				2BFE8C2127C476BC001F171C /* b2_chain_polygon_contact.cpp in Sources */,
 				2BFE8C3C27C476BC001F171C /* b2_stack_allocator.cpp in Sources */,
 				2BFE8C9327C485F7001F171C /* Phy2DSystem.cpp in Sources */,
-				2BFE8C9B27C48E5C001F171C /* TestSystem.cpp in Sources */,
 				2BFE8C4A27C476BC001F171C /* b2_distance.cpp in Sources */,
 				2BFE8C4927C476BC001F171C /* b2_time_of_impact.cpp in Sources */,
 				2BFE8C3D27C476BC001F171C /* b2_settings.cpp in Sources */,

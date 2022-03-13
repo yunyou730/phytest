@@ -15,6 +15,7 @@
 #include "TestMoveSystem.h"
 #include "HierarchyGUISystem.h"
 #include "InspectorGuiSystem.h"
+#include "TestSystem.h"
 
 #include "WorldComp.h"
 
@@ -40,13 +41,14 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
     GetFramework()->RegisterSystem(new TestMoveSystem(GetFramework()));
     GetFramework()->RegisterSystem(new HierarychyGUISystem(GetFramework()));
     GetFramework()->RegisterSystem(new InspectorGuiSystem(GetFramework()));
+    GetFramework()->RegisterSystem(new TestSystem(GetFramework()));
         
 //    CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
     CreateOthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
     
 //    CreateVBOTest();
 //    CreateEBOTest();
-//    CreateBox();
+    CreateBox();
     
     CreatePhyBox(glm::vec3(0,3,0));
     CreatePhyBox(glm::vec3(0,40,0));
