@@ -47,7 +47,6 @@ glm::mat4& CameraComponent::GetProjectionMatrix()
             _projectionMatrix = glm::perspective(glm::radians(_fovY), aspect, _zNear, _zFar);
             break;
         case ECameraType::Ortho:
-            
         {
             float widthField = (_orthoHalf + _orthoHalf) * aspect;
             _projectionMatrix = glm::ortho<float>(-widthField * 0.5,widthField * 0.5,-_orthoHalf,_orthoHalf,_zNear,_zFar);  // fix height,adapth width

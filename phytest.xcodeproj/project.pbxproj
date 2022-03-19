@@ -30,6 +30,8 @@
 		2B586D6927E5845500833F2F /* InspectorItemCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D6727E5845500833F2F /* InspectorItemCamera.cpp */; };
 		2B586D6D27E5883F00833F2F /* InspectorItemRenderState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D6C27E5883F00833F2F /* InspectorItemRenderState.cpp */; };
 		2B586D7427E5B3DE00833F2F /* ComponentFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D6F27E5B0B100833F2F /* ComponentFactory.cpp */; };
+		2B586D7827E5BD2500833F2F /* InspectorItemPrimitive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D7727E5BD2400833F2F /* InspectorItemPrimitive.cpp */; };
+		2B586D7C27E5BF7E00833F2F /* InspectorItemPhy2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D7A27E5BF7D00833F2F /* InspectorItemPhy2D.cpp */; };
 		2B6003B427C7EC5C00B19562 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B227C7EC5C00B19562 /* Game.cpp */; };
 		2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */; };
 		2B60074227C7F7C400B19562 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60068527C7F7C400B19562 /* glm.cpp */; };
@@ -599,6 +601,10 @@
 		2B586D6C27E5883F00833F2F /* InspectorItemRenderState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorItemRenderState.cpp; sourceTree = "<group>"; };
 		2B586D6F27E5B0B100833F2F /* ComponentFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentFactory.cpp; sourceTree = "<group>"; };
 		2B586D7027E5B0B100833F2F /* ComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentFactory.h; sourceTree = "<group>"; };
+		2B586D7627E5BD2400833F2F /* InspectorItemPrimitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorItemPrimitive.h; sourceTree = "<group>"; };
+		2B586D7727E5BD2400833F2F /* InspectorItemPrimitive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorItemPrimitive.cpp; sourceTree = "<group>"; };
+		2B586D7A27E5BF7D00833F2F /* InspectorItemPhy2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorItemPhy2D.cpp; sourceTree = "<group>"; };
+		2B586D7B27E5BF7D00833F2F /* InspectorItemPhy2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorItemPhy2D.h; sourceTree = "<group>"; };
 		2B6003B227C7EC5C00B19562 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		2B6003B327C7EC5C00B19562 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
@@ -1241,6 +1247,10 @@
 				2B586D6827E5845500833F2F /* InspectorItemCamera.h */,
 				2B586D6C27E5883F00833F2F /* InspectorItemRenderState.cpp */,
 				2B586D6B27E5883F00833F2F /* InspectorItemRenderState.h */,
+				2B586D7727E5BD2400833F2F /* InspectorItemPrimitive.cpp */,
+				2B586D7627E5BD2400833F2F /* InspectorItemPrimitive.h */,
+				2B586D7A27E5BF7D00833F2F /* InspectorItemPhy2D.cpp */,
+				2B586D7B27E5BF7D00833F2F /* InspectorItemPhy2D.h */,
 			);
 			path = Inspector;
 			sourceTree = "<group>";
@@ -2655,6 +2665,7 @@
 				2B6008A627C7F7EB00B19562 /* string_cast.inl in Sources */,
 				2B6008A727C7F7EB00B19562 /* functions.inl in Sources */,
 				2B6008A827C7F7EB00B19562 /* rotate_vector.inl in Sources */,
+				2B586D7827E5BD2500833F2F /* InspectorItemPrimitive.cpp in Sources */,
 				2B6008A927C7F7EB00B19562 /* matrix_interpolation.inl in Sources */,
 				2B586D2E27D5157D00833F2F /* imgui_demo.cpp in Sources */,
 				2B6008AA27C7F7EB00B19562 /* hash.inl in Sources */,
@@ -2749,6 +2760,7 @@
 				2B586D2F27D5157D00833F2F /* imgui_draw.cpp in Sources */,
 				2BFE8C2527C476BC001F171C /* b2_contact_solver.cpp in Sources */,
 				2BFE8C9427C485F7001F171C /* RendererSystem.cpp in Sources */,
+				2B586D7C27E5BF7E00833F2F /* InspectorItemPhy2D.cpp in Sources */,
 				2B586D2D27D5157D00833F2F /* imgui_tables.cpp in Sources */,
 				2BFE8CBD27C60276001F171C /* PrimitiveComponent.cpp in Sources */,
 				2BFE8C2C27C476BC001F171C /* b2_edge_polygon_contact.cpp in Sources */,

@@ -15,6 +15,7 @@
 #include "Inspector/InspectorItemTransform.h"
 #include "Inspector/InspectorItemCamera.h"
 #include "Inspector/InspectorItemRenderState.h"
+#include "Inspector/InspectorItemPrimitive.h"
 
 #include "ComponentFactory.h"
 
@@ -76,6 +77,7 @@ void InspectorGuiSystem::RefreshInspector(fl::Entity* entity)
     InspectorItemTransform::Show(entity);
     InspectorItemCamera::Show(entity);
     InspectorItemRenderState::Show(entity);
+    InspectorItemPrimitive::Show(entity);
 }
 
 void InspectorGuiSystem::ShowAddComponentPart(fl::Entity* entity)

@@ -24,7 +24,7 @@ public:
     
 protected:
     void CreatePersCamera(int viewportWidth,int viewportHeight);
-    void CreateOthoCamera(int viewportWidth,int viewportHeight);
+    void CreateOrthoCamera(int viewportWidth,int viewportHeight);
     
     void CreateVBOTest();
     void CreateEBOTest();

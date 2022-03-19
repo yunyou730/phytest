@@ -30,23 +30,68 @@ fl::Component* ComponentFactory::CreateComponent(const char* compName,fl::Entity
         cameraComp->SetLookDir(glm::vec3(0,0,-1));
         cameraComp->SetDrawDebugInfo(true);
         entity->AddComponent(fl::CameraComponent::ClsName(), cameraComp);
-        
-        
-        
     }
     else if(strcmp(compName,fl::PrimitiveComponent::ClsName()) == 0)
     {
-        fl::Log::Info(fl::PrimitiveComponent::ClsName());
+        auto primComp = new fl::PrimitiveComponent(fl::EVertexAttrType::POS_UV_COLOR,true);
         
+        // near
+        primComp->AddVertex(glm::vec3(-0.5,-0.5,-0.5),glm::vec2(0,0),glm::vec3(1,0,0));
+        primComp->AddVertex(glm::vec3( 0.5,-0.5,-0.5),glm::vec2(1,0),glm::vec3(0,1,0));
+        primComp->AddVertex(glm::vec3(-0.5, 0.5,-0.5),glm::vec2(0,1),glm::vec3(0,0,1));
+        primComp->AddVertex(glm::vec3( 0.5, 0.5,-0.5),glm::vec2(1,1),glm::vec3(1,1,0));
         
+        // far
+        primComp->AddVertex(glm::vec3(-0.5,-0.5, 0.5),glm::vec2(0,0),glm::vec3(1,0,0));
+        primComp->AddVertex(glm::vec3( 0.5,-0.5, 0.5),glm::vec2(1,0),glm::vec3(0,1,0));
+        primComp->AddVertex(glm::vec3(-0.5, 0.5, 0.5),glm::vec2(0,1),glm::vec3(0,0,1));
+        primComp->AddVertex(glm::vec3( 0.5, 0.5, 0.5),glm::vec2(1,1),glm::vec3(1,1,0));
+        
+        // left
+        primComp->AddVertex(glm::vec3(-0.5,-0.5, 0.5),glm::vec2(0,0),glm::vec3(1,0,0));
+        primComp->AddVertex(glm::vec3(-0.5,-0.5,-0.5),glm::vec2(1,0),glm::vec3(0,1,0));
+        primComp->AddVertex(glm::vec3(-0.5, 0.5, 0.5),glm::vec2(0,1),glm::vec3(0,0,1));
+        primComp->AddVertex(glm::vec3(-0.5, 0.5,-0.5),glm::vec2(1,1),glm::vec3(1,1,0));
+        
+        // right
+        primComp->AddVertex(glm::vec3( 0.5,-0.5,-0.5),glm::vec2(0,0),glm::vec3(1,0,0));
+        primComp->AddVertex(glm::vec3( 0.5,-0.5, 0.5),glm::vec2(1,0),glm::vec3(0,1,0));
+        primComp->AddVertex(glm::vec3( 0.5, 0.5,-0.5),glm::vec2(0,1),glm::vec3(0,0,1));
+        primComp->AddVertex(glm::vec3( 0.5, 0.5, 0.5),glm::vec2(1,1),glm::vec3(1,1,0));
+        
+        // top & bottom
+        // todo
+        
+        primComp->SetIndexData({
+            0,1,2,1,2,3,        // near
+            4,5,6,5,6,7,        // far
+            8,9,10,9,10,11,      // left
+            12,13,14,13,14,15,  // right
+            
+        });
+        primComp->Commit();
+        
+        entity->AddComponent(fl::PrimitiveComponent::ClsName(),primComp);
     }
     else if(strcmp(compName,fl::RenderStateComponent::ClsName()) == 0)
     {
         fl::Log::Info(fl::RenderStateComponent::ClsName());
+        
+        // render state
+        auto renderStateComp = new fl::RenderStateComponent();
+        renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::Builtin_StardardMVP);
+        renderStateComp->SetPrimitiveType(fl::ERenderPrimitiveType::Triangle);
+        renderStateComp->SetFillMode(fl::ERenderFillMode::Fill);
+        entity->AddComponent(fl::RenderStateComponent::ClsName(),renderStateComp);
     }
     else if(strcmp(compName,fl::Phy2DComponent::ClsName()) == 0)
     {
         fl::Log::Info(fl::Phy2DComponent::ClsName());
+
+        // phy 2d
+        auto phy2dComp = new fl::Phy2DComponent();
+        phy2dComp->SetBodyType(fl::Phy2DComponent::BodyType::Dynamic);
+        entity->AddComponent(fl::Phy2DComponent::ClsName(),phy2dComp);
     }
     
     return comp;
