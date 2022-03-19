@@ -12,6 +12,9 @@ class HierarychyGUISystem : public fl::System,public fl::ISysGUI
 public:
     HierarychyGUISystem(fl::Framework* framework);
     virtual void OnGUI() override;
+    
+protected:
+    void CreateEntity();
 
 protected:
     WCEntitySelection* _entitySelection = nullptr;

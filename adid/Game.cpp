@@ -44,7 +44,7 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
     GetFramework()->RegisterSystem(new TestSystem(GetFramework()));
         
 //    CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
-    CreateOthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
+//    CreateOthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
     
 //    CreateVBOTest();
 //    CreateEBOTest();
@@ -162,7 +162,7 @@ void Game::CreateOthoCamera(int viewportWidth,int viewportHeight)
     cameraComp->SetOrthoHalf(6);
     cameraComp->SetDrawDebugInfo(true);
     
-    entity->AddComponent(CLASS_NAME(CameraComponent), cameraComp);
+    entity->AddComponent(fl::CameraComponent::ClsName(), cameraComp);
     
     auto transformComp = entity->GetComponent<fl::TransformComponent>();
     transformComp->SetPosition(glm::vec3(0,0,5.0));

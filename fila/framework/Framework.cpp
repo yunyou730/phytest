@@ -45,7 +45,7 @@ Entity* Framework::CreateEntity()
 {
     _entityIdSeed++;
     
-    Entity* entity = new Entity(_entityIdSeed);
+    Entity* entity = new Entity(this,_entityIdSeed);
     _entityMap.insert(std::make_pair(_entityIdSeed,entity));
     
     // auto create transform component

@@ -37,8 +37,14 @@ void HierarychyGUISystem::OnGUI()
     
     if (ImGui::Begin("Hierarchy", p_open, window_flags))
     {
-        ImGui::SetNextItemOpen(_hierarchyExpand);
+        // Create entity
+        if(ImGui::Button("Create Entity"))
+        {
+            CreateEntity();
+        }
         
+        // Hierarychy Tree
+        ImGui::SetNextItemOpen(_hierarchyExpand);
         const std::map<unsigned int,fl::Entity*>& entityMap = GetFramework()->GetEntityMap();
         if (ImGui::TreeNode("Root"))
         {
@@ -60,5 +66,13 @@ void HierarychyGUISystem::OnGUI()
     ImGui::End();
 }
 
+void HierarychyGUISystem::CreateEntity()
+{
+    fl::Entity* entity = GetFramework()->CreateEntity();
+    std::stringstream ss;
+    ss << "entity [" << entity->GetID() << "] created" << std::endl;
+    fl::Log::Info(ss.str().c_str());
+
+}
 
 }

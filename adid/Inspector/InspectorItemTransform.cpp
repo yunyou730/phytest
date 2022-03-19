@@ -10,10 +10,7 @@ namespace ad
 void InspectorItemTransform::Show(fl::Entity* entity)
 {
     auto transform = entity->GetComponent<fl::TransformComponent>();
-    if(transform == nullptr)
-        return;
-    
-     if (ImGui::CollapsingHeader(fl::TransformComponent::ClsName(),ImGuiTreeNodeFlags_DefaultOpen))
+     if (transform != nullptr && ImGui::CollapsingHeader(fl::TransformComponent::ClsName(),ImGuiTreeNodeFlags_DefaultOpen))
      {
          ImGui::Text("Position");
          ImGui::DragFloat("px", &transform->_pos.x, 0.01f, 0.0f, 0.0f);
@@ -30,7 +27,6 @@ void InspectorItemTransform::Show(fl::Entity* entity)
          ImGui::DragFloat("sy", &transform->_scale.y, 0.1f, 0.f, 0.f);
          ImGui::DragFloat("sz", &transform->_scale.z, 0.1f, 0.f, 0.f);
      }
-
 }
 
 }

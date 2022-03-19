@@ -16,7 +16,6 @@ public:
     Framework(Application* app);
     virtual ~Framework();
     
-    
 public:
     Application* GetApp() const { return _app;}
     
@@ -31,14 +30,13 @@ public:
 public:
     void RegisterSystem(System* sys);
     void RegisterWorldComponent(const std::string& wcClsName,WorldComponent* comp);
-        
     
     template<typename WCType>
     WCType* GetWorldComponent()
     {
         return GetWorldComponent<WCType>(WCType::ClsName());
     }
-        
+    
 public:
     Entity* CreateEntity();
     std::vector<Entity*> QueryEntityWithCompSet(std::set<std::string> compSet);

@@ -85,6 +85,8 @@ void TransformComponent::SetRotationY(float degree)
 
 void TransformComponent::SetRotationZ(float degree)
 {
+    degree = degree - (int)(degree / 360.f) * 360.f;
+    
     _rotByEachAxis.z = degree;
     _bDirty = true;
 }

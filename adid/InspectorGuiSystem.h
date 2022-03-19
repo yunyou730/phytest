@@ -15,9 +15,12 @@ public:
     
 protected:
     void RefreshInspector(fl::Entity* entity);
+    void ShowAddComponentPart(fl::Entity* entity);
+    void DoAddComponent(int index,fl::Entity* entity);
     
 protected:
     WCEntitySelection*  _entitySelection = nullptr;
+    int     _toAddComponentIndex = 0;
 };
 
 }

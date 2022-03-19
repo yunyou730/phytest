@@ -8,12 +8,14 @@
 namespace fl {
 
 class Component;
+class Framework;
 class Entity
 {
 public:
-    Entity(unsigned int entityId);
+    Entity(Framework* framework,unsigned int entityId);
     ~Entity();
     unsigned int GetID() const { return _entityId; }
+    Framework* GetFramework() { return _framework;}
     
     bool HasComponent(const std::string& compClsName);
     void AddComponent(const std::string& compClsName,Component* component);
@@ -43,6 +45,7 @@ protected:
 protected:
     unsigned int _entityId = 0;
     std::map<std::string,Component*> _componentMap;
+    Framework*  _framework = nullptr;
 };
 
 }

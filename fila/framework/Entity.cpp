@@ -3,8 +3,9 @@
 
 namespace fl {
 
-Entity::Entity(unsigned int entityId)
-    :_entityId(entityId)
+Entity::Entity(Framework* framework,unsigned int entityId)
+    :_framework(framework)
+    ,_entityId(entityId)
 {
     
 }
