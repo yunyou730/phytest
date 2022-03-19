@@ -23,6 +23,7 @@ public:
 public:
     void OnPrepare(const LaunchParam& launchParam);
     void OnUpdate();
+    void OnLateUpdate();
     void OnRender();
     void OnCleanUp();
     void OnGUI();
@@ -62,6 +63,7 @@ protected:
 protected:
     std::vector<ISysPrepare*>       _prepareSysList;
     std::vector<ISysUpdate*>        _updateSysList;
+    std::vector<ISysLateUpdate*>    _lateUpdateSysList;
     std::vector<ISysRenderer*>      _renderSysList;
     std::vector<ISysCleanup*>       _cleanupSysList;
     std::vector<ISysGUISupport*>    _guiSupportSysList;

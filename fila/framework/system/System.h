@@ -30,6 +30,13 @@ public:
     virtual void Update() = 0;
 };
 
+// LateUpdate ------
+class ISysLateUpdate
+{
+public:
+    virtual void LateUpdate() = 0;
+};
+
 // Renderer ----------
 class ISysRenderer
 {

@@ -17,6 +17,7 @@ public:
     virtual void OnCleanup();
     
     virtual void OnUpdate();
+    virtual void OnLateUpdate();
     virtual void OnRenderer();
     
     virtual void OnViewportSizeChange(int width,int height);

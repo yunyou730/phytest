@@ -20,6 +20,10 @@ GLuint RenderUtil::HandlePrimitiveType(RenderStateComponent* renderStateComp)
             result = GL_POINTS;
             glPointSize(renderStateComp->GetPointSize());
             break;
+        case ERenderPrimitiveType::Line:
+            result = GL_LINES;
+            // glLineWidth // glLineWidht not work...
+            break;
         default:
             result = GL_TRIANGLES;
             break;

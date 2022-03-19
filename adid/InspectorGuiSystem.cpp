@@ -12,6 +12,10 @@
 #include "imgui.h"
 #include <sstream>
 
+#include "Inspector/InspectorItemTransform.h"
+#include "Inspector/InspectorItemCamera.h"
+#include "Inspector/InspectorItemRenderState.h"
+
 namespace ad {
 
 InspectorGuiSystem::InspectorGuiSystem(fl::Framework* framework)
@@ -22,6 +26,19 @@ InspectorGuiSystem::InspectorGuiSystem(fl::Framework* framework)
 
 void InspectorGuiSystem::OnGUI()
 {
+    ImGuiIO io = ImGui::GetIO();
+    float display_width = (float) io.DisplaySize.x;
+    float display_height = (float)io.DisplaySize.y;
+    float demo_window_size_x = display_width * 0.25;
+    float demo_window_size_y = display_height * 0.8;
+    
+    float demo_window_pos_x = display_width - demo_window_size_x;
+    float demo_window_pos_y = display_height * 0;
+
+    ImGui::SetNextWindowPos(ImVec2(demo_window_pos_x, demo_window_pos_y), ImGuiCond_Once);
+    ImGui::SetNextWindowSize(ImVec2(demo_window_size_x,demo_window_size_y),ImGuiCond_Once);
+    
+    
     ImGuiWindowFlags window_flags = 0;
     bool* p_open = nullptr;
     
@@ -40,57 +57,11 @@ void InspectorGuiSystem::RefreshInspector(fl::Entity* entity)
 {
     ImGui::Text("[EntityID] %d",entity->GetID());
     
-    if (ImGui::CollapsingHeader(fl::TransformComponent::ClsName(),true))
-    {
-        auto transform = entity->GetComponent<fl::TransformComponent>();
-        
-        ImGui::Text("Position");
-        ImGui::DragFloat("px", &transform->_pos.x, 0.01f, 0.0f, 0.0f);
-        ImGui::DragFloat("py", &transform->_pos.y, 0.01f, 0.0f, 0.0f);
-        ImGui::DragFloat("pz", &transform->_pos.z, 0.01f, 0.0f, 0.0f);
-        
-        ImGui::Text("Rotation");
-        ImGui::DragFloat("rx", &transform->_rotByEachAxis.x, 0.1f, 0.f, 360.f);
-        ImGui::DragFloat("ry", &transform->_rotByEachAxis.y, 0.1f, 0.f, 360.f);
-        ImGui::DragFloat("rz", &transform->_rotByEachAxis.z, 0.1f, 0.f, 360.f);
-        
-        ImGui::Text("Scale");
-        ImGui::DragFloat("sx", &transform->_scale.x, 0.1f, 0.f, 0.f);
-        ImGui::DragFloat("sy", &transform->_scale.y, 0.1f, 0.f, 0.f);
-        ImGui::DragFloat("sz", &transform->_scale.z, 0.1f, 0.f, 0.f);
-    }
+    InspectorItemTransform::Show(entity);
+    InspectorItemCamera::Show(entity);
+    InspectorItemRenderState::Show(entity);
     
-    
-    const static char* cameraTypeItems[] = {"Perspective","Ortho"};
-    auto camera = entity->GetComponent<fl::CameraComponent>();
-    if(camera != nullptr && ImGui::CollapsingHeader(fl::CameraComponent::ClsName(),true))
-    {
-        int selectIndex = (int)camera->_cameraType;
-        ImGui::Combo("camera_type", &selectIndex, cameraTypeItems, IM_ARRAYSIZE(cameraTypeItems));
-        camera->_cameraType = (fl::ECameraType)selectIndex;
-        
-        ImGui::DragInt("camera_sort",&camera->_sort,1,0,20);
-        ImGui::DragFloat("camera_fov_y", &camera->_fovY,1.f,0.f,180.f);
-        
-        ImGui::DragFloat("camera_move_speed",&camera->_moveSpeed,1.f,0.f,30.f);
-        ImGui::DragFloat("camera_rot_speed",&camera->_rotateDegSpeed,1.f,0.f,360.f);
-        
-        
-        ImGui::DragFloat("camera_ortho_half",&camera->_orthoHalf,0.5f,0.3f,30.f);
 
-        
-        // look dir
-        std::stringstream ss;
-        ImGui::Text("look dir(%.3f,%.3f,%.3f)",camera->LookDir().x,camera->LookDir().y,camera->LookDir().z);
-        
-        // render layers
-        ss.clear();
-        for(auto it = camera->_renderLayers.begin();it != camera->_renderLayers.end();it++)
-        {
-            ss << *it << ",";
-        }
-        ImGui::Text("render layers [%s]",ss.str().c_str());
-    }
 }
 
 }

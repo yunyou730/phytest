@@ -26,6 +26,9 @@
 		2B586D5927DDD52B00833F2F /* phy2d_debug.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B586D5727DDD51900833F2F /* phy2d_debug.fsh */; };
 		2B586D5A27DDD52B00833F2F /* phy2d_debug.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B586D5827DDD51900833F2F /* phy2d_debug.vsh */; };
 		2B586D5F27DE5B7B00833F2F /* TestSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D5E27DE5B7B00833F2F /* TestSystem.cpp */; };
+		2B586D6427E5803800833F2F /* InspectorItemTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D6227E5803800833F2F /* InspectorItemTransform.cpp */; };
+		2B586D6927E5845500833F2F /* InspectorItemCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D6727E5845500833F2F /* InspectorItemCamera.cpp */; };
+		2B586D6D27E5883F00833F2F /* InspectorItemRenderState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D6C27E5883F00833F2F /* InspectorItemRenderState.cpp */; };
 		2B6003B427C7EC5C00B19562 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B227C7EC5C00B19562 /* Game.cpp */; };
 		2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */; };
 		2B60074227C7F7C400B19562 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60068527C7F7C400B19562 /* glm.cpp */; };
@@ -587,6 +590,12 @@
 		2B586D5827DDD51900833F2F /* phy2d_debug.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = phy2d_debug.vsh; sourceTree = "<group>"; };
 		2B586D5D27DE5B7B00833F2F /* TestSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSystem.h; sourceTree = "<group>"; };
 		2B586D5E27DE5B7B00833F2F /* TestSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestSystem.cpp; sourceTree = "<group>"; };
+		2B586D6227E5803800833F2F /* InspectorItemTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorItemTransform.cpp; sourceTree = "<group>"; };
+		2B586D6327E5803800833F2F /* InspectorItemTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorItemTransform.h; sourceTree = "<group>"; };
+		2B586D6727E5845500833F2F /* InspectorItemCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorItemCamera.cpp; sourceTree = "<group>"; };
+		2B586D6827E5845500833F2F /* InspectorItemCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorItemCamera.h; sourceTree = "<group>"; };
+		2B586D6B27E5883F00833F2F /* InspectorItemRenderState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorItemRenderState.h; sourceTree = "<group>"; };
+		2B586D6C27E5883F00833F2F /* InspectorItemRenderState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorItemRenderState.cpp; sourceTree = "<group>"; };
 		2B6003B227C7EC5C00B19562 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		2B6003B327C7EC5C00B19562 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
@@ -1220,6 +1229,19 @@
 			path = utilsfuncs;
 			sourceTree = "<group>";
 		};
+		2B586D6127E5803800833F2F /* Inspector */ = {
+			isa = PBXGroup;
+			children = (
+				2B586D6227E5803800833F2F /* InspectorItemTransform.cpp */,
+				2B586D6327E5803800833F2F /* InspectorItemTransform.h */,
+				2B586D6727E5845500833F2F /* InspectorItemCamera.cpp */,
+				2B586D6827E5845500833F2F /* InspectorItemCamera.h */,
+				2B586D6C27E5883F00833F2F /* InspectorItemRenderState.cpp */,
+				2B586D6B27E5883F00833F2F /* InspectorItemRenderState.h */,
+			);
+			path = Inspector;
+			sourceTree = "<group>";
+		};
 		2B60059927C7F7C300B19562 /* glm */ = {
 			isa = PBXGroup;
 			children = (
@@ -1735,6 +1757,7 @@
 		2BFE8ADB27C3E360001F171C /* adid */ = {
 			isa = PBXGroup;
 			children = (
+				2B586D6127E5803800833F2F /* Inspector */,
 				2BFE8ADC27C3E360001F171C /* main.cpp */,
 				2B6003B227C7EC5C00B19562 /* Game.cpp */,
 				2B6003B327C7EC5C00B19562 /* Game.h */,
@@ -2279,6 +2302,7 @@
 				2B60075A27C7F7EA00B19562 /* matrix_float4x3.hpp in Sources */,
 				2B60075B27C7F7EA00B19562 /* vector_bool3.hpp in Sources */,
 				2B586D3F27D6693600833F2F /* WorldComp.cpp in Sources */,
+				2B586D6D27E5883F00833F2F /* InspectorItemRenderState.cpp in Sources */,
 				2B60075C27C7F7EA00B19562 /* vector_relational.hpp in Sources */,
 				2B60075D27C7F7EA00B19562 /* vector_uint1_sized.hpp in Sources */,
 				2B60075E27C7F7EA00B19562 /* vector_bool1.hpp in Sources */,
@@ -2533,6 +2557,7 @@
 				2B60084F27C7F7EA00B19562 /* quaternion_simd.inl in Sources */,
 				2B60085027C7F7EA00B19562 /* ulp.inl in Sources */,
 				2B60085127C7F7EA00B19562 /* round.hpp in Sources */,
+				2B586D6927E5845500833F2F /* InspectorItemCamera.cpp in Sources */,
 				2B60085227C7F7EA00B19562 /* matrix_transform.hpp in Sources */,
 				2B60085327C7F7EA00B19562 /* type_precision.hpp in Sources */,
 				2B60085427C7F7EA00B19562 /* bitfield.hpp in Sources */,
@@ -2635,6 +2660,7 @@
 				2B6008B027C7F7EB00B19562 /* std_based_type.inl in Sources */,
 				2B6008B127C7F7EB00B19562 /* matrix_factorisation.inl in Sources */,
 				2B6008B227C7F7EB00B19562 /* type_aligned.inl in Sources */,
+				2B586D6427E5803800833F2F /* InspectorItemTransform.cpp in Sources */,
 				2B6008B327C7F7EB00B19562 /* vec_swizzle.hpp in Sources */,
 				2B6008B427C7F7EB00B19562 /* projection.hpp in Sources */,
 				2B6008B527C7F7EB00B19562 /* compatibility.inl in Sources */,

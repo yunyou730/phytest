@@ -40,6 +40,7 @@ void Application::OnPrepare(Window* window,const LaunchParam& launchParam)
     _framework->RegisterWorldComponent(WCGlobalRenderParam::ClsName(),globalRenderParam);
     _framework->RegisterWorldComponent(WCKeyboardInput::ClsName(),new WCKeyboardInput());
     _framework->RegisterWorldComponent(WCPhy2DSettings::ClsName(),new WCPhy2DSettings());
+    _framework->RegisterWorldComponent(WCImGUISettings::ClsName(),new WCImGUISettings());
     
     // Prepare
     _framework->OnPrepare(launchParam);
@@ -55,6 +56,11 @@ void Application::OnCleanup()
 void Application::OnUpdate()
 {
     _framework->OnUpdate();
+}
+
+void Application::OnLateUpdate()
+{
+    
 }
 
 void Application::OnRenderer()

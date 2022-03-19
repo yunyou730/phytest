@@ -11,6 +11,7 @@ enum class ERenderPrimitiveType
 {
     Triangle,
     Point,
+    Line,
     
     Max,
 };
@@ -54,7 +55,7 @@ public:
     void SetZTestEnable(bool bEnable) {_bEnableDepthTest = bEnable;}
     bool IsEnableZTest() const { return _bEnableDepthTest;}
     
-protected:
+public:
     unsigned int _shaderId = 0;
     ERenderPrimitiveType  _primitiveType = ERenderPrimitiveType::Triangle;
     ERenderFillMode     _fillMode = ERenderFillMode::Fill;

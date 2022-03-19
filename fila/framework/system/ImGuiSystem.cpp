@@ -47,11 +47,14 @@ void ImGuiSystem::Prepare(const LaunchParam& launchParam)
     // Setup Platform/Renderer backends
     ImGui_ImplGlfw_InitForOpenGL(GetFramework()->GetApp()->GetWindow()->GLFWWindow(), true);
     ImGui_ImplOpenGL3_Init(glsl_version);
+    
+    
+    
+    GetFramework();
 }
 
 void ImGuiSystem::BeforeGUI()
 {
-
     //     Start the Dear ImGui frame
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();

@@ -13,6 +13,8 @@ class CameraComponent;
 class ShaderManager;
 class ShaderProgram;
 
+class WCImGUISettings;
+
 class ImGuiSystem : public System,public ISysPrepare,public ISysCleanup,public ISysGUISupport,public ISysGUI
 {
 public:
@@ -28,7 +30,8 @@ public:
     void ToggleDebug() { _bEnableDebug = !_bEnableDebug;}
     
 protected:
-    bool    _bEnableDebug = false;
+    bool                _bEnableDebug = false;
+    WCImGUISettings*    _imguiSettings = nullptr;
 };
 
 }

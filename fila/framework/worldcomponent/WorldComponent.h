@@ -56,8 +56,16 @@ public:
     // iterate times in one second
     int     _phyFPS = 30;
     float   TimeStep() const;
+};
+
+class WCImGUISettings : public WorldComponent
+{
+public:
+    static const char* ClsName() { return "WCImGUISettings";}
     
-    
+    bool    _bSizeChanged = false;
+    int     _width = 0;
+    int     _height = 0;
 };
 
 

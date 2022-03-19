@@ -71,6 +71,14 @@ void Framework::OnUpdate()
     }
 }
 
+void Framework::OnLateUpdate()
+{
+    for(auto it = _lateUpdateSysList.begin();it != _lateUpdateSysList.end();it++)
+    {
+        (*it)->LateUpdate();
+    }
+}
+
 void Framework::OnRender()
 {
     // Render

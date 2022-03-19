@@ -31,7 +31,7 @@ RendererSystem::RendererSystem(Framework* framework)
 void RendererSystem::Prepare(const LaunchParam& launchParam)
 {
     _shaderManager = GetFramework()->GetApp()->GetShaderManager();
-    _renderParam =_framework->GetWorldComponent<WCGlobalRenderParam>();
+    _renderParam = GetFramework()->GetWorldComponent<WCGlobalRenderParam>();
     
     auto param =_framework->GetWorldComponent<WCGlobalRenderParam>();
     glClearColor(param->launchParam.clearColorR,
