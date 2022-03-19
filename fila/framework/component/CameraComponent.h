@@ -40,6 +40,7 @@ public:
     float RotDegSpeed() const { return _rotateDegSpeed;}
     
     void SetCameraType(ECameraType camType) { _cameraType = camType;}
+    ECameraType GetCameraType() const { return _cameraType; }
     
     void SetOrthoHalf(float orthoHalf) {_orthoHalf = orthoHalf;}
     

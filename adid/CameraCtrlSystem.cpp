@@ -49,20 +49,18 @@ void CameraCtrlSystem::DumpKeyboardState()
 void CameraCtrlSystem::HandleCameraMove(float deltaTime,fl::Entity* camEntity)
 {
     auto transform = camEntity->GetComponent<fl::TransformComponent>();
-    
     auto camComp = camEntity->GetComponent<fl::CameraComponent>();
     
-    
-    float distance = camComp->MoveSpeed() * _framework->GetApp()->GetDeltaTime();
+    float distance = camComp->MoveSpeed() * _moveSpeedFactor * _framework->GetApp()->GetDeltaTime();
     glm::vec3 direction(0.0);
     
     if(_keyboardInput->IsKeyPressed(fl::EInputKey::KEY_UP))
     {
-        direction = camComp->LookDir();
+        direction = GetHorizontalMoveDirection(camComp);
     }
     if(_keyboardInput->IsKeyPressed(fl::EInputKey::KEY_DOWN))
     {
-        direction = -camComp->LookDir();
+        direction = -GetHorizontalMoveDirection(camComp);
     }
     
     if(_keyboardInput->IsKeyPressed(fl::EInputKey::KEY_LEFT))
@@ -83,7 +81,6 @@ void CameraCtrlSystem::HandleCameraMove(float deltaTime,fl::Entity* camEntity)
 
 void CameraCtrlSystem::HandleCameraRotate(float deltaTime,fl::Entity* camEntity)
 {
-    
     auto camComp = camEntity->GetComponent<fl::CameraComponent>();
     
     float rotDegSpeed = camComp->RotDegSpeed();
@@ -133,9 +130,25 @@ void CameraCtrlSystem::HandleCameraRotate(float deltaTime,fl::Entity* camEntity)
         glm::vec4 to = from * rot;
         
 //        fl::Log::Info(rot);
-        
         camComp->SetLookDir(to);
     }
+}
+
+glm::vec3 CameraCtrlSystem::GetHorizontalMoveDirection(fl::CameraComponent* camComp)
+{
+    glm::vec3 direction(0.0);
+    switch(camComp->GetCameraType())
+    {
+        case fl::ECameraType::Perspective:
+            direction = camComp->LookDir();
+            break;
+        case fl::ECameraType::Ortho:
+            direction = glm::cross(camComp->LookDir(),camComp->RightDir());
+            break;
+        default:
+            break;
+    }
+    return direction;
 }
 
 }

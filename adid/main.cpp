@@ -98,12 +98,43 @@ void TestMath()
     
     glm::mat4 Projection = glm::perspective(glm::pi<float>() * 0.25f, 4.0f / 3.0f, 0.1f, 100.f);
     fl::Log::Info(Projection);
-    
+
 }
+
+//int Fib(int level)
+//{
+//    if(level == 1 || level == 2) return 1;
+//    return Fib(level - 1) + Fib(level - 2);
+//}
+//
+//int Fib2(int level)
+//{
+//    std::vector<int> result;
+//    result.reserve(level);
+//    result.push_back(1);
+//    result.push_back(1);
+//
+//    for(int i = 2;i < level;i++)
+//    {
+//        result.push_back(result[i - 1] + result[i - 2]);
+//    }
+//
+//    return result[level - 1];
+//}
+//
+//void Test()
+//{
+//    for(int i = 1;i <= 10;i++)
+//    {
+//        printf("%d\n",Fib(i));
+//    }
+//}
 
 
 int main(int argc, const char * argv[])
 {
+//    Test();
+
     TestBox2D();
     TestMath();
     
