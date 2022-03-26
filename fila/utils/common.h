@@ -10,6 +10,20 @@ if(pointer != nullptr) \
 
 #define CLASS_NAME(name) #name
 
+#define DELCARE_SINGLETON(CLS_NAME) \
+friend class Application;\
+public:\
+static CLS_NAME* Instance() \
+{\
+    static CLS_NAME instance;\
+    return &instance;\
+}\
+protected:\
+CLS_NAME() {}\
+
+
+
+
 namespace fl
 {
 struct LaunchParam

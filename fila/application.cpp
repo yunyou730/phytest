@@ -7,7 +7,8 @@
 #include "ImGuiSystem.h"
 #include "Phy2DSystem.h"
 
-#include "renderer/ShaderManager.h"
+#include "ShaderManager.h"
+#include "PrimitiveManager.h"
 
 namespace fl {
 
@@ -25,9 +26,17 @@ void Application::OnPrepare(Window* window,const LaunchParam& launchParam)
 {
     _window = window;
     
-    _shaderManager = new ShaderManager();
+    _shaderManager = ShaderManager::Instance();
+    _primitiveManager = PrimitiveManager::Instance();
     _framework = new Framework(this);
     
+    
+    // managers
+    _shaderManager->StartUp();
+    _primitiveManager->StartUp();
+    // @miao @todo
+    
+    // framework
     // system
     _framework->RegisterSystem(new RendererSystem(_framework));
     _framework->RegisterSystem(new ImGuiSystem(_framework));
@@ -50,7 +59,8 @@ void Application::OnCleanup()
 {
     _framework->OnCleanUp();
     SAFE_DEL(_framework);
-    SAFE_DEL(_shaderManager);
+//    SAFE_DEL(_shaderManager);
+//    SAFE_DEL(_primitiveManager);;
 }
 
 void Application::OnUpdate()

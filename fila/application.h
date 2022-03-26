@@ -6,6 +6,7 @@ namespace fl {
 
 class Framework;
 class ShaderManager;
+class PrimitiveManager;
 class Window;
 class Application
 {
@@ -54,7 +55,8 @@ protected:
     bool        _bShallExit = false;
     
 // managers
-    ShaderManager* _shaderManager = nullptr;
+    ShaderManager*      _shaderManager = nullptr;
+    PrimitiveManager*   _primitiveManager = nullptr;
     
     Window* _window = nullptr;
 };

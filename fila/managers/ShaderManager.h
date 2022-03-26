@@ -20,7 +20,18 @@ class ShaderProgram;
 class ShaderManager
 {
 public:
-    ShaderManager();
+    static ShaderManager* Instance()
+    {
+        static ShaderManager instance;
+        return &instance;
+    }
+protected:
+    ShaderManager() {}
+    
+    
+public:
+    void StartUp();
+    void CleanUp();
     
     unsigned int CreateShaderWithFile(const std::string& vsPath,const std::string& fsPath);
     unsigned int CreateShader(const std::string& vsCode,const std::string& fsCode);

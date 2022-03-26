@@ -26,8 +26,6 @@ protected:
     void CreatePersCamera(int viewportWidth,int viewportHeight);
     void CreateOrthoCamera(int viewportWidth,int viewportHeight);
     
-    void CreateVBOTest();
-    void CreateEBOTest();
     void CreateBox();
 
     void CreatePhyBox(const glm::vec3& pos);

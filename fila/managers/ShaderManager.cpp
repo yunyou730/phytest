@@ -4,9 +4,14 @@
 
 namespace fl {
 
-ShaderManager::ShaderManager()
+void ShaderManager::StartUp()
 {
     CreateBuiltinShaders();
+}
+
+void ShaderManager::CleanUp()
+{
+    
 }
 
 unsigned int ShaderManager::CreateShaderWithFile(const std::string& vsPath,const std::string& fsPath)

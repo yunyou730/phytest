@@ -6,8 +6,7 @@
 #include "Framework.h"
 #include "ShaderManager.h"
 
-#include "renderer/ShaderManager.h"
-#include "renderer/ShaderProgram.h"
+#include "ShaderProgram.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>

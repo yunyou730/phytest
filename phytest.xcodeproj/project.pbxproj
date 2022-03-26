@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B551A7727EEE4BB001560D9 /* PrimObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A7527EEE4BA001560D9 /* PrimObject.cpp */; };
 		2B586D1027D332FB00833F2F /* CameraCtrlSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */; };
 		2B586D1627D4A58E00833F2F /* TestMoveSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D1527D4A58E00833F2F /* TestMoveSystem.cpp */; };
 		2B586D2927D5157D00833F2F /* imgui_widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D1C27D5157C00833F2F /* imgui_widgets.cpp */; };
@@ -32,6 +33,7 @@
 		2B586D7427E5B3DE00833F2F /* ComponentFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D6F27E5B0B100833F2F /* ComponentFactory.cpp */; };
 		2B586D7827E5BD2500833F2F /* InspectorItemPrimitive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D7727E5BD2400833F2F /* InspectorItemPrimitive.cpp */; };
 		2B586D7C27E5BF7E00833F2F /* InspectorItemPhy2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D7A27E5BF7D00833F2F /* InspectorItemPhy2D.cpp */; };
+		2B586D8227E7808B00833F2F /* PrimitiveManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D8127E7808B00833F2F /* PrimitiveManager.cpp */; };
 		2B6003B427C7EC5C00B19562 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B227C7EC5C00B19562 /* Game.cpp */; };
 		2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */; };
 		2B60074227C7F7C400B19562 /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B60068527C7F7C400B19562 /* glm.cpp */; };
@@ -555,6 +557,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B551A7527EEE4BA001560D9 /* PrimObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrimObject.cpp; sourceTree = "<group>"; };
+		2B551A7627EEE4BA001560D9 /* PrimObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimObject.h; sourceTree = "<group>"; };
 		2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraCtrlSystem.cpp; sourceTree = "<group>"; };
 		2B586D0F27D332FB00833F2F /* CameraCtrlSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCtrlSystem.h; sourceTree = "<group>"; };
 		2B586D1427D4A58E00833F2F /* TestMoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMoveSystem.h; sourceTree = "<group>"; };
@@ -605,6 +609,8 @@
 		2B586D7727E5BD2400833F2F /* InspectorItemPrimitive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorItemPrimitive.cpp; sourceTree = "<group>"; };
 		2B586D7A27E5BF7D00833F2F /* InspectorItemPhy2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorItemPhy2D.cpp; sourceTree = "<group>"; };
 		2B586D7B27E5BF7D00833F2F /* InspectorItemPhy2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorItemPhy2D.h; sourceTree = "<group>"; };
+		2B586D8027E7808A00833F2F /* PrimitiveManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimitiveManager.h; sourceTree = "<group>"; };
+		2B586D8127E7808B00833F2F /* PrimitiveManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrimitiveManager.cpp; sourceTree = "<group>"; };
 		2B6003B227C7EC5C00B19562 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		2B6003B327C7EC5C00B19562 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
@@ -1253,6 +1259,17 @@
 				2B586D7B27E5BF7D00833F2F /* InspectorItemPhy2D.h */,
 			);
 			path = Inspector;
+			sourceTree = "<group>";
+		};
+		2B586D7E27E7803900833F2F /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				2B586D8127E7808B00833F2F /* PrimitiveManager.cpp */,
+				2B586D8027E7808A00833F2F /* PrimitiveManager.h */,
+				2B6008FD27C95A5E00B19562 /* ShaderManager.cpp */,
+				2B6008FC27C95A5E00B19562 /* ShaderManager.h */,
+			);
+			path = managers;
 			sourceTree = "<group>";
 		};
 		2B60059927C7F7C300B19562 /* glm */ = {
@@ -2131,6 +2148,7 @@
 		2BFE8C6E27C47B30001F171C /* fila */ = {
 			isa = PBXGroup;
 			children = (
+				2B586D7E27E7803900833F2F /* managers */,
 				2BFE8C7D27C48560001F171C /* framework */,
 				2BFE8C6F27C47B30001F171C /* renderer */,
 				2BFE8C7027C47B30001F171C /* fila.h */,
@@ -2147,10 +2165,10 @@
 		2BFE8C6F27C47B30001F171C /* renderer */ = {
 			isa = PBXGroup;
 			children = (
-				2B6008FD27C95A5E00B19562 /* ShaderManager.cpp */,
-				2B6008FC27C95A5E00B19562 /* ShaderManager.h */,
 				2B6003B627C7F6EA00B19562 /* ShaderProgram.cpp */,
 				2B6003B727C7F6EA00B19562 /* ShaderProgram.h */,
+				2B551A7527EEE4BA001560D9 /* PrimObject.cpp */,
+				2B551A7627EEE4BA001560D9 /* PrimObject.h */,
 			);
 			path = renderer;
 			sourceTree = "<group>";
@@ -2640,6 +2658,7 @@
 				2B60088E27C7F7EB00B19562 /* matrix_cross_product.hpp in Sources */,
 				2B60088F27C7F7EB00B19562 /* euler_angles.hpp in Sources */,
 				2B60089027C7F7EB00B19562 /* fast_square_root.inl in Sources */,
+				2B551A7727EEE4BB001560D9 /* PrimObject.cpp in Sources */,
 				2B60089127C7F7EB00B19562 /* color_space_YCoCg.inl in Sources */,
 				2B60089227C7F7EB00B19562 /* type_trait.hpp in Sources */,
 				2B60089327C7F7EB00B19562 /* extended_min_max.inl in Sources */,
@@ -2654,6 +2673,7 @@
 				2B60089C27C7F7EB00B19562 /* associated_min_max.hpp in Sources */,
 				2B60089D27C7F7EB00B19562 /* matrix_transform_2d.hpp in Sources */,
 				2B60089E27C7F7EB00B19562 /* integer.inl in Sources */,
+				2B586D8227E7808B00833F2F /* PrimitiveManager.cpp in Sources */,
 				2B60089F27C7F7EB00B19562 /* log_base.hpp in Sources */,
 				2B6008A027C7F7EB00B19562 /* matrix_query.hpp in Sources */,
 				2B6008A127C7F7EB00B19562 /* vector_angle.inl in Sources */,
