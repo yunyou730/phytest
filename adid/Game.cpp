@@ -15,6 +15,7 @@
 #include "TestMoveSystem.h"
 #include "HierarchyGUISystem.h"
 #include "InspectorGuiSystem.h"
+#include "DebugGuiSystem.h"
 #include "TestSystem.h"
 
 #include "WorldComp.h"
@@ -41,10 +42,11 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
     GetFramework()->RegisterSystem(new TestMoveSystem(GetFramework()));
     GetFramework()->RegisterSystem(new HierarychyGUISystem(GetFramework()));
     GetFramework()->RegisterSystem(new InspectorGuiSystem(GetFramework()));
+    GetFramework()->RegisterSystem(new DebugGuiSystem(GetFramework()));
     GetFramework()->RegisterSystem(new TestSystem(GetFramework()));
         
-//    CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
-    CreateOrthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
+    CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
+//    CreateOrthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
     
     CreateBox();
     
@@ -55,70 +57,6 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
     CreatePhyGround(glm::vec3(0,0,0),{b2Vec2(0.0,0.0),b2Vec2(0.0,1.0),b2Vec2(1.0,1.0)});
     CreatePhyGround(glm::vec3(-2,2,0),{b2Vec2(0.0,0.0),b2Vec2(0.0,1.0),b2Vec2(1.0,0.0)});
     CreatePhyGround(glm::vec3( 3,2,0));
-    
-    /*
-    
-    // Create entity2
-    {
-        fl::Entity* entity = GetFramework()->CreateEntity();
-        auto primitiveComp = new fl::PrimitiveComponent(fl::EVertexAttrType::POS_UV);
-        primitiveComp->AddVertex(glm::vec3(-0.5,-0.5,0.0),glm::vec2(0,0));
-        primitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0),glm::vec2(1,0));
-        primitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0),glm::vec2(0,1));
-        primitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0),glm::vec2(1,0));
-        primitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0),glm::vec2(0,1));
-        primitiveComp->AddVertex(glm::vec3( 0.5, 0.5,0.0),glm::vec2(1,1));
-        
-        primitiveComp->Commit();
-        
-        entity->AddComponent(CLASS_NAME(PrimitiveComponent), primitiveComp);
-        
-        auto renderStateComp = new fl::RenderStateComponent();
-        renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::BuiltinAttrPosUV);
-        entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
-    }
-    
-    // Create entity3
-    {
-        fl::Entity* entity = GetFramework()->CreateEntity();
-        auto primitiveComp = new fl::PrimitiveComponent(fl::EVertexAttrType::POS_UV_COLOR);
-        primitiveComp->AddVertex(glm::vec3(-0.5,-0.5,0.0),glm::vec2(0,0),glm::vec3(0,0,0));
-        primitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0),glm::vec2(1,0),glm::vec3(1,0,0));
-        primitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0),glm::vec2(0,1),glm::vec3(0,1,0));
-        primitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0),glm::vec2(1,0),glm::vec3(1,0,0));
-        primitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0),glm::vec2(0,1),glm::vec3(0,1,0));
-        primitiveComp->AddVertex(glm::vec3( 0.5, 0.5,0.0),glm::vec2(1,1),glm::vec3(1,1,1));
-        
-        primitiveComp->Commit();
-        
-        entity->AddComponent(CLASS_NAME(PrimitiveComponent), primitiveComp);
-        
-        auto renderStateComp = new fl::RenderStateComponent();
-        renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::BuiltinAttrPosUVCol);
-        entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
-    }
-    
-    
-    // Create entity4
-    {
-        fl::Entity* entity = GetFramework()->CreateEntity();
-        auto primitiveComp = new fl::PrimitiveComponent(fl::EVertexAttrType::POS);
-        primitiveComp->AddVertex(glm::vec3(-0.5,-0.5,0.0));
-        primitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
-        primitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
-        primitiveComp->AddVertex(glm::vec3( 0.5,-0.5,0.0));
-        primitiveComp->AddVertex(glm::vec3(-0.5, 0.5,0.0));
-        primitiveComp->AddVertex(glm::vec3( 0.5, 0.5,0.0));
-        
-        primitiveComp->Commit();
-        
-        entity->AddComponent(CLASS_NAME(PrimitiveComponent), primitiveComp);
-        
-        auto renderStateComp = new fl::RenderStateComponent();
-        renderStateComp->SetShaderId((unsigned int)fl::EBuiltinShaderId::BuiltinStardardBase);
-        entity->AddComponent(CLASS_NAME(RenderStateComponent),renderStateComp);
-    }
-    */
 }
 
 void Game::OnCleanup()
@@ -170,46 +108,8 @@ void Game::CreateOrthoCamera(int viewportWidth,int viewportHeight)
 void Game::CreateBox()
 {
     fl::Entity* entity = GetFramework()->CreateEntity();
-    
-//    auto primComp = new fl::PrimitiveComponent(fl::EVertexAttrType::POS_UV_COLOR,true);
-    auto primComp = new fl::PrimitiveComponent(fl::EPrimitiveType::Cube);
-    
-//    // near
-//    primComp->AddVertex(glm::vec3(-0.5,-0.5,-0.5),glm::vec2(0,0),glm::vec3(1,0,0));
-//    primComp->AddVertex(glm::vec3( 0.5,-0.5,-0.5),glm::vec2(1,0),glm::vec3(0,1,0));
-//    primComp->AddVertex(glm::vec3(-0.5, 0.5,-0.5),glm::vec2(0,1),glm::vec3(0,0,1));
-//    primComp->AddVertex(glm::vec3( 0.5, 0.5,-0.5),glm::vec2(1,1),glm::vec3(1,1,0));
-//
-//    // far
-//    primComp->AddVertex(glm::vec3(-0.5,-0.5, 0.5),glm::vec2(0,0),glm::vec3(1,0,0));
-//    primComp->AddVertex(glm::vec3( 0.5,-0.5, 0.5),glm::vec2(1,0),glm::vec3(0,1,0));
-//    primComp->AddVertex(glm::vec3(-0.5, 0.5, 0.5),glm::vec2(0,1),glm::vec3(0,0,1));
-//    primComp->AddVertex(glm::vec3( 0.5, 0.5, 0.5),glm::vec2(1,1),glm::vec3(1,1,0));
-//
-//    // left
-//    primComp->AddVertex(glm::vec3(-0.5,-0.5, 0.5),glm::vec2(0,0),glm::vec3(1,0,0));
-//    primComp->AddVertex(glm::vec3(-0.5,-0.5,-0.5),glm::vec2(1,0),glm::vec3(0,1,0));
-//    primComp->AddVertex(glm::vec3(-0.5, 0.5, 0.5),glm::vec2(0,1),glm::vec3(0,0,1));
-//    primComp->AddVertex(glm::vec3(-0.5, 0.5,-0.5),glm::vec2(1,1),glm::vec3(1,1,0));
-//
-//    // right
-//    primComp->AddVertex(glm::vec3( 0.5,-0.5,-0.5),glm::vec2(0,0),glm::vec3(1,0,0));
-//    primComp->AddVertex(glm::vec3( 0.5,-0.5, 0.5),glm::vec2(1,0),glm::vec3(0,1,0));
-//    primComp->AddVertex(glm::vec3( 0.5, 0.5,-0.5),glm::vec2(0,1),glm::vec3(0,0,1));
-//    primComp->AddVertex(glm::vec3( 0.5, 0.5, 0.5),glm::vec2(1,1),glm::vec3(1,1,0));
-//
-//    // top & bottom
-//    // todo
-//
-//    primComp->SetIndexData({
-//        0,1,2,1,2,3,        // near
-//        4,5,6,5,6,7,        // far
-//        8,9,10,9,10,11,      // left
-//        12,13,14,13,14,15,  // right
-//
-//    });
-//    primComp->Commit();
-    
+
+    auto primComp = new fl::PrimitiveComponent(fl::EPrimitiveType::Quad);
     entity->AddComponent(fl::PrimitiveComponent::ClsName(),primComp);
     
     // render state
@@ -227,44 +127,7 @@ void Game::CreatePhyBox(const glm::vec3& pos)
     auto transform = entity->GetComponent<fl::TransformComponent>();
     transform->SetPosition(pos);
     
-//    auto primComp = new fl::PrimitiveComponent(fl::EVertexAttrType::POS_UV_COLOR,true);
     auto primComp = new fl::PrimitiveComponent(fl::EPrimitiveType::Cube);
-    
-    // near
-//    primComp->AddVertex(glm::vec3(-0.5,-0.5,-0.5),glm::vec2(0,0),glm::vec3(1,0,0));
-//    primComp->AddVertex(glm::vec3( 0.5,-0.5,-0.5),glm::vec2(1,0),glm::vec3(0,1,0));
-//    primComp->AddVertex(glm::vec3(-0.5, 0.5,-0.5),glm::vec2(0,1),glm::vec3(0,0,1));
-//    primComp->AddVertex(glm::vec3( 0.5, 0.5,-0.5),glm::vec2(1,1),glm::vec3(1,1,0));
-//
-//    // far
-//    primComp->AddVertex(glm::vec3(-0.5,-0.5, 0.5),glm::vec2(0,0),glm::vec3(1,0,0));
-//    primComp->AddVertex(glm::vec3( 0.5,-0.5, 0.5),glm::vec2(1,0),glm::vec3(0,1,0));
-//    primComp->AddVertex(glm::vec3(-0.5, 0.5, 0.5),glm::vec2(0,1),glm::vec3(0,0,1));
-//    primComp->AddVertex(glm::vec3( 0.5, 0.5, 0.5),glm::vec2(1,1),glm::vec3(1,1,0));
-//
-//    // left
-//    primComp->AddVertex(glm::vec3(-0.5,-0.5, 0.5),glm::vec2(0,0),glm::vec3(1,0,0));
-//    primComp->AddVertex(glm::vec3(-0.5,-0.5,-0.5),glm::vec2(1,0),glm::vec3(0,1,0));
-//    primComp->AddVertex(glm::vec3(-0.5, 0.5, 0.5),glm::vec2(0,1),glm::vec3(0,0,1));
-//    primComp->AddVertex(glm::vec3(-0.5, 0.5,-0.5),glm::vec2(1,1),glm::vec3(1,1,0));
-//
-//    // right
-//    primComp->AddVertex(glm::vec3( 0.5,-0.5,-0.5),glm::vec2(0,0),glm::vec3(1,0,0));
-//    primComp->AddVertex(glm::vec3( 0.5,-0.5, 0.5),glm::vec2(1,0),glm::vec3(0,1,0));
-//    primComp->AddVertex(glm::vec3( 0.5, 0.5,-0.5),glm::vec2(0,1),glm::vec3(0,0,1));
-//    primComp->AddVertex(glm::vec3( 0.5, 0.5, 0.5),glm::vec2(1,1),glm::vec3(1,1,0));
-//
-//    // top & bottom
-//    // todo
-//
-//    primComp->SetIndexData({
-//        0,1,2,1,2,3,        // near
-//        4,5,6,5,6,7,        // far
-//        8,9,10,9,10,11,      // left
-//        12,13,14,13,14,15,  // right
-//    });
-//    primComp->Commit();
-    
     entity->AddComponent(fl::PrimitiveComponent::ClsName(),primComp);
     
     // render state

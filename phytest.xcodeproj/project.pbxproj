@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B551A7727EEE4BB001560D9 /* PrimObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A7527EEE4BA001560D9 /* PrimObject.cpp */; };
+		2B551A7B27EEFB78001560D9 /* DebugGuiSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A7927EEFB78001560D9 /* DebugGuiSystem.cpp */; };
 		2B586D1027D332FB00833F2F /* CameraCtrlSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */; };
 		2B586D1627D4A58E00833F2F /* TestMoveSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D1527D4A58E00833F2F /* TestMoveSystem.cpp */; };
 		2B586D2927D5157D00833F2F /* imgui_widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D1C27D5157C00833F2F /* imgui_widgets.cpp */; };
@@ -559,6 +560,8 @@
 /* Begin PBXFileReference section */
 		2B551A7527EEE4BA001560D9 /* PrimObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrimObject.cpp; sourceTree = "<group>"; };
 		2B551A7627EEE4BA001560D9 /* PrimObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimObject.h; sourceTree = "<group>"; };
+		2B551A7927EEFB78001560D9 /* DebugGuiSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugGuiSystem.cpp; sourceTree = "<group>"; };
+		2B551A7A27EEFB78001560D9 /* DebugGuiSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugGuiSystem.h; sourceTree = "<group>"; };
 		2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraCtrlSystem.cpp; sourceTree = "<group>"; };
 		2B586D0F27D332FB00833F2F /* CameraCtrlSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCtrlSystem.h; sourceTree = "<group>"; };
 		2B586D1427D4A58E00833F2F /* TestMoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMoveSystem.h; sourceTree = "<group>"; };
@@ -1799,6 +1802,8 @@
 				2B586D1427D4A58E00833F2F /* TestMoveSystem.h */,
 				2B586D3927D5CD4700833F2F /* HierarchyGUISystem.cpp */,
 				2B586D3827D5CD4700833F2F /* HierarchyGUISystem.h */,
+				2B551A7927EEFB78001560D9 /* DebugGuiSystem.cpp */,
+				2B551A7A27EEFB78001560D9 /* DebugGuiSystem.h */,
 				2B586D4127D671B000833F2F /* InspectorGuiSystem.cpp */,
 				2B586D4227D671B000833F2F /* InspectorGuiSystem.h */,
 				2B586D5E27DE5B7B00833F2F /* TestSystem.cpp */,
@@ -2329,6 +2334,7 @@
 				2B60075427C7F7EA00B19562 /* matrix_double3x2_precision.hpp in Sources */,
 				2B60075527C7F7EA00B19562 /* matrix_float2x4.hpp in Sources */,
 				2B60075627C7F7EA00B19562 /* vector_bool2.hpp in Sources */,
+				2B551A7B27EEFB78001560D9 /* DebugGuiSystem.cpp in Sources */,
 				2B60075727C7F7EA00B19562 /* quaternion_double_precision.hpp in Sources */,
 				2B60075827C7F7EA00B19562 /* matrix_float4x2.hpp in Sources */,
 				2B60075927C7F7EA00B19562 /* scalar_packing.inl in Sources */,
