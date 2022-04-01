@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2B551A7727EEE4BB001560D9 /* PrimObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A7527EEE4BA001560D9 /* PrimObject.cpp */; };
-		2B551A7B27EEFB78001560D9 /* DebugGuiSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A7927EEFB78001560D9 /* DebugGuiSystem.cpp */; };
 		2B551A7F27F03909001560D9 /* DestroySystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A7D27F03909001560D9 /* DestroySystem.cpp */; };
-		2B586D1027D332FB00833F2F /* CameraCtrlSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */; };
-		2B586D1627D4A58E00833F2F /* TestMoveSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D1527D4A58E00833F2F /* TestMoveSystem.cpp */; };
+		2B551A8E27F763D8001560D9 /* HierarchyGUISystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A8327F763D8001560D9 /* HierarchyGUISystem.cpp */; };
+		2B551A8F27F763D8001560D9 /* CameraCtrlSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A8927F763D8001560D9 /* CameraCtrlSystem.cpp */; };
+		2B551A9027F763D8001560D9 /* DebugGuiSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A8A27F763D8001560D9 /* DebugGuiSystem.cpp */; };
+		2B551A9127F763D8001560D9 /* InspectorGuiSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A8B27F763D8001560D9 /* InspectorGuiSystem.cpp */; };
+		2B551A9227F763D8001560D9 /* TestMoveSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A8C27F763D8001560D9 /* TestMoveSystem.cpp */; };
+		2B551A9327F763D8001560D9 /* TestSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A8D27F763D8001560D9 /* TestSystem.cpp */; };
+		2B551A9A27F76601001560D9 /* PreviewModeGuiSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A9827F76601001560D9 /* PreviewModeGuiSystem.cpp */; };
 		2B586D2927D5157D00833F2F /* imgui_widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D1C27D5157C00833F2F /* imgui_widgets.cpp */; };
 		2B586D2A27D5157D00833F2F /* imgui_impl_opengl3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D2127D5157C00833F2F /* imgui_impl_opengl3.cpp */; };
 		2B586D2B27D5157D00833F2F /* imgui_impl_glfw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D2227D5157C00833F2F /* imgui_impl_glfw.cpp */; };
@@ -20,15 +24,12 @@
 		2B586D2E27D5157D00833F2F /* imgui_demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D2727D5157C00833F2F /* imgui_demo.cpp */; };
 		2B586D2F27D5157D00833F2F /* imgui_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D2827D5157C00833F2F /* imgui_draw.cpp */; };
 		2B586D3627D5204900833F2F /* ImGuiSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D3527D5204900833F2F /* ImGuiSystem.cpp */; };
-		2B586D3A27D5CD4700833F2F /* HierarchyGUISystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D3927D5CD4700833F2F /* HierarchyGUISystem.cpp */; };
 		2B586D3F27D6693600833F2F /* WorldComp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D3D27D6693600833F2F /* WorldComp.cpp */; };
-		2B586D4327D671B100833F2F /* InspectorGuiSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D4127D671B000833F2F /* InspectorGuiSystem.cpp */; };
 		2B586D4B27D7EBAE00833F2F /* Phy2DComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D4A27D7EBAE00833F2F /* Phy2DComponent.cpp */; };
 		2B586D5027DDBC7E00833F2F /* RenderFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D4E27DDBC7E00833F2F /* RenderFunc.cpp */; };
 		2B586D5527DDBD8600833F2F /* Phy2dFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D5427DDBD8600833F2F /* Phy2dFunc.cpp */; };
 		2B586D5927DDD52B00833F2F /* phy2d_debug.fsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B586D5727DDD51900833F2F /* phy2d_debug.fsh */; };
 		2B586D5A27DDD52B00833F2F /* phy2d_debug.vsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B586D5827DDD51900833F2F /* phy2d_debug.vsh */; };
-		2B586D5F27DE5B7B00833F2F /* TestSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D5E27DE5B7B00833F2F /* TestSystem.cpp */; };
 		2B586D6427E5803800833F2F /* InspectorItemTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D6227E5803800833F2F /* InspectorItemTransform.cpp */; };
 		2B586D6927E5845500833F2F /* InspectorItemCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D6727E5845500833F2F /* InspectorItemCamera.cpp */; };
 		2B586D6D27E5883F00833F2F /* InspectorItemRenderState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D6C27E5883F00833F2F /* InspectorItemRenderState.cpp */; };
@@ -561,14 +562,22 @@
 /* Begin PBXFileReference section */
 		2B551A7527EEE4BA001560D9 /* PrimObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrimObject.cpp; sourceTree = "<group>"; };
 		2B551A7627EEE4BA001560D9 /* PrimObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimObject.h; sourceTree = "<group>"; };
-		2B551A7927EEFB78001560D9 /* DebugGuiSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugGuiSystem.cpp; sourceTree = "<group>"; };
-		2B551A7A27EEFB78001560D9 /* DebugGuiSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugGuiSystem.h; sourceTree = "<group>"; };
 		2B551A7D27F03909001560D9 /* DestroySystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DestroySystem.cpp; sourceTree = "<group>"; };
 		2B551A7E27F03909001560D9 /* DestroySystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestroySystem.h; sourceTree = "<group>"; };
-		2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraCtrlSystem.cpp; sourceTree = "<group>"; };
-		2B586D0F27D332FB00833F2F /* CameraCtrlSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCtrlSystem.h; sourceTree = "<group>"; };
-		2B586D1427D4A58E00833F2F /* TestMoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMoveSystem.h; sourceTree = "<group>"; };
-		2B586D1527D4A58E00833F2F /* TestMoveSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestMoveSystem.cpp; sourceTree = "<group>"; };
+		2B551A8227F763D8001560D9 /* DebugGuiSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugGuiSystem.h; sourceTree = "<group>"; };
+		2B551A8327F763D8001560D9 /* HierarchyGUISystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HierarchyGUISystem.cpp; sourceTree = "<group>"; };
+		2B551A8427F763D8001560D9 /* TestSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSystem.h; sourceTree = "<group>"; };
+		2B551A8527F763D8001560D9 /* InspectorGuiSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorGuiSystem.h; sourceTree = "<group>"; };
+		2B551A8627F763D8001560D9 /* HierarchyGUISystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HierarchyGUISystem.h; sourceTree = "<group>"; };
+		2B551A8727F763D8001560D9 /* TestMoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMoveSystem.h; sourceTree = "<group>"; };
+		2B551A8827F763D8001560D9 /* CameraCtrlSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCtrlSystem.h; sourceTree = "<group>"; };
+		2B551A8927F763D8001560D9 /* CameraCtrlSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraCtrlSystem.cpp; sourceTree = "<group>"; };
+		2B551A8A27F763D8001560D9 /* DebugGuiSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugGuiSystem.cpp; sourceTree = "<group>"; };
+		2B551A8B27F763D8001560D9 /* InspectorGuiSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorGuiSystem.cpp; sourceTree = "<group>"; };
+		2B551A8C27F763D8001560D9 /* TestMoveSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestMoveSystem.cpp; sourceTree = "<group>"; };
+		2B551A8D27F763D8001560D9 /* TestSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestSystem.cpp; sourceTree = "<group>"; };
+		2B551A9827F76601001560D9 /* PreviewModeGuiSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreviewModeGuiSystem.cpp; sourceTree = "<group>"; };
+		2B551A9927F76601001560D9 /* PreviewModeGuiSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewModeGuiSystem.h; sourceTree = "<group>"; };
 		2B586D1927D5157C00833F2F /* imgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui.h; sourceTree = "<group>"; };
 		2B586D1A27D5157C00833F2F /* imstb_textedit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imstb_textedit.h; sourceTree = "<group>"; };
 		2B586D1B27D5157C00833F2F /* imconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imconfig.h; sourceTree = "<group>"; };
@@ -587,12 +596,8 @@
 		2B586D3227D5165200833F2F /* imgui_impl_opengl3_loader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imgui_impl_opengl3_loader.h; sourceTree = "<group>"; };
 		2B586D3427D5204900833F2F /* ImGuiSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImGuiSystem.h; sourceTree = "<group>"; };
 		2B586D3527D5204900833F2F /* ImGuiSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImGuiSystem.cpp; sourceTree = "<group>"; };
-		2B586D3827D5CD4700833F2F /* HierarchyGUISystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HierarchyGUISystem.h; sourceTree = "<group>"; };
-		2B586D3927D5CD4700833F2F /* HierarchyGUISystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HierarchyGUISystem.cpp; sourceTree = "<group>"; };
 		2B586D3D27D6693600833F2F /* WorldComp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldComp.cpp; sourceTree = "<group>"; };
 		2B586D3E27D6693600833F2F /* WorldComp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldComp.h; sourceTree = "<group>"; };
-		2B586D4127D671B000833F2F /* InspectorGuiSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorGuiSystem.cpp; sourceTree = "<group>"; };
-		2B586D4227D671B000833F2F /* InspectorGuiSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorGuiSystem.h; sourceTree = "<group>"; };
 		2B586D4927D7EBAE00833F2F /* Phy2DComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phy2DComponent.h; sourceTree = "<group>"; };
 		2B586D4A27D7EBAE00833F2F /* Phy2DComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Phy2DComponent.cpp; sourceTree = "<group>"; };
 		2B586D4E27DDBC7E00833F2F /* RenderFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderFunc.cpp; sourceTree = "<group>"; };
@@ -601,8 +606,6 @@
 		2B586D5427DDBD8600833F2F /* Phy2dFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Phy2dFunc.cpp; sourceTree = "<group>"; };
 		2B586D5727DDD51900833F2F /* phy2d_debug.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = phy2d_debug.fsh; sourceTree = "<group>"; };
 		2B586D5827DDD51900833F2F /* phy2d_debug.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = phy2d_debug.vsh; sourceTree = "<group>"; };
-		2B586D5D27DE5B7B00833F2F /* TestSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSystem.h; sourceTree = "<group>"; };
-		2B586D5E27DE5B7B00833F2F /* TestSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestSystem.cpp; sourceTree = "<group>"; };
 		2B586D6227E5803800833F2F /* InspectorItemTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorItemTransform.cpp; sourceTree = "<group>"; };
 		2B586D6327E5803800833F2F /* InspectorItemTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorItemTransform.h; sourceTree = "<group>"; };
 		2B586D6727E5845500833F2F /* InspectorItemCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InspectorItemCamera.cpp; sourceTree = "<group>"; };
@@ -1208,6 +1211,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B551A8127F763D8001560D9 /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				2B551A9827F76601001560D9 /* PreviewModeGuiSystem.cpp */,
+				2B551A9927F76601001560D9 /* PreviewModeGuiSystem.h */,
+				2B551A8227F763D8001560D9 /* DebugGuiSystem.h */,
+				2B551A8A27F763D8001560D9 /* DebugGuiSystem.cpp */,
+				2B551A8627F763D8001560D9 /* HierarchyGUISystem.h */,
+				2B551A8327F763D8001560D9 /* HierarchyGUISystem.cpp */,
+				2B551A8427F763D8001560D9 /* TestSystem.h */,
+				2B551A8D27F763D8001560D9 /* TestSystem.cpp */,
+				2B551A8827F763D8001560D9 /* CameraCtrlSystem.h */,
+				2B551A8927F763D8001560D9 /* CameraCtrlSystem.cpp */,
+				2B551A8527F763D8001560D9 /* InspectorGuiSystem.h */,
+				2B551A8B27F763D8001560D9 /* InspectorGuiSystem.cpp */,
+				2B551A8727F763D8001560D9 /* TestMoveSystem.h */,
+				2B551A8C27F763D8001560D9 /* TestMoveSystem.cpp */,
+			);
+			path = Systems;
+			sourceTree = "<group>";
+		};
 		2B586D1827D5157C00833F2F /* imgui */ = {
 			isa = PBXGroup;
 			children = (
@@ -1793,24 +1817,13 @@
 		2BFE8ADB27C3E360001F171C /* adid */ = {
 			isa = PBXGroup;
 			children = (
+				2B551A8127F763D8001560D9 /* Systems */,
 				2B586D6127E5803800833F2F /* Inspector */,
 				2BFE8ADC27C3E360001F171C /* main.cpp */,
 				2B6003B227C7EC5C00B19562 /* Game.cpp */,
 				2B6003B327C7EC5C00B19562 /* Game.h */,
 				2B586D6F27E5B0B100833F2F /* ComponentFactory.cpp */,
 				2B586D7027E5B0B100833F2F /* ComponentFactory.h */,
-				2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */,
-				2B586D0F27D332FB00833F2F /* CameraCtrlSystem.h */,
-				2B586D1527D4A58E00833F2F /* TestMoveSystem.cpp */,
-				2B586D1427D4A58E00833F2F /* TestMoveSystem.h */,
-				2B586D3927D5CD4700833F2F /* HierarchyGUISystem.cpp */,
-				2B586D3827D5CD4700833F2F /* HierarchyGUISystem.h */,
-				2B551A7927EEFB78001560D9 /* DebugGuiSystem.cpp */,
-				2B551A7A27EEFB78001560D9 /* DebugGuiSystem.h */,
-				2B586D4127D671B000833F2F /* InspectorGuiSystem.cpp */,
-				2B586D4227D671B000833F2F /* InspectorGuiSystem.h */,
-				2B586D5E27DE5B7B00833F2F /* TestSystem.cpp */,
-				2B586D5D27DE5B7B00833F2F /* TestSystem.h */,
 				2B586D3D27D6693600833F2F /* WorldComp.cpp */,
 				2B586D3E27D6693600833F2F /* WorldComp.h */,
 			);
@@ -2339,7 +2352,6 @@
 				2B60075427C7F7EA00B19562 /* matrix_double3x2_precision.hpp in Sources */,
 				2B60075527C7F7EA00B19562 /* matrix_float2x4.hpp in Sources */,
 				2B60075627C7F7EA00B19562 /* vector_bool2.hpp in Sources */,
-				2B551A7B27EEFB78001560D9 /* DebugGuiSystem.cpp in Sources */,
 				2B60075727C7F7EA00B19562 /* quaternion_double_precision.hpp in Sources */,
 				2B60075827C7F7EA00B19562 /* matrix_float4x2.hpp in Sources */,
 				2B60075927C7F7EA00B19562 /* scalar_packing.inl in Sources */,
@@ -2374,7 +2386,6 @@
 				2B60077427C7F7EA00B19562 /* matrix_double4x2_precision.hpp in Sources */,
 				2B60077527C7F7EA00B19562 /* matrix_clip_space.inl in Sources */,
 				2B60077627C7F7EA00B19562 /* vector_double4_precision.hpp in Sources */,
-				2B586D3A27D5CD4700833F2F /* HierarchyGUISystem.cpp in Sources */,
 				2B60077727C7F7EA00B19562 /* matrix_float3x4_precision.hpp in Sources */,
 				2B60077827C7F7EA00B19562 /* scalar_integer.inl in Sources */,
 				2B60077927C7F7EA00B19562 /* vector_uint3.hpp in Sources */,
@@ -2483,6 +2494,7 @@
 				2B6007DD27C7F7EA00B19562 /* quaternion_relational.inl in Sources */,
 				2B6007DE27C7F7EA00B19562 /* vector_double4.hpp in Sources */,
 				2B6007DF27C7F7EA00B19562 /* matrix_int3x3.hpp in Sources */,
+				2B551A8E27F763D8001560D9 /* HierarchyGUISystem.cpp in Sources */,
 				2B6007E027C7F7EA00B19562 /* vector_uint2_sized.hpp in Sources */,
 				2B6007E127C7F7EA00B19562 /* matrix_uint4x2.hpp in Sources */,
 				2B6007E227C7F7EA00B19562 /* matrix_uint2x4.hpp in Sources */,
@@ -2595,7 +2607,6 @@
 				2B60084927C7F7EA00B19562 /* vec1.hpp in Sources */,
 				2B60084A27C7F7EA00B19562 /* type_precision.inl in Sources */,
 				2B60084B27C7F7EA00B19562 /* bitfield.inl in Sources */,
-				2B586D1627D4A58E00833F2F /* TestMoveSystem.cpp in Sources */,
 				2B60084C27C7F7EA00B19562 /* ulp.hpp in Sources */,
 				2B60084D27C7F7EA00B19562 /* round.inl in Sources */,
 				2B60084E27C7F7EA00B19562 /* packing.hpp in Sources */,
@@ -2620,7 +2631,6 @@
 				2B60086027C7F7EB00B19562 /* color_space.inl in Sources */,
 				2B60086127C7F7EB00B19562 /* noise.inl in Sources */,
 				2B60086227C7F7EB00B19562 /* matrix_access.hpp in Sources */,
-				2B586D1027D332FB00833F2F /* CameraCtrlSystem.cpp in Sources */,
 				2B60086327C7F7EB00B19562 /* random.inl in Sources */,
 				2B60086427C7F7EB00B19562 /* epsilon.hpp in Sources */,
 				2B6008EF27C9545000B19562 /* FileReader.cpp in Sources */,
@@ -2678,8 +2688,10 @@
 				2B60089527C7F7EB00B19562 /* float_notmalize.inl in Sources */,
 				2B60089627C7F7EB00B19562 /* transform.hpp in Sources */,
 				2B60089727C7F7EB00B19562 /* bit.hpp in Sources */,
+				2B551A8F27F763D8001560D9 /* CameraCtrlSystem.cpp in Sources */,
 				2B60089827C7F7EB00B19562 /* number_precision.hpp in Sources */,
 				2B60089927C7F7EB00B19562 /* mixed_product.hpp in Sources */,
+				2B551A9127F763D8001560D9 /* InspectorGuiSystem.cpp in Sources */,
 				2B60089A27C7F7EB00B19562 /* closest_point.inl in Sources */,
 				2B60089B27C7F7EB00B19562 /* dual_quaternion.inl in Sources */,
 				2B60089C27C7F7EB00B19562 /* associated_min_max.hpp in Sources */,
@@ -2765,9 +2777,12 @@
 				2B6008E427C7F7EB00B19562 /* projection.inl in Sources */,
 				2B6008E527C7F7EB00B19562 /* type_aligned.hpp in Sources */,
 				2BFE8C9527C485F7001F171C /* System.cpp in Sources */,
+				2B551A9027F763D8001560D9 /* DebugGuiSystem.cpp in Sources */,
 				2BFE8C2427C476BC001F171C /* b2_revolute_joint.cpp in Sources */,
 				2BFE8C1E27C476BC001F171C /* b2_joint.cpp in Sources */,
+				2B551A9327F763D8001560D9 /* TestSystem.cpp in Sources */,
 				2BFE8C2927C476BC001F171C /* b2_distance_joint.cpp in Sources */,
+				2B551A9227F763D8001560D9 /* TestMoveSystem.cpp in Sources */,
 				2BFE8C7427C47B30001F171C /* window.cpp in Sources */,
 				2BFE8C2B27C476BC001F171C /* b2_polygon_contact.cpp in Sources */,
 				2BFE8C3227C476BC001F171C /* b2_world.cpp in Sources */,
@@ -2785,7 +2800,6 @@
 				2BFE8C4327C476BC001F171C /* b2_chain_shape.cpp in Sources */,
 				2BFE8C3727C476BC001F171C /* b2_fixture.cpp in Sources */,
 				2BFE8C3427C476BC001F171C /* b2_mouse_joint.cpp in Sources */,
-				2B586D5F27DE5B7B00833F2F /* TestSystem.cpp in Sources */,
 				2B6003B827C7F6EA00B19562 /* ShaderProgram.cpp in Sources */,
 				2BFE8C3E27C476BC001F171C /* b2_math.cpp in Sources */,
 				2BFE8C8A27C485E7001F171C /* Framework.cpp in Sources */,
@@ -2803,6 +2817,7 @@
 				2B6003B427C7EC5C00B19562 /* Game.cpp in Sources */,
 				2BFE8C1F27C476BC001F171C /* b2_chain_circle_contact.cpp in Sources */,
 				2BFE8C4427C476BC001F171C /* b2_broad_phase.cpp in Sources */,
+				2B551A9A27F76601001560D9 /* PreviewModeGuiSystem.cpp in Sources */,
 				2BFE8C3927C476BC001F171C /* b2_draw.cpp in Sources */,
 				2BFE8C3527C476BC001F171C /* b2_circle_contact.cpp in Sources */,
 				2BFE8C4027C476BC001F171C /* b2_circle_shape.cpp in Sources */,
@@ -2820,7 +2835,6 @@
 				2BFE8C4627C476BC001F171C /* b2_polygon_shape.cpp in Sources */,
 				2BFE8ADD27C3E360001F171C /* main.cpp in Sources */,
 				2BFE8CC127C6028B001F171C /* Component.cpp in Sources */,
-				2B586D4327D671B100833F2F /* InspectorGuiSystem.cpp in Sources */,
 				2BFE8C3627C476BC001F171C /* b2_prismatic_joint.cpp in Sources */,
 				2BFE8C2D27C476BC001F171C /* b2_edge_circle_contact.cpp in Sources */,
 				2BFE8C3127C476BC001F171C /* b2_motor_joint.cpp in Sources */,

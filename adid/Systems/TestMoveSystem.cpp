@@ -20,7 +20,6 @@ void TestMoveSystem::Update()
     const float moveSpeed = 3.0;
     float dt = GetFramework()->GetApp()->GetDeltaTime();
     
-    
     auto entity = GetFramework()->GetEntity(2);
     if(entity != nullptr)
     {

@@ -12,6 +12,7 @@ class CameraComponent;
 
 namespace ad {
 
+class WCPreviewMode;
 class CameraCtrlSystem : public fl::System,public fl::ISysUpdate
 {
 public:
@@ -21,14 +22,15 @@ public:
     
 protected:
     void DumpKeyboardState();
+    
     void HandleCameraMove(float deltaTime,fl::Entity* camEntity);
     void HandleCameraRotate(float deltaTime,fl::Entity* camEntity);
-    
     glm::vec3 GetHorizontalMoveDirection(fl::CameraComponent* camComp);
     
 protected:
     fl::WCKeyboardInput* _keyboardInput = nullptr;
     float   _moveSpeedFactor = 3.0f;
+    WCPreviewMode*  _previewMode = nullptr;
 };
 
 }

@@ -16,6 +16,7 @@
 #include "HierarchyGUISystem.h"
 #include "InspectorGuiSystem.h"
 #include "DebugGuiSystem.h"
+#include "PreviewModeGuiSystem.h"
 #include "TestSystem.h"
 
 #include "WorldComp.h"
@@ -37,12 +38,15 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
     fl::Application::OnPrepare(window,launchParam);
     
     GetFramework()->RegisterWorldComponent(WCEntitySelection::ClsName(), new WCEntitySelection());
+    GetFramework()->RegisterWorldComponent(WCPreviewMode::ClsName(),new WCPreviewMode());
     
     GetFramework()->RegisterSystem(new CameraCtrlSystem(GetFramework()));
-    GetFramework()->RegisterSystem(new TestMoveSystem(GetFramework()));
     GetFramework()->RegisterSystem(new HierarychyGUISystem(GetFramework()));
     GetFramework()->RegisterSystem(new InspectorGuiSystem(GetFramework()));
     GetFramework()->RegisterSystem(new DebugGuiSystem(GetFramework()));
+    GetFramework()->RegisterSystem(new PreviewModeGuiSystem(GetFramework()));
+    
+    GetFramework()->RegisterSystem(new TestMoveSystem(GetFramework()));
     GetFramework()->RegisterSystem(new TestSystem(GetFramework()));
         
 //    CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);

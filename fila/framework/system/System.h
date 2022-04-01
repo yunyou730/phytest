@@ -11,9 +11,8 @@ public:
     virtual ~System();
     
     Framework* GetFramework() { return _framework;}
-    
 protected:
-    Framework* _framework = nullptr;
+    Framework*  _framework = nullptr;
 };
 
 // Prepare ----------

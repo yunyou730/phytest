@@ -3,6 +3,7 @@
 #include "fila.h"
 #include "Entity.h"
 #include <vector>
+#include "WorldComp.h"
 
 #include "TransformComponent.h"
 #include "CameraComponent.h"
@@ -13,6 +14,7 @@ CameraCtrlSystem::CameraCtrlSystem(fl::Framework* framework)
     :System(framework)
 {
     _keyboardInput = _framework->GetWorldComponent<fl::WCKeyboardInput>();
+    _previewMode = _framework->GetWorldComponent<ad::WCPreviewMode>();
 }
 
 void CameraCtrlSystem::Update()
@@ -26,10 +28,13 @@ void CameraCtrlSystem::Update()
     compSet.insert(CLASS_NAME(TransformComponent));
     std::vector<fl::Entity*> entities = GetFramework()->QueryEntityWithCompSet(compSet);
     
-    for(auto it = entities.begin();it != entities.end();it++)
+    if(_previewMode->_previewMode == EPreviewMode::Free)
     {
-        HandleCameraMove(dt,*it);
-        HandleCameraRotate(dt,*it);
+        for(auto it = entities.begin();it != entities.end();it++)
+        {
+            HandleCameraMove(dt,*it);
+            HandleCameraRotate(dt,*it);
+        }
     }
 }
 

@@ -33,7 +33,6 @@ void Framework::RegisterSystem(System* sys)
     RegisterSysByType(sys,ISysGUISupport,_guiSupportSysList);
     RegisterSysByType(sys,ISysGUI,_guiSysList);
     RegisterSysByType(sys,ISysLateUpdate,_lateUpdateSysList);
-    
 }
 
 void Framework::RegisterWorldComponent(const std::string& wcClsName,WorldComponent* comp)

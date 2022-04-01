@@ -15,5 +15,23 @@ public:
 };
 
 
+enum class EPreviewMode
+{
+    Free,
+    Playing,
+    
+    Max
+};
+
+class WCPreviewMode : public fl::WorldComponent
+{
+public:
+    static std::string ClsName() { return "WCPreviewMode"; }
+    
+    void SwitchPreviewMode();
+    
+    EPreviewMode   _previewMode = EPreviewMode::Free;
+};
+
 }
 

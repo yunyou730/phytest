@@ -13,11 +13,11 @@
 #include "imgui.h"
 #include <sstream>
 
-#include "Inspector/InspectorItemTransform.h"
-#include "Inspector/InspectorItemCamera.h"
-#include "Inspector/InspectorItemRenderState.h"
-#include "Inspector/InspectorItemPrimitive.h"
-#include "Inspector/InspectorItemPhy2D.h"
+#include "../Inspector/InspectorItemTransform.h"
+#include "../Inspector/InspectorItemCamera.h"
+#include "../Inspector/InspectorItemRenderState.h"
+#include "../Inspector/InspectorItemPrimitive.h"
+#include "../Inspector/InspectorItemPhy2D.h"
 
 #include "ComponentFactory.h"
 
