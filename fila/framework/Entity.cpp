@@ -12,7 +12,11 @@ Entity::Entity(Framework* framework,unsigned int entityId)
 
 Entity::~Entity()
 {
-    
+    for(auto it : _componentMap)
+    {
+        delete it.second;
+    }
+    _componentMap.clear();
 }
 
 bool Entity::HasComponent(const std::string& compClsName)

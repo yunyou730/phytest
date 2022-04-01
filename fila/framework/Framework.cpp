@@ -32,6 +32,8 @@ void Framework::RegisterSystem(System* sys)
     RegisterSysByType(sys,ISysCleanup,_cleanupSysList);
     RegisterSysByType(sys,ISysGUISupport,_guiSupportSysList);
     RegisterSysByType(sys,ISysGUI,_guiSysList);
+    RegisterSysByType(sys,ISysLateUpdate,_lateUpdateSysList);
+    
 }
 
 void Framework::RegisterWorldComponent(const std::string& wcClsName,WorldComponent* comp)
@@ -53,6 +55,17 @@ Entity* Framework::CreateEntity()
     entity->AddComponent(CLASS_NAME(TransformComponent), transform);
     
     return entity;
+}
+
+void Framework::DestroyEntity(const int entityID)
+{
+    auto it = _entityMap.find(entityID);
+    if(it != _entityMap.end())
+    {
+        Entity* entity = it->second;
+        SAFE_DEL(entity);
+        _entityMap.erase(it);
+    }
 }
 
 void Framework::OnPrepare(const LaunchParam& launchParam)

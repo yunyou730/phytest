@@ -78,11 +78,14 @@ void Window::MainLoop(Application* app,const LaunchParam& launchParam)
         
         app->ProcessInput(this);
         app->OnUpdate();
+        app->OnLateUpdate();
             
         // Render code here
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT |GL_STENCIL_BUFFER_BIT); // render begin
         app->OnRenderer();
-
+        
+        
+        
         // render end
         glfwSwapBuffers(_window);
         glfwPollEvents();

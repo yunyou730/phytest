@@ -4,6 +4,7 @@
 #include "Entity.h"
 #include <vector>
 
+#include "WorldCOmponent.h"
 #include "TransformComponent.h"
 #include "CameraComponent.h"
 
@@ -16,6 +17,7 @@
 #include "Inspector/InspectorItemCamera.h"
 #include "Inspector/InspectorItemRenderState.h"
 #include "Inspector/InspectorItemPrimitive.h"
+#include "Inspector/InspectorItemPhy2D.h"
 
 #include "ComponentFactory.h"
 
@@ -32,6 +34,7 @@ InspectorGuiSystem::InspectorGuiSystem(fl::Framework* framework)
     :System(framework)
 {
     _entitySelection = GetFramework()->GetWorldComponent<WCEntitySelection>();
+    _destroy = GetFramework()->GetWorldComponent<fl::WCDestroy>();
 }
 
 void InspectorGuiSystem::OnGUI()
@@ -67,6 +70,11 @@ void InspectorGuiSystem::OnGUI()
 void InspectorGuiSystem::RefreshInspector(fl::Entity* entity)
 {
     ImGui::Text("[EntityID] %d",entity->GetID());
+    if(ImGui::Button("Destroy"))
+    {
+        _destroy->AddEntity(entity->GetID());
+    }
+    ImGui::Separator();
     
     ShowAddComponentPart(entity);
     if(ImGui::Button("Add Component"))
@@ -74,10 +82,13 @@ void InspectorGuiSystem::RefreshInspector(fl::Entity* entity)
         DoAddComponent(_toAddComponentIndex,entity);
     }
     
+    ImGui::Separator();
+    
     InspectorItemTransform::Show(entity);
     InspectorItemCamera::Show(entity);
     InspectorItemRenderState::Show(entity);
     InspectorItemPrimitive::Show(entity);
+    InspectorItemPhy2D::Show(entity);
 }
 
 void InspectorGuiSystem::ShowAddComponentPart(fl::Entity* entity)

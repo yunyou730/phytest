@@ -42,6 +42,8 @@ public:
     std::vector<Entity*> QueryEntityWithCompSet(std::set<std::string> compSet);
     Entity* GetEntity(const int entityID);
     
+    void DestroyEntity(const int entityID);
+    
     const std::map<unsigned int,Entity*>& GetEntityMap() { return _entityMap;}
         
 protected:

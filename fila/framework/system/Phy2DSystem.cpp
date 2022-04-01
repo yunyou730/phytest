@@ -23,8 +23,9 @@ void Phy2DSystem::Prepare(const LaunchParam& launchParam)
     _compSetWithPhy2d.insert(Phy2DComponent::ClsName());
     
     _phy2dSettings = GetFramework()->GetWorldComponent<WCPhy2DSettings>();
-    _world = new b2World(_phy2dSettings->_gravity);
+    _destroy = GetFramework()->GetWorldComponent<WCDestroy>();
     
+    _world = new b2World(_phy2dSettings->_gravity);
     _shaderManager = GetFramework()->GetApp()->GetShaderManager();
 }
 
@@ -33,6 +34,19 @@ void Phy2DSystem::Update()
     CheckAndCreateBody();
     ProcessTickRate();
     SyncPhyPropToTransform();
+}
+
+void Phy2DSystem::LateUpdate()
+{
+    for(auto it : _destroy->_toDestroy)
+    {
+        int entityId = it;
+        Entity* entity = GetFramework()->GetEntity(entityId);
+        if(entity != nullptr)
+        {
+            HandleDestroyedEntity(entity);
+        }
+    }
 }
 
 void Phy2DSystem::ProcessTickRate()
@@ -95,6 +109,16 @@ void Phy2DSystem::Renderer()
                 Phy2dFunc::DrawDebugWire(_shaderManager,_phy2dSettings,entity->GetComponent<Phy2DComponent>(),camComp);
             }
         }
+    }
+}
+
+void Phy2DSystem::HandleDestroyedEntity(Entity* entity)
+{
+    auto phy2dComp = entity->GetComponent<Phy2DComponent>();
+    if(phy2dComp != nullptr)
+    {
+        auto body = phy2dComp->GetBody();
+        _world->DestroyBody(body);
     }
 }
 

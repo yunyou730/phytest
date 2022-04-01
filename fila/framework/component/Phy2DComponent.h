@@ -26,6 +26,7 @@ public:
 public:
     static const char* ClsName() {return "Phy2DComponent";}
     Phy2DComponent();
+    virtual ~Phy2DComponent();
     
     void SetBodyType(BodyType bodyType) { _bodyType = bodyType; }
     void SetPolygonShapePoints(const std::vector<b2Vec2>& points);

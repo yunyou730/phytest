@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B551A7727EEE4BB001560D9 /* PrimObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A7527EEE4BA001560D9 /* PrimObject.cpp */; };
 		2B551A7B27EEFB78001560D9 /* DebugGuiSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A7927EEFB78001560D9 /* DebugGuiSystem.cpp */; };
+		2B551A7F27F03909001560D9 /* DestroySystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B551A7D27F03909001560D9 /* DestroySystem.cpp */; };
 		2B586D1027D332FB00833F2F /* CameraCtrlSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */; };
 		2B586D1627D4A58E00833F2F /* TestMoveSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D1527D4A58E00833F2F /* TestMoveSystem.cpp */; };
 		2B586D2927D5157D00833F2F /* imgui_widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B586D1C27D5157C00833F2F /* imgui_widgets.cpp */; };
@@ -562,6 +563,8 @@
 		2B551A7627EEE4BA001560D9 /* PrimObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimObject.h; sourceTree = "<group>"; };
 		2B551A7927EEFB78001560D9 /* DebugGuiSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebugGuiSystem.cpp; sourceTree = "<group>"; };
 		2B551A7A27EEFB78001560D9 /* DebugGuiSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugGuiSystem.h; sourceTree = "<group>"; };
+		2B551A7D27F03909001560D9 /* DestroySystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DestroySystem.cpp; sourceTree = "<group>"; };
+		2B551A7E27F03909001560D9 /* DestroySystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestroySystem.h; sourceTree = "<group>"; };
 		2B586D0E27D332FB00833F2F /* CameraCtrlSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraCtrlSystem.cpp; sourceTree = "<group>"; };
 		2B586D0F27D332FB00833F2F /* CameraCtrlSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCtrlSystem.h; sourceTree = "<group>"; };
 		2B586D1427D4A58E00833F2F /* TestMoveSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMoveSystem.h; sourceTree = "<group>"; };
@@ -2211,6 +2214,8 @@
 				2BFE8C8F27C485F7001F171C /* RendererSystem.h */,
 				2B586D3527D5204900833F2F /* ImGuiSystem.cpp */,
 				2B586D3427D5204900833F2F /* ImGuiSystem.h */,
+				2B551A7D27F03909001560D9 /* DestroySystem.cpp */,
+				2B551A7E27F03909001560D9 /* DestroySystem.h */,
 				2BFE8C9127C485F7001F171C /* System.cpp */,
 				2BFE8C9227C485F7001F171C /* System.h */,
 			);
@@ -2551,6 +2556,7 @@
 				2B60082427C7F7EA00B19562 /* setup.hpp in Sources */,
 				2B60082527C7F7EA00B19562 /* type_mat2x2.inl in Sources */,
 				2B60082627C7F7EA00B19562 /* type_vec1.inl in Sources */,
+				2B551A7F27F03909001560D9 /* DestroySystem.cpp in Sources */,
 				2B60082727C7F7EA00B19562 /* func_common_simd.inl in Sources */,
 				2B60082827C7F7EA00B19562 /* type_mat4x4.inl in Sources */,
 				2B60082927C7F7EA00B19562 /* func_geometric_simd.inl in Sources */,

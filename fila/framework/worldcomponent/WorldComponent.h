@@ -2,6 +2,7 @@
 #include "window.h"
 #include <map>
 #include "box2d.h"
+#include <set>
 
 namespace fl {
 
@@ -68,5 +69,23 @@ public:
     int     _height = 0;
 };
 
+
+class WCDestroy : public WorldComponent
+{
+public:
+    static const char* ClsName() { return "WCDestroy";}
+    
+    void AddEntity(int entityId)
+    {
+        _toDestroy.insert(entityId);
+    }
+    
+    void CleanDestroyList()
+    {
+        _toDestroy.clear();
+    }
+    
+    std::set<int> _toDestroy;
+};
 
 }

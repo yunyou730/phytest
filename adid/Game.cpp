@@ -45,8 +45,8 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
     GetFramework()->RegisterSystem(new DebugGuiSystem(GetFramework()));
     GetFramework()->RegisterSystem(new TestSystem(GetFramework()));
         
-    CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
-//    CreateOrthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
+//    CreatePersCamera(launchParam.viewportWidth,launchParam.viewportHeight);
+    CreateOrthoCamera(launchParam.viewportWidth,launchParam.viewportHeight);
     
     CreateBox();
     
@@ -57,6 +57,9 @@ void Game::OnPrepare(fl::Window* window,const fl::LaunchParam& launchParam)
     CreatePhyGround(glm::vec3(0,0,0),{b2Vec2(0.0,0.0),b2Vec2(0.0,1.0),b2Vec2(1.0,1.0)});
     CreatePhyGround(glm::vec3(-2,2,0),{b2Vec2(0.0,0.0),b2Vec2(0.0,1.0),b2Vec2(1.0,0.0)});
     CreatePhyGround(glm::vec3( 3,2,0));
+    
+    
+    CreatePhyGround(glm::vec3(0,-3,0),{b2Vec2(-10,-3),b2Vec2(10,-3),b2Vec2(-10,-2),b2Vec2(10,-2)});
 }
 
 void Game::OnCleanup()

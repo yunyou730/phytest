@@ -12,6 +12,12 @@ Phy2DComponent::Phy2DComponent()
     
 }
 
+Phy2DComponent::~Phy2DComponent()
+{
+    // @miao @todo
+    
+}
+
 void Phy2DComponent::SetPolygonShapePoints(const std::vector<b2Vec2>& points)
 {
     _polygonShapePoints = points;

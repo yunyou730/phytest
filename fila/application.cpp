@@ -6,6 +6,7 @@
 #include "RendererSystem.h"
 #include "ImGuiSystem.h"
 #include "Phy2DSystem.h"
+#include "DestroySystem.h"
 
 #include "ShaderManager.h"
 #include "PrimitiveManager.h"
@@ -34,13 +35,13 @@ void Application::OnPrepare(Window* window,const LaunchParam& launchParam)
     // managers
     _shaderManager->StartUp();
     _primitiveManager->StartUp();
-    // @miao @todo
     
     // framework
     // system
     _framework->RegisterSystem(new RendererSystem(_framework));
     _framework->RegisterSystem(new ImGuiSystem(_framework));
     _framework->RegisterSystem(new Phy2DSystem(_framework));
+    _framework->RegisterSystem(new DestroySystem(_framework));
     
     // world component
     auto globalRenderParam = new WCGlobalRenderParam();
@@ -50,6 +51,7 @@ void Application::OnPrepare(Window* window,const LaunchParam& launchParam)
     _framework->RegisterWorldComponent(WCKeyboardInput::ClsName(),new WCKeyboardInput());
     _framework->RegisterWorldComponent(WCPhy2DSettings::ClsName(),new WCPhy2DSettings());
     _framework->RegisterWorldComponent(WCImGUISettings::ClsName(),new WCImGUISettings());
+    _framework->RegisterWorldComponent(WCDestroy::ClsName(),new WCDestroy());
     
     // Prepare
     _framework->OnPrepare(launchParam);
@@ -59,8 +61,6 @@ void Application::OnCleanup()
 {
     _framework->OnCleanUp();
     SAFE_DEL(_framework);
-//    SAFE_DEL(_shaderManager);
-//    SAFE_DEL(_primitiveManager);;
 }
 
 void Application::OnUpdate()
@@ -70,7 +70,7 @@ void Application::OnUpdate()
 
 void Application::OnLateUpdate()
 {
-    
+    _framework->OnLateUpdate();
 }
 
 void Application::OnRenderer()

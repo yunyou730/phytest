@@ -4,6 +4,11 @@
 
 #include "fila.h"
 
+namespace fl
+{
+class WCDestroy;
+}
+
 namespace ad {
 
 class WCEntitySelection;
@@ -21,6 +26,8 @@ protected:
 protected:
     WCEntitySelection*  _entitySelection = nullptr;
     int     _toAddComponentIndex = 0;
+    
+    fl::WCDestroy*  _destroy = nullptr;
 };
 
 }
